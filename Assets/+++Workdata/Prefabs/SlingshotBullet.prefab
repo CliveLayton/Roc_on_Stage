@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823205773986992233}
-  - component: {fileID: 4592878211430400935}
+  - component: {fileID: 348838709916683515}
   - component: {fileID: 6888693505015301500}
-  - component: {fileID: 7089373466590808459}
-  m_Layer: 0
+  - component: {fileID: 8602167903377148191}
+  m_Layer: 7
   m_Name: SlingshotBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 6340303579211953702}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4592878211430400935
+--- !u!54 &348838709916683515
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,10 +57,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
+  m_Interpolate: 1
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &6888693505015301500
 SphereCollider:
@@ -77,13 +77,13 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7089373466590808459
+--- !u!114 &8602167903377148191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,13 +92,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5082812425561065486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c8aadbe5e105d94fab471039b76465e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b7675fb6787a0c418082f532d7e82fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  despawnTime: 5
-  damage: 1
-  shooter: {fileID: 0}
+  normalBulletSpeed: 15
+  destroyTime: 3
+  whatDestroysBullet:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &5170718738897791341
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6340303579211953702}
   - component: {fileID: 1742861159529963156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
   m_Color: {r: 0.8490566, g: 0.7957319, b: 0.244304, a: 1}

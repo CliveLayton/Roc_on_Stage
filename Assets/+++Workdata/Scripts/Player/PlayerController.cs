@@ -5,11 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MoverBase
+public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Bullet bulletPrefab;
-    [SerializeField] private Weapon equippedWeapon;
-    
+
     public float normalSpeed = 5f;
     public float sprintSpeed = 10f;
     public float jumpPower = 5f;
@@ -25,6 +23,7 @@ public class PlayerController : MoverBase
     private float speed;
     private bool hasDoubleJump = true;
     private bool isRolling = false;
+    public bool isShooting = false;
 
     private void Awake()
     {
@@ -33,7 +32,6 @@ public class PlayerController : MoverBase
         moveAction = inputActions.Player.Move;
         mouseAction = inputActions.Player.MousePosition;
         speed = normalSpeed;
-        equippedWeapon.GetEquipedBy(this);
     }
 
     private void Update()
@@ -41,7 +39,6 @@ public class PlayerController : MoverBase
         moveInput = moveAction.ReadValue<Vector2>();
         mousePosition = mouseAction.ReadValue<Vector2>();
         isGrounded();
-        SetLookDirection(GetShootDirection());
     }
 
     private void FixedUpdate()
@@ -121,21 +118,13 @@ public class PlayerController : MoverBase
     {
         if (context.performed)
         {
-            equippedWeapon.StartShooting();
+            isShooting = true;
         }
 
         if (context.canceled)
         {
-            equippedWeapon.StopShooting();
+            isShooting = false;
         }
-    }
-    
-    private Vector2 GetShootDirection()
-    {
-        Vector2 worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 moverToMouse = worldMousePosition - GetPosition();
-        moverToMouse.Normalize();
-        return moverToMouse;
     }
 
     private bool isGrounded()
