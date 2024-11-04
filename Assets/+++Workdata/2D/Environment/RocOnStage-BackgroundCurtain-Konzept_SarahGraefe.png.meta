@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b906e5f1a73917544a1891ab93804d6f
+guid: f00f554a0c687bc46951745acb3948e6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,11 +39,11 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,62 +95,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: IMG_1501_0
-      rect:
-        serializedVersion: 2
-        x: 334
-        y: 405
-        width: 711
-        height: 750
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3322892c511c4804cbb887928fc3ff2e
-      internalID: -307290730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_1501_1
-      rect:
-        serializedVersion: 2
-        x: 1102
-        y: 383
-        width: 726
-        height: 676
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a2bb8b5c60d10c45a0ca06a26b6aab9
-      internalID: 989513821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: db14303067542634f8765685043ee531
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      IMG_1501_0: -307290730
-      IMG_1501_1: 989513821
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

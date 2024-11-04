@@ -1,16 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] private float normalBulletSpeed = 15f;
     [SerializeField] private float destroyTime = 3f;
     [SerializeField] private LayerMask whatDestroysBullet;
     [SerializeField] private float normalBulletDamage = 1f;
     
     private Rigidbody rb;
+
+    #endregion
+
+    #region Unity Methods
 
     private void Start()
     {
@@ -43,6 +46,10 @@ public class BulletBehavior : MonoBehaviour
         }
     }
 
+    #endregion
+    
+    #region Bullet Methods
+
     private void SetStraightVelocity()
     {
         rb.velocity = transform.right * normalBulletSpeed;
@@ -52,4 +59,7 @@ public class BulletBehavior : MonoBehaviour
     {
         Destroy(gameObject, destroyTime);
     }
+
+    #endregion
+    
 }

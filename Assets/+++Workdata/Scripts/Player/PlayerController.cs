@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,78 +5,75 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
+    #region Variables
+
     public float normalSpeed = 5f;
     public float sprintSpeed = 10f;
     public float jumpPower = 5f;
     public float rollSpeed = 10f;
+    public float rotationSpeed = 50f;
     public LayerMask groundLayer;
 
     private Vector2 moveInput;
-    private Vector2 mousePosition;
     private Rigidbody rb;
-    private GameInput inputActions;
-    private InputAction moveAction;
-    private InputAction mouseAction;
     private float speed;
     private bool hasDoubleJump = true;
     private bool isRolling = false;
-    public bool isShooting = false;
+    private SpriteRenderer[] playerVisuals;
+
+
+    #endregion
+
+    #region Unity Methods
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        inputActions = new GameInput();
-        moveAction = inputActions.Player.Move;
-        mouseAction = inputActions.Player.MousePosition;
+        playerVisuals = GetComponentsInChildren<SpriteRenderer>();
         speed = normalSpeed;
     }
 
     private void Update()
     {
-        moveInput = moveAction.ReadValue<Vector2>();
-        mousePosition = mouseAction.ReadValue<Vector2>();
         isGrounded();
     }
 
     private void FixedUpdate()
     {
+        
+        if (moveInput.x > 0)
+        {
+            foreach (var sprite in playerVisuals)
+            {
+                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+            }
+        }
+        else if (moveInput.x < 0)
+        {
+            foreach (var sprite in playerVisuals)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+                
+                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+        }
+
         if (!isRolling)
         {
-            rb.velocity = new Vector2(moveInput.x * speed, rb.velocity.y);
+            rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
         }
     }
 
-    private void OnEnable()
+    #endregion
+
+    #region Input Methods
+
+    public void OnMove(InputAction.CallbackContext context)
     {
-        inputActions.Enable();
-
-        inputActions.Player.Jump.performed += OnJump;
-        
-        inputActions.Player.Sprint.performed += OnSprint;
-        inputActions.Player.Sprint.canceled += OnSprint;
-
-        inputActions.Player.DodgeRoll.performed += OnDodgeRoll;
-
-        inputActions.Player.Shoot.performed += OnShoot;
-        inputActions.Player.Shoot.canceled += OnShoot;
+        moveInput = context.ReadValue<Vector2>();
     }
 
-    private void OnDisable()
-    {
-        inputActions.Disable();
-
-        inputActions.Player.Jump.performed -= OnJump;
-        
-        inputActions.Player.Sprint.performed -= OnSprint;
-        inputActions.Player.Sprint.canceled -= OnSprint;
-
-        inputActions.Player.DodgeRoll.performed -= OnDodgeRoll;
-        
-        inputActions.Player.Shoot.performed -= OnShoot;
-        inputActions.Player.Shoot.canceled -= OnShoot;
-    }
-
-    private void OnJump(InputAction.CallbackContext context)
+    public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded())
         {
@@ -92,7 +86,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnSprint(InputAction.CallbackContext context)
+    public void OnSprint(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -105,7 +99,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDodgeRoll(InputAction.CallbackContext context)
+    public void OnDodgeRoll(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded())
         {
@@ -114,18 +108,8 @@ public class PlayerController : MonoBehaviour
         }   
     }
 
-    private void OnShoot(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            isShooting = true;
-        }
-
-        if (context.canceled)
-        {
-            isShooting = false;
-        }
-    }
+    #endregion
+   
 
     private bool isGrounded()
     {

@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerAimAndShoot : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] private GameObject gun;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform bulletSpawnPoint;
@@ -12,12 +14,39 @@ public class PlayerAimAndShoot : MonoBehaviour
     private Vector2 worldPosition;
     private Vector2 direction;
     private float angle = 0f;
-    
+
+    private bool isShooting;
+
+    #endregion
+
+    #region Unity Methods
+
     private void Update()
     {
         HandleGunRotation();
         HandleGunShooting();
     }
+
+    #endregion
+
+    #region Input Methods
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            isShooting = true;
+        }
+
+        if (context.canceled)
+        {
+            isShooting = false;
+        }
+    }
+
+    #endregion
+
+    #region Gun Methdos
 
     private void HandleGunRotation()
     {
@@ -39,9 +68,12 @@ public class PlayerAimAndShoot : MonoBehaviour
 
     private void HandleGunShooting()
     {
-        if (true)
+        if (isShooting)
         {
             bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
         }
     }
+
+    #endregion
+    
 }
