@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 50f;
     public LayerMask groundLayer;
 
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     private Rigidbody rb;
     private float speed;
     private bool hasDoubleJump = true;
@@ -30,38 +30,18 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerVisuals = GetComponentsInChildren<SpriteRenderer>();
+
         speed = normalSpeed;
     }
 
     private void Update()
     {
-        isGrounded();
+        isGrounded(); ;
     }
 
     private void FixedUpdate()
     {
-        
-        if (moveInput.x > 0)
-        {
-            foreach (var sprite in playerVisuals)
-            {
-                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
-            }
-        }
-        else if (moveInput.x < 0)
-        {
-            foreach (var sprite in playerVisuals)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
-                
-                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            }
-        }
-
-        if (!isRolling)
-        {
-            rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
-        }
+        PlayerMovement();
     }
 
     #endregion
@@ -104,9 +84,39 @@ public class PlayerController : MonoBehaviour
         if (context.performed && isGrounded())
         {
             isRolling = true;
-            rb.AddForce(new Vector2(rollSpeed, rb.velocity.y), ForceMode.Impulse);
-        }   
+            rb.AddForce(new Vector2(moveInput.x * rollSpeed, rb.velocity.y), ForceMode.Impulse);
+        }
     }
+
+    #endregion
+
+    #region Player Movement
+
+    private void PlayerMovement()
+    {
+        if (moveInput.x > 0)
+        {
+            foreach (var sprite in playerVisuals)
+            {
+                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+            }
+        }
+        else if (moveInput.x < 0)
+        {
+            foreach (var sprite in playerVisuals)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+                
+                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+        }
+
+        if (!isRolling)
+        {
+            rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
+        }
+    }
+    
 
     #endregion
    

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,21 +10,46 @@ public class PlayerAimAndShoot : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform bulletSpawnPoint;
 
+    public float timeBetweenBullets = 0.5f;
+    public float reloadTime;
+
     private GameObject bulletInst;
+    private PlayerController playerController;
 
     private Vector2 worldPosition;
     private Vector2 direction;
     private float angle = 0f;
+    private float timeSinceLastBullet;
 
-    private bool isShooting;
+    private bool isShooting = false;
+    private bool isFacingRight = true;
 
     #endregion
 
     #region Unity Methods
 
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
+
     private void Update()
     {
         HandleGunRotation();
+        
+        timeSinceLastBullet += Time.deltaTime;
+        
+        if (!isShooting)
+        {
+            return;
+        }
+        
+        if (timeSinceLastBullet < timeBetweenBullets)
+        {
+            return;
+        }
+        
+        timeSinceLastBullet = 0;    
         HandleGunShooting();
     }
 
@@ -50,28 +76,47 @@ public class PlayerAimAndShoot : MonoBehaviour
 
     private void HandleGunRotation()
     {
+        if (playerController.moveInput.x > 0)
+        {
+            isFacingRight = true;
+        }
+        else if (playerController.moveInput.x < 0)
+        {
+            isFacingRight = false;
+        }
+        
         worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         direction = (worldPosition - (Vector2)gun.transform.position).normalized;
         
-        angle = Mathf.Clamp(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg, -90, 90);
-        
-        if (angle < 90 && angle > -90)
+        if (isFacingRight)
         {
-            //rotate the gun towards the mouse position
-            gun.transform.right = direction;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            
+            if (angle < 80 && angle > -80)
+            {
+                //rotate the gun towards the mouse position
+                gun.transform.right = direction;
+            }
+        }
+        else if (!isFacingRight)
+        {
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            if (angle > 120 || angle < -120)
+            {
+                //rotate the gun towards the mouse position
+                gun.transform.right = direction;
+            }
+
         }
 
-        
         //angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         
     }
 
     private void HandleGunShooting()
     {
-        if (isShooting)
-        {
-            bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
-        }
+        bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
     }
 
     #endregion
