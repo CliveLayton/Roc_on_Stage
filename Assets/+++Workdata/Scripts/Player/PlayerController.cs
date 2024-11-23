@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed = 10f;
     public float jumpPower = 5f;
     public float rollSpeed = 10f;
+    public float stompPower = 10f;
     public float rotationSpeed = 50f;
     public LayerMask groundLayer;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private bool hasDoubleJump = true;
     private bool isRolling = false;
+    private bool usedStompAttack = false;
     private SpriteRenderer[] playerVisuals;
 
 
@@ -32,11 +34,6 @@ public class PlayerController : MonoBehaviour
         playerVisuals = GetComponentsInChildren<SpriteRenderer>();
 
         speed = normalSpeed;
-    }
-
-    private void Update()
-    {
-        isGrounded(); ;
     }
 
     private void FixedUpdate()
@@ -88,6 +85,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnStompAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed && !isGrounded() && !usedStompAttack)
+        {
+            usedStompAttack = true;
+            rb.AddForce(new Vector2(0, - stompPower), ForceMode.Impulse);
+        }
+    }
+
     #endregion
 
     #region Player Movement
@@ -128,6 +134,7 @@ public class PlayerController : MonoBehaviour
         if (hitGround)
         {
             hasDoubleJump = true;
+            usedStompAttack = false;
         }
 
         return hitGround;

@@ -91,6 +91,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""StompAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebc1d3a3-3324-4dde-a37b-55decde12b4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -355,6 +364,17 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Touch"",
                     ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""603e82a5-6668-499e-afb8-c39bcf998ea6"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StompAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -949,6 +969,7 @@ namespace UnityEngine.InputSystem
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_DodgeRoll = m_Player.FindAction("DodgeRoll", throwIfNotFound: true);
             m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
+            m_Player_StompAttack = m_Player.FindAction("StompAttack", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1029,6 +1050,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_DodgeRoll;
         private readonly InputAction m_Player_MousePosition;
+        private readonly InputAction m_Player_StompAttack;
         public struct PlayerActions
         {
             private @GameInput m_Wrapper;
@@ -1040,6 +1062,7 @@ namespace UnityEngine.InputSystem
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @DodgeRoll => m_Wrapper.m_Player_DodgeRoll;
             public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
+            public InputAction @StompAttack => m_Wrapper.m_Player_StompAttack;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1070,6 +1093,9 @@ namespace UnityEngine.InputSystem
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @StompAttack.started += instance.OnStompAttack;
+                @StompAttack.performed += instance.OnStompAttack;
+                @StompAttack.canceled += instance.OnStompAttack;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1095,6 +1121,9 @@ namespace UnityEngine.InputSystem
                 @MousePosition.started -= instance.OnMousePosition;
                 @MousePosition.performed -= instance.OnMousePosition;
                 @MousePosition.canceled -= instance.OnMousePosition;
+                @StompAttack.started -= instance.OnStompAttack;
+                @StompAttack.performed -= instance.OnStompAttack;
+                @StompAttack.canceled -= instance.OnStompAttack;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1284,6 +1313,7 @@ namespace UnityEngine.InputSystem
             void OnSprint(InputAction.CallbackContext context);
             void OnDodgeRoll(InputAction.CallbackContext context);
             void OnMousePosition(InputAction.CallbackContext context);
+            void OnStompAttack(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

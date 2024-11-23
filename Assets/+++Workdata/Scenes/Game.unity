@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 99126893}
   - component: {fileID: 99126892}
   - component: {fileID: 99126895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -875,6 +875,7 @@ MonoBehaviour:
   sprintSpeed: 10
   jumpPower: 8
   rollSpeed: 10
+  stompPower: 20
   rotationSpeed: 5
   groundLayer:
     serializedVersion: 2
@@ -1185,7 +1186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1863862115}
   - component: {fileID: 1863862116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

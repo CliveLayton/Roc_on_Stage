@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour , IDamageable
         this.transform.rotation = quaternion.identity;
     }
 
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
         enemyMaterial.SetFloat("_Thickness", outlineThickness);
         enemyMaterial.SetColor("_OutlineColor", outlineGlowColor);

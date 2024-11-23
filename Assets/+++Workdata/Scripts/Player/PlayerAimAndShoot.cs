@@ -23,6 +23,7 @@ public class PlayerAimAndShoot : MonoBehaviour
 
     private bool isShooting = false;
     private bool isFacingRight = true;
+    private Vector3 bulletDirection;
 
     #endregion
 
@@ -36,7 +37,7 @@ public class PlayerAimAndShoot : MonoBehaviour
     private void Update()
     {
         HandleGunRotation();
-        
+
         timeSinceLastBullet += Time.deltaTime;
         
         if (!isShooting)
@@ -48,9 +49,12 @@ public class PlayerAimAndShoot : MonoBehaviour
         {
             return;
         }
-        
-        timeSinceLastBullet = 0;    
-        HandleGunShooting();
+
+        if (CheckForTarget())
+        {
+            timeSinceLastBullet = 0;
+            HandleGunShooting();
+        }
     }
 
     #endregion
@@ -117,6 +121,17 @@ public class PlayerAimAndShoot : MonoBehaviour
     private void HandleGunShooting()
     {
         bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit) && hit.collider.CompareTag("Enemy"))
+        { 
+            Vector3 bulletTarget = hit.transform.position;
+            bulletDirection = (bulletTarget - gun.transform.position).normalized;
+        }
+        bulletInst.GetComponent<BulletBehavior>().SetDirection(bulletDirection);
+    }
+
+    private bool CheckForTarget()
+    {
+        return Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit) && hit.collider.CompareTag("Enemy");
     }
 
     #endregion

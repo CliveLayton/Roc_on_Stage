@@ -10,6 +10,7 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField] private float normalBulletDamage = 1f;
     
     private Rigidbody rb;
+    private Vector3 targetDirection;
 
     #endregion
 
@@ -18,10 +19,10 @@ public class BulletBehavior : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+
         SetDestroyTime();
         
-        SetStraightVelocity();
+        SetVelocity();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +42,7 @@ public class BulletBehavior : MonoBehaviour
                 iDamageable.Damage(normalBulletDamage);
             }
             
-            //Destroy the bulleta
+            //Destroy the bullet
             Destroy(gameObject);
         }
     }
@@ -50,9 +51,14 @@ public class BulletBehavior : MonoBehaviour
     
     #region Bullet Methods
 
-    private void SetStraightVelocity()
+    public void SetDirection(Vector3 direction)
     {
-        rb.velocity = transform.right * normalBulletSpeed;
+        targetDirection = direction;
+    }
+    
+    private void SetVelocity()
+    {
+        rb.velocity = targetDirection * normalBulletSpeed;
     }
 
     private void SetDestroyTime()

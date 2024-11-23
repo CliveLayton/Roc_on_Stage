@@ -40,6 +40,8 @@ public class PlayerInputManager : MonoBehaviour
 
       gameInput.Player.DodgeRoll.performed += playerController.OnDodgeRoll;
 
+      gameInput.Player.StompAttack.performed += playerController.OnStompAttack;
+
       gameInput.Player.Shoot.performed += playerAimAndShoot.OnShoot;
       gameInput.Player.Shoot.canceled += playerAimAndShoot.OnShoot;
    }
@@ -61,6 +63,8 @@ public class PlayerInputManager : MonoBehaviour
       gameInput.Player.Sprint.canceled -= playerController.OnSprint;
 
       gameInput.Player.DodgeRoll.performed -= playerController.OnDodgeRoll;
+      
+      gameInput.Player.StompAttack.performed -= playerController.OnStompAttack;
 
       gameInput.Player.Shoot.performed -= playerAimAndShoot.OnShoot;
       gameInput.Player.Shoot.canceled -= playerAimAndShoot.OnShoot;
