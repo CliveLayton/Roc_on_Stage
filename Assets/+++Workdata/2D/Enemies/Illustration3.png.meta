@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c63ebcec501da874ba5a710a9cef12ec
+guid: d17ca605447b800458082d1293a0081c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RocOnStage_ConceptGuardOhneRustung_Aiden_0
+      name: Illustration3_0
       rect:
         serializedVersion: 2
         x: 601
         y: 515
         width: 700
-        height: 498
+        height: 558
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17dad463f6179aa42ad15eed688f21a9
-      internalID: 714727278
+      spriteID: f7c6dfac9e1cf1b438cb61f5e93196d3
+      internalID: -2077971837
       vertices: []
       indices: 
       edges: []
@@ -120,7 +120,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 84a7661545024e440bfcda5671d5ba67
+    spriteID: d8c29d0f3d9b35c4b8cd0311f87490bb
     internalID: 0
     vertices: []
     indices: 
@@ -128,9 +128,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RocOnStage_ConceptGuardOhneRustung_Aiden_0: 714727278
-      RocOnStage_ConceptGuardOhneRustung_Aiden_1: 134392676
-      RocOnStage_ConceptGuardOhneRustung_Aiden_2: 835891602
+      Illustration3_0: -2077971837
+      Illustration3_1: -1129551237
+      Illustration3_2: 1134656928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

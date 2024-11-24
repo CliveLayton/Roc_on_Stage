@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,10 +18,12 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 moveInput;
     private Rigidbody rb;
+    private Animator anim;
     private float speed;
     private bool hasDoubleJump = true;
-    private bool isRolling = false;
+    public bool isRolling = false;
     private bool usedStompAttack = false;
+    public bool isLanding = false;
     private SpriteRenderer[] playerVisuals;
 
 
@@ -31,14 +34,23 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
         playerVisuals = GetComponentsInChildren<SpriteRenderer>();
 
         speed = normalSpeed;
     }
 
+    private void Update()
+    {
+        PlayerAnimations();
+    }
+
     private void FixedUpdate()
     {
-        PlayerMovement();
+        if (!isRolling && !isLanding)
+        {
+            PlayerMovement();
+        }
     }
 
     #endregion
@@ -55,11 +67,13 @@ public class PlayerController : MonoBehaviour
         if (context.performed && isGrounded())
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower), ForceMode.Impulse);
+            anim.SetBool("isJumping", true);
         }
         else if (context.performed && !isGrounded() && hasDoubleJump)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower), ForceMode.Impulse);
             hasDoubleJump = false;
+            anim.SetBool("isJumping", true);
         }
     }
 
@@ -139,4 +153,35 @@ public class PlayerController : MonoBehaviour
 
         return hitGround;
     }
+
+    #region Animation Methods
+
+    private void PlayerAnimations()
+    {
+        anim.SetFloat("speed", Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
+        anim.SetBool("isDodgeRolling", isRolling);
+        anim.SetBool("isStompAttacking", usedStompAttack);
+
+        if (isGrounded())
+        {
+            anim.SetBool("isLanding", true);
+        }
+        else
+        {
+            anim.SetBool("isLanding", false);
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            anim.SetBool("isFalling", true);
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isFalling", false);
+        }
+    }
+
+    #endregion
+    
 }

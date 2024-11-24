@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour , IDamageable
     #region Variables
 
     [SerializeField] private float maxHealth = 5f;
-    [SerializeField] private Transform destinationPoint;
     [SerializeField] private float outlineThickness = 5f;
     [ColorUsage(showAlpha:true, hdr:true)]
     [SerializeField] private Color outlineGlowColor;
@@ -36,7 +35,7 @@ public class Enemy : MonoBehaviour , IDamageable
 
     private void Update()
     {
-        agent.SetDestination(destinationPoint.position);
+        agent.SetDestination(FindObjectOfType<PlayerController>().gameObject.transform.position);
 
         this.transform.rotation = quaternion.identity;
     }
