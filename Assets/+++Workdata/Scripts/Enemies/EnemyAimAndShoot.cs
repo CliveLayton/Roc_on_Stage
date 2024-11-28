@@ -9,24 +9,18 @@ public class EnemyAimAndShoot : MonoBehaviour
 
     [SerializeField] private LayerMask layersToCover;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float bulletSpeed;
 
     private GameObject bulletInst;
     private GameObject target;
     private Coroutine detectPlayerCoroutine;
-    private Animator anim;
+    public Animator anim;
     private bool isCovered;
     private Vector3 directionToPredictedPosition;
 
     #endregion
 
     #region Unity Methods
-
-    private void Awake()
-    {
-        anim = GetComponentInChildren<Animator>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -60,10 +54,10 @@ public class EnemyAimAndShoot : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             if (target == null) continue;
             
-            float distanceToPlayer = Vector3.Distance(bulletSpawnPoint.transform.position, target.transform.position);
-            Vector3 directionToPlayer = (target.transform.position - bulletSpawnPoint.transform.position).normalized;
+            float distanceToPlayer = Vector3.Distance(this.transform.position, target.transform.position);
+            Vector3 directionToPlayer = (target.transform.position - this.transform.position).normalized;
             Vector3 predictedPosition = PredictPlayerPosition(distanceToPlayer);
-            directionToPredictedPosition = (predictedPosition - bulletSpawnPoint.position).normalized;
+            directionToPredictedPosition = (predictedPosition - this.transform.position).normalized;
 
             isCovered = IsPlayerCovered(directionToPlayer, distanceToPlayer);
             
@@ -74,7 +68,7 @@ public class EnemyAimAndShoot : MonoBehaviour
     {
         if (!isCovered)
         {
-            bulletInst = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            bulletInst = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bulletInst.GetComponent<BulletBehavior>().SetDirection(directionToPredictedPosition);
         }
     }

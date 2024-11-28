@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  knockbackPower: 4
 --- !u!195 &6852227915182308396
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -173,5 +174,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5595869, y: 1.5716765, z: 0.35503805}
-  m_Center: {x: -0.018079221, y: 0.8517834, z: 0.014584899}
+  m_Size: {x: 1.5595869, y: 1.5716765, z: 1.0268946}
+  m_Center: {x: -0.018079221, y: 0.8517834, z: 0.00813967}

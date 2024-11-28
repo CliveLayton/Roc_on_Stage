@@ -116,11 +116,12 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnAttacking(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded() && !isAttacking)
+        if (context.performed && !isAttacking)
         {
             isAttacking = true;
+            anim.SetTrigger("Attack");
         }
-        else if (context.performed && isGrounded() && isAttacking)
+        else if (context.performed && isAttacking)
         {
             attackID = 1;
         }

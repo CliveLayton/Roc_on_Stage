@@ -734,8 +734,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3697386, y: 1.9367024, z: 0.13050783}
-  m_Center: {x: -0.0112223625, y: 0.6803933, z: -0.06835395}
+  m_Size: {x: 1.3697386, y: 1.9367024, z: 0.5629041}
+  m_Center: {x: -0.0112223625, y: 0.6803933, z: -0.068080544}
 --- !u!54 &979023188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatSwordDamages:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
   swordDamage: 1
 --- !u!65 &1164039507
 BoxCollider:
@@ -1235,7 +1235,7 @@ PrefabInstance:
     - target: {fileID: 1251440690406669752, guid: 333d697c84615a04bbdf83c8e699078f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
         type: 3}
@@ -1286,6 +1286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852227915182308396, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1599,6 +1604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 354756458128519733, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 875967841134058678, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: maxHealth
@@ -1666,6 +1676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1267710280023476077, guid: 858398fb9685f994693c3613a7f345e5, type: 3}
+    - {fileID: 8467704840568625297, guid: 858398fb9685f994693c3613a7f345e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -5,13 +5,8 @@ using UnityEngine;
 
 public class EnemyAnimationEvents : MonoBehaviour
 {
-    private EnemyAimAndShoot enemyShooter;
-
-    private void Awake()
-    {
-        enemyShooter = GetComponentInParent<EnemyAimAndShoot>();
-    }
-
+    public EnemyAimAndShoot enemyShooter;
+    
     public void Throw()
     {
         enemyShooter.ThrowBullet();
