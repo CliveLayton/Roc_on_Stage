@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour , IDamageable
 {
     #region Variables
 
-    [SerializeField] private float maxHealth = 5f;
+    [SerializeField] private int maxHealth = 5;
     // [SerializeField] private float outlineThickness = 5f;
     // [ColorUsage(showAlpha:true, hdr:true)]
     // [SerializeField] private Color outlineGlowColor;
@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private NavMeshAgent agent;
     //private Material enemyMaterial;
 
-    private float currentHealth;
+    private int currentHealth;
 
     #endregion
 
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour , IDamageable
     
     #region Enemy Methods
 
-    public void Damage(float damageAmount)
+    public void Damage(int damageAmount)
     {
         currentHealth -= damageAmount;
 

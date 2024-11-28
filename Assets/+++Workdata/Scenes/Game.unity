@@ -666,9 +666,9 @@ GameObject:
   - component: {fileID: 979023188}
   - component: {fileID: 979023187}
   - component: {fileID: 979023190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -690,6 +690,7 @@ MonoBehaviour:
   inActionSpeed: 3
   jumpPower: 8
   rotationSpeed: 5
+  maxHealth: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -759,7 +760,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &979023190
@@ -788,7 +789,7 @@ GameObject:
   - component: {fileID: 1164039505}
   - component: {fileID: 1164039507}
   - component: {fileID: 1164039506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,6 +1232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1251440690406669752, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1648,7 +1654,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8467704840568625297, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467704840568625297, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: layersToCover.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1267710280023476077, guid: 858398fb9685f994693c3613a7f345e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

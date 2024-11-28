@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1827082625702956895}
   - component: {fileID: 5772838453055619407}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8281314508326868275}
   - component: {fileID: 6852227915182308396}
   - component: {fileID: 5910976905398325724}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -132,9 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  outlineThickness: 5
-  outlineGlowColor: {r: 5.992157, g: 4.7058825, b: 0, a: 1}
-  resetOutlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!195 &6852227915182308396
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
 
     #region Variables
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     //public float rollSpeed = 10f;
     //public float stompPower = 10f;
     public float rotationSpeed = 50f;
+    public int maxHealth;
     public LayerMask groundLayer;
 
     public Vector2 moveInput;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool isAttacking = false;
     public int attackID = 0;
     private SpriteRenderer[] playerVisuals;
+    private int currentHealth;
 
 
     #endregion
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
         playerVisuals = GetComponentsInChildren<SpriteRenderer>();
 
         speed = normalSpeed;
+        currentHealth = maxHealth;
     }
 
     private void FixedUpdate()
@@ -152,7 +155,18 @@ public class PlayerController : MonoBehaviour
     
 
     #endregion
-   
+
+    #region PlayerController Methods
+
+    public void Damage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private bool isGrounded()
     {
@@ -160,6 +174,8 @@ public class PlayerController : MonoBehaviour
 
         return hitGround;
     }
+
+    #endregion
 
     #region Animation Methods
 

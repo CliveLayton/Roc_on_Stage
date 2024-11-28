@@ -7,7 +7,7 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField] private float normalBulletSpeed = 15f;
     [SerializeField] private float destroyTime = 3f;
     [SerializeField] private LayerMask whatDestroysBullet;
-    [SerializeField] private float normalBulletDamage = 1f;
+    [SerializeField] private int normalBulletDamage = 1;
     
     private Rigidbody rb;
     private Vector3 targetDirection;
@@ -34,11 +34,10 @@ public class BulletBehavior : MonoBehaviour
             //play sound FX
             //Screenshake
             
-            //Damage Enemy
+            //Damage Objects
             IDamageable iDamageable = other.gameObject.GetComponent<IDamageable>();
             if (iDamageable != null)
             {
-                //damage enemy
                 iDamageable.Damage(normalBulletDamage);
             }
             

@@ -8,7 +8,7 @@ public class SwordBehavior : MonoBehaviour
     #region Variables
 
     [SerializeField] private LayerMask whatSwordDamages;
-    [SerializeField] private float swordDamage = 1f;
+    [SerializeField] private int swordDamage = 1;
 
     #endregion
 
