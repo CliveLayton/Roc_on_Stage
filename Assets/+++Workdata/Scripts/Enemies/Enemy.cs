@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour , IDamageable
     #region Variables
 
     [SerializeField] private float maxHealth = 5f;
-    [SerializeField] private float outlineThickness = 5f;
-    [ColorUsage(showAlpha:true, hdr:true)]
-    [SerializeField] private Color outlineGlowColor;
-    [ColorUsage(showAlpha:true, hdr:true)]
-    [SerializeField] private Color resetOutlineColor;
+    // [SerializeField] private float outlineThickness = 5f;
+    // [ColorUsage(showAlpha:true, hdr:true)]
+    // [SerializeField] private Color outlineGlowColor;
+    // [ColorUsage(showAlpha:true, hdr:true)]
+    // [SerializeField] private Color resetOutlineColor;
     private NavMeshAgent agent;
-    private Material enemyMaterial;
+    //private Material enemyMaterial;
 
     private float currentHealth;
 
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
+        //enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
     }
 
     private void Start()
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour , IDamageable
         this.transform.rotation = quaternion.identity;
     }
 
-    private void OnMouseEnter()
+    /*private void OnMouseEnter()
     {
         enemyMaterial.SetFloat("_Thickness", outlineThickness);
         enemyMaterial.SetColor("_OutlineColor", outlineGlowColor);
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour , IDamageable
     {
         enemyMaterial.SetFloat("_Thickness", 0f);
         enemyMaterial.SetColor("_OutlineColor", resetOutlineColor);
-    }
+    }*/
 
     #endregion
     

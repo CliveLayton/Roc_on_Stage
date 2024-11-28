@@ -12,10 +12,10 @@ public class PlayerAnimationEvents : MonoBehaviour
         player = GetComponentInParent<PlayerController>();
     }
     
-    public void EndDodgeRoll()
+    /*public void EndDodgeRoll()
     {
         player.isRolling = false;
-    }
+    }*/
 
     public void StartLanding()
     {
@@ -25,5 +25,23 @@ public class PlayerAnimationEvents : MonoBehaviour
     public void EndLanding()
     {
         player.isLanding = false;
+    }
+
+    public void InAttacking()
+    {
+        player.speed = player.inActionSpeed;
+    }
+
+    public void OutAttack1()
+    {
+        player.speed = player.inActionSpeed;
+        player.isAttacking = false;
+    }
+
+    public void OutAttack2()
+    {
+        player.speed = player.inActionSpeed;
+        player.attackID = 0;
+        player.isAttacking = false;
     }
 }

@@ -8,7 +8,7 @@ public class PlayerInputManager : MonoBehaviour
 
    private GameInput gameInput;
    private PlayerController playerController;
-   private PlayerAimAndShoot playerAimAndShoot;
+   //private PlayerAimAndShoot playerAimAndShoot;
 
    #endregion
 
@@ -19,7 +19,7 @@ public class PlayerInputManager : MonoBehaviour
    {
       gameInput = new GameInput();
       playerController = GetComponent<PlayerController>();
-      playerAimAndShoot = GetComponent<PlayerAimAndShoot>();
+      //playerAimAndShoot = GetComponent<PlayerAimAndShoot>();
    }
 
    /// <summary>
@@ -38,12 +38,14 @@ public class PlayerInputManager : MonoBehaviour
       gameInput.Player.Sprint.performed += playerController.OnSprint;
       gameInput.Player.Sprint.canceled += playerController.OnSprint;
 
-      gameInput.Player.DodgeRoll.performed += playerController.OnDodgeRoll;
+      //gameInput.Player.DodgeRoll.performed += playerController.OnDodgeRoll;
 
-      gameInput.Player.StompAttack.performed += playerController.OnStompAttack;
+      //gameInput.Player.StompAttack.performed += playerController.OnStompAttack;
 
-      gameInput.Player.Shoot.performed += playerAimAndShoot.OnShoot;
-      gameInput.Player.Shoot.canceled += playerAimAndShoot.OnShoot;
+      gameInput.Player.Attack.performed += playerController.OnAttacking;
+
+      //gameInput.Player.Shoot.performed += playerAimAndShoot.OnShoot;
+      //gameInput.Player.Shoot.canceled += playerAimAndShoot.OnShoot;
    }
 
    /// <summary>
@@ -62,12 +64,14 @@ public class PlayerInputManager : MonoBehaviour
       gameInput.Player.Sprint.performed -= playerController.OnSprint;
       gameInput.Player.Sprint.canceled -= playerController.OnSprint;
 
-      gameInput.Player.DodgeRoll.performed -= playerController.OnDodgeRoll;
+      //gameInput.Player.DodgeRoll.performed -= playerController.OnDodgeRoll;
       
-      gameInput.Player.StompAttack.performed -= playerController.OnStompAttack;
+      //gameInput.Player.StompAttack.performed -= playerController.OnStompAttack;
+      
+      gameInput.Player.Attack.performed -= playerController.OnAttacking;
 
-      gameInput.Player.Shoot.performed -= playerAimAndShoot.OnShoot;
-      gameInput.Player.Shoot.canceled -= playerAimAndShoot.OnShoot;
+      //gameInput.Player.Shoot.performed -= playerAimAndShoot.OnShoot;
+      //gameInput.Player.Shoot.canceled -= playerAimAndShoot.OnShoot;
    }
 
    #endregion

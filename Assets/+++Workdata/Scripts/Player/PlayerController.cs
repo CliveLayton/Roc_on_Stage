@@ -10,20 +10,23 @@ public class PlayerController : MonoBehaviour
 
     public float normalSpeed = 5f;
     public float sprintSpeed = 10f;
+    public float inActionSpeed = 3f;
     public float jumpPower = 5f;
-    public float rollSpeed = 10f;
-    public float stompPower = 10f;
+    //public float rollSpeed = 10f;
+    //public float stompPower = 10f;
     public float rotationSpeed = 50f;
     public LayerMask groundLayer;
 
     public Vector2 moveInput;
     private Rigidbody rb;
     private Animator anim;
-    private float speed;
-    private bool hasDoubleJump = true;
-    public bool isRolling = false;
-    private bool usedStompAttack = false;
+    public float speed;
+    //private bool hasDoubleJump = true;
+    //public bool isRolling = false;
+    //private bool usedStompAttack = false;
     public bool isLanding = false;
+    public bool isAttacking = false;
+    public int attackID = 0;
     private SpriteRenderer[] playerVisuals;
 
 
@@ -40,17 +43,17 @@ public class PlayerController : MonoBehaviour
         speed = normalSpeed;
     }
 
-    private void Update()
-    {
-        PlayerAnimations();
-    }
-
     private void FixedUpdate()
     {
-        if (!isRolling && !isLanding)
+        if (!isLanding)
         {
             PlayerMovement();
         }
+    }
+
+    private void LateUpdate()
+    {
+        PlayerAnimations();
     }
 
     #endregion
@@ -69,12 +72,12 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower), ForceMode.Impulse);
             anim.SetBool("isJumping", true);
         }
-        else if (context.performed && !isGrounded() && hasDoubleJump)
+        /*else if (context.performed && !isGrounded() && hasDoubleJump)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower), ForceMode.Impulse);
             hasDoubleJump = false;
             anim.SetBool("isJumping", true);
-        }
+        }*/
     }
 
     public void OnSprint(InputAction.CallbackContext context)
@@ -90,21 +93,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnDodgeRoll(InputAction.CallbackContext context)
+    /*public void OnDodgeRoll(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded())
         {
             isRolling = true;
             rb.AddForce(new Vector2(moveInput.x * rollSpeed, rb.velocity.y), ForceMode.Impulse);
         }
-    }
+    }*/
 
-    public void OnStompAttack(InputAction.CallbackContext context)
+    /*public void OnStompAttack(InputAction.CallbackContext context)
     {
         if (context.performed && !isGrounded() && !usedStompAttack)
         {
             usedStompAttack = true;
             rb.AddForce(new Vector2(0, - stompPower), ForceMode.Impulse);
+        }
+    }*/
+
+    public void OnAttacking(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded() && !isAttacking)
+        {
+            isAttacking = true;
+        }
+        else if (context.performed && isGrounded() && isAttacking)
+        {
+            attackID = 1;
         }
     }
 
@@ -130,11 +145,9 @@ public class PlayerController : MonoBehaviour
                 sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
         }
-
-        if (!isRolling)
-        {
-            rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
-        }
+        
+        rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
+        
     }
     
 
@@ -145,12 +158,6 @@ public class PlayerController : MonoBehaviour
     {
         bool hitGround = Physics.Raycast(transform.position, Vector3.down, 0.7f, groundLayer);
 
-        if (hitGround)
-        {
-            hasDoubleJump = true;
-            usedStompAttack = false;
-        }
-
         return hitGround;
     }
 
@@ -159,8 +166,10 @@ public class PlayerController : MonoBehaviour
     private void PlayerAnimations()
     {
         anim.SetFloat("speed", Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
-        anim.SetBool("isDodgeRolling", isRolling);
-        anim.SetBool("isStompAttacking", usedStompAttack);
+        //anim.SetBool("isDodgeRolling", isRolling);
+        //anim.SetBool("isStompAttacking", usedStompAttack);
+        anim.SetBool("isAttacking", isAttacking);
+        anim.SetInteger("ActionID", attackID);
 
         if (isGrounded())
         {
