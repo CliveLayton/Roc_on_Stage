@@ -8,10 +8,8 @@ public class EnemyAimAndShoot : MonoBehaviour
     #region Variables
 
     [SerializeField] private LayerMask layersToCover;
-    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpeed;
-
-    private GameObject bulletInst;
+    
     private GameObject target;
     private Coroutine detectPlayerCoroutine;
     public Animator anim;
@@ -68,8 +66,14 @@ public class EnemyAimAndShoot : MonoBehaviour
     {
         if (!isCovered)
         {
-            bulletInst = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bulletInst.GetComponent<BulletBehavior>().SetDirection(directionToPredictedPosition);
+            GameObject bulletInst = ObjectPooling.Instance.GetPooledObject(); 
+            if (bulletInst != null)
+            {
+                bulletInst.transform.position = transform.position;
+                bulletInst.transform.rotation = Quaternion.identity;
+                bulletInst.SetActive(true);
+                bulletInst.GetComponent<BulletBehavior>().SetDirection(directionToPredictedPosition);
+            }
         }
     }
 

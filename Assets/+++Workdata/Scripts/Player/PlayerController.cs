@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public int attackID = 0;
     private SpriteRenderer[] playerVisuals;
     private int currentHealth;
+    private Material playerMaterial;
 
 
     #endregion
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         playerVisuals = GetComponentsInChildren<SpriteRenderer>();
+        playerMaterial = GetComponentInChildren<SpriteRenderer>().material;
 
         speed = normalSpeed;
         currentHealth = maxHealth;
@@ -57,6 +60,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void LateUpdate()
     {
         PlayerAnimations();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(LerpBetweenColors());
+        }
     }
 
     #endregion
@@ -174,6 +185,35 @@ public class PlayerController : MonoBehaviour, IDamageable
         bool hitGround = Physics.Raycast(transform.position, Vector3.down, 0.7f, groundLayer);
 
         return hitGround;
+    }
+    
+    private IEnumerator LerpBetweenColors()
+    {
+        float duration = 0.2f;
+        float elapsedTime = 0f;
+        Color startColor = Color.black;
+        Color endColor = Color.red;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float time = elapsedTime / duration;
+            playerMaterial.SetColor("_SpriteColor", Color.Lerp(startColor,endColor, time));
+            yield return null;
+        }
+        
+        playerMaterial.SetColor("_SpriteColor", endColor);
+        elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float time = elapsedTime / duration;
+            playerMaterial.SetColor("_SpriteColor", Color.Lerp(endColor, startColor,time));
+            yield return null;
+        }
+        
+        playerMaterial.SetColor("_SpriteColor", startColor);
     }
 
     #endregion

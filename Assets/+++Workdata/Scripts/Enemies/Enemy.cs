@@ -61,8 +61,6 @@ public class Enemy : MonoBehaviour , IDamageable
             IDamageable idamageable = other.gameObject.GetComponent<IDamageable>();
             if (idamageable != null)
             {
-                Material playerMaterial = other.gameObject.GetComponentInChildren<SpriteRenderer>().material;
-                StartCoroutine(LerpBetweenColors(playerMaterial));
                 idamageable.Damage(1);
                 Vector3 directionToPlayer = (other.transform.position - this.transform.position).normalized;
                 agent.velocity = knockbackPower * -directionToPlayer;
@@ -73,35 +71,6 @@ public class Enemy : MonoBehaviour , IDamageable
     #endregion
     
     #region Enemy Methods
-
-    IEnumerator LerpBetweenColors(Material material)
-    {
-        float duration = 0.2f;
-        float elapsedTime = 0f;
-        Color startColor = Color.black;
-        Color endColor = Color.red;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            float time = elapsedTime / duration;
-            material.SetColor("_SpriteColor", Color.Lerp(startColor,endColor, time));
-            yield return null;
-        }
-        
-        material.SetColor("_SpriteColor", endColor);
-        elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            float time = elapsedTime / duration;
-            material.SetColor("_SpriteColor", Color.Lerp(endColor, startColor,time));
-            yield return null;
-        }
-        
-        material.SetColor("_SpriteColor", startColor);
-    }
 
     public void Damage(int damageAmount)
     {
