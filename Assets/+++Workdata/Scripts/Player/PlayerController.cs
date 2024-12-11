@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     public int attackID = 0;
     private SpriteRenderer[] playerVisuals;
     private int currentHealth;
+    private bool allowDamage = true;
+    public float invincibleTime = 0.5f;
     private Material playerMaterial;
 
 
@@ -60,14 +62,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void LateUpdate()
     {
         PlayerAnimations();
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            StartCoroutine(LerpBetweenColors());
-        }
     }
 
     #endregion
@@ -172,6 +166,13 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Damage(int damageAmount)
     {
+        if (!allowDamage)
+        {
+            return;
+        }
+
+        StartCoroutine(InvincibleTime());
+        StartCoroutine(LerpBetweenColors());
         currentHealth -= damageAmount;
 
         if (currentHealth <= 0)
@@ -185,6 +186,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         bool hitGround = Physics.Raycast(transform.position, Vector3.down, 0.7f, groundLayer);
 
         return hitGround;
+    }
+
+    private IEnumerator InvincibleTime()
+    {
+        allowDamage = false;
+        yield return new WaitForSeconds(invincibleTime);
+        allowDamage = true;
     }
     
     private IEnumerator LerpBetweenColors()

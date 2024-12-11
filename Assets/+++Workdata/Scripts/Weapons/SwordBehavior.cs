@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class SwordBehavior : MonoBehaviour
@@ -9,10 +10,16 @@ public class SwordBehavior : MonoBehaviour
 
     [SerializeField] private LayerMask whatSwordDamages;
     [SerializeField] private int swordDamage = 1;
+    private CinemachineImpulseSource cmImpulse;
 
     #endregion
 
     #region Unity Methods
+
+    private void Start()
+    {
+        cmImpulse = FindObjectOfType<CinemachineImpulseSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +29,8 @@ public class SwordBehavior : MonoBehaviour
             //spawn particles
             //play sound FX
             //Screenshake
+            StartCoroutine(SlowTimeShortly());
+            cmImpulse.GenerateImpulse();
             
             //Damage Enemy
             IDamageable iDamageable = other.gameObject.GetComponent<IDamageable>();
@@ -29,7 +38,19 @@ public class SwordBehavior : MonoBehaviour
             {
                 iDamageable.Damage(swordDamage);
             }
+            
         }
+    }
+
+    #endregion
+
+    #region SwordBehavior Methods
+
+    private IEnumerator SlowTimeShortly()
+    {
+        Time.timeScale = 0.1f;
+        yield return new WaitForSeconds(0.01f);
+        Time.timeScale = 1f;
     }
 
     #endregion
