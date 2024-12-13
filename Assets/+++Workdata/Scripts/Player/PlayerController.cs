@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private bool allowDamage = true;
     public float invincibleTime = 0.5f;
     private Material playerMaterial;
+    private Quaternion targetRotation;
 
 
     #endregion
@@ -138,21 +139,20 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void PlayerMovement()
     {
+        
         if (moveInput.x > 0)
         {
-            foreach (var sprite in playerVisuals)
-            {
-                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
-            }
+            targetRotation = Quaternion.identity;
+           
         }
         else if (moveInput.x < 0)
         {
-            foreach (var sprite in playerVisuals)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
-                
-                sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            }
+            targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+        }
+        
+        foreach (var sprite in playerVisuals)
+        {
+            sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
         
         rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);

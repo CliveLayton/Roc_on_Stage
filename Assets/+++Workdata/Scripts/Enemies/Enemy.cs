@@ -10,13 +10,18 @@ public class Enemy : MonoBehaviour , IDamageable
 
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private float knockbackPower = 4f;
+    [SerializeField] private float rotationSpeed;
     // [SerializeField] private float outlineThickness = 5f;
     // [ColorUsage(showAlpha:true, hdr:true)]
     // [SerializeField] private Color outlineGlowColor;
     // [ColorUsage(showAlpha:true, hdr:true)]
     // [SerializeField] private Color resetOutlineColor;
+    public bool hasTarget = false;
+    public Transform targetTransform;
+    
     private NavMeshAgent agent;
     //private Material enemyMaterial;
+    private Transform visualChild;
 
     private int currentHealth;
 
@@ -27,6 +32,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        visualChild = this.transform.GetChild(0);
         //enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
     }
 
@@ -37,9 +43,21 @@ public class Enemy : MonoBehaviour , IDamageable
 
     private void Update()
     {
-        agent.SetDestination(FindObjectOfType<PlayerController>().gameObject.transform.position);
+        if (hasTarget)
+        {
+            agent.SetDestination(targetTransform.position);
+        }
 
-        this.transform.rotation = quaternion.identity;
+        if (agent.velocity.x <= 0)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+            visualChild.transform.rotation = Quaternion.Slerp(visualChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+        else if (agent.velocity.x > 0)
+        {
+            visualChild.transform.rotation = Quaternion.Slerp(visualChild.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+        }
+        
     }
 
     /*private void OnMouseEnter()
