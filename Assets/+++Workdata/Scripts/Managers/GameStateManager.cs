@@ -14,7 +14,10 @@ public class GameStateManager : MonoBehaviour
     public static GameStateManager instance;
 
     public const string mainMenuSceneName = "Main Menu";
-    public const string level1SceneName = "Game";
+    public const string level1SceneName = "Forest";
+    public const string level2SceneName = "Town";
+    public const string level3SceneName = "Castle";
+    public const string level4SceneName = "Boss";
 
     public enum GameState
     {
