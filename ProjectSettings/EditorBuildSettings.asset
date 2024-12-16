@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/+++Workdata/Scenes/ManagerScene.unity
+    guid: a1f682403f0104f418ac2f4abea9385e
+  - enabled: 1
+    path: Assets/+++Workdata/Scenes/Main Menu.unity
+    guid: a092a12f9429d084f859613aa108bbee
+  - enabled: 1
     path: Assets/+++Workdata/Scenes/Forest.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/+++Workdata/Scenes/Town.unity
+    guid: e66ceb4fb446cab4f9221adb79e30c15
+  - enabled: 1
+    path: Assets/+++Workdata/Scenes/Castle.unity
+    guid: 67a2d7c53bf2fc544ab6021e86f1a77b
+  - enabled: 1
+    path: Assets/+++Workdata/Scenes/Boss.unity
+    guid: 3c8401c0d9aa0bc4b95c419fe555acd1
   m_configObjects: {}

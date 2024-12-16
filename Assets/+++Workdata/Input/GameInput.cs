@@ -48,15 +48,6 @@ namespace UnityEngine.InputSystem
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Shoot"",
-                    ""type"": ""Button"",
-                    ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""3efbe742-80b2-46f4-8c2d-789778dae635"",
@@ -105,6 +96,15 @@ namespace UnityEngine.InputSystem
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""f84fac6a-9c78-4e0d-9bb1-9be8419155c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Counter"",
+                    ""type"": ""Button"",
+                    ""id"": ""57e7b709-b505-49c7-8f3a-4de03f6a51ad"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -279,61 +279,6 @@ namespace UnityEngine.InputSystem
                 },
                 {
                     ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0a909afa-b20a-4753-a238-4c4862eb44b0"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -439,6 +384,28 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b394b16-a9b1-476b-b8ea-b50dbbaa0072"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Counter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8bd59197-42d2-407a-95b4-b5bc0e31856c"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Counter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1028,13 +995,13 @@ namespace UnityEngine.InputSystem
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-            m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_DodgeRoll = m_Player.FindAction("DodgeRoll", throwIfNotFound: true);
             m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
             m_Player_StompAttack = m_Player.FindAction("StompAttack", throwIfNotFound: true);
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+            m_Player_Counter = m_Player.FindAction("Counter", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1110,26 +1077,26 @@ namespace UnityEngine.InputSystem
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
-        private readonly InputAction m_Player_Shoot;
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_DodgeRoll;
         private readonly InputAction m_Player_MousePosition;
         private readonly InputAction m_Player_StompAttack;
         private readonly InputAction m_Player_Attack;
+        private readonly InputAction m_Player_Counter;
         public struct PlayerActions
         {
             private @GameInput m_Wrapper;
             public PlayerActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
-            public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @DodgeRoll => m_Wrapper.m_Player_DodgeRoll;
             public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
             public InputAction @StompAttack => m_Wrapper.m_Player_StompAttack;
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
+            public InputAction @Counter => m_Wrapper.m_Player_Counter;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1145,9 +1112,6 @@ namespace UnityEngine.InputSystem
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Shoot.started += instance.OnShoot;
-                @Shoot.performed += instance.OnShoot;
-                @Shoot.canceled += instance.OnShoot;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
@@ -1166,6 +1130,9 @@ namespace UnityEngine.InputSystem
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @Counter.started += instance.OnCounter;
+                @Counter.performed += instance.OnCounter;
+                @Counter.canceled += instance.OnCounter;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -1176,9 +1143,6 @@ namespace UnityEngine.InputSystem
                 @Look.started -= instance.OnLook;
                 @Look.performed -= instance.OnLook;
                 @Look.canceled -= instance.OnLook;
-                @Shoot.started -= instance.OnShoot;
-                @Shoot.performed -= instance.OnShoot;
-                @Shoot.canceled -= instance.OnShoot;
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
@@ -1197,6 +1161,9 @@ namespace UnityEngine.InputSystem
                 @Attack.started -= instance.OnAttack;
                 @Attack.performed -= instance.OnAttack;
                 @Attack.canceled -= instance.OnAttack;
+                @Counter.started -= instance.OnCounter;
+                @Counter.performed -= instance.OnCounter;
+                @Counter.canceled -= instance.OnCounter;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1381,13 +1348,13 @@ namespace UnityEngine.InputSystem
         {
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
-            void OnShoot(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnSprint(InputAction.CallbackContext context);
             void OnDodgeRoll(InputAction.CallbackContext context);
             void OnMousePosition(InputAction.CallbackContext context);
             void OnStompAttack(InputAction.CallbackContext context);
             void OnAttack(InputAction.CallbackContext context);
+            void OnCounter(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

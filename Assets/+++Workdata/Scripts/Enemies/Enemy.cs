@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,6 +22,8 @@ public class Enemy : MonoBehaviour , IDamageable
     private Transform visualChild;
 
     private int currentHealth;
+    private bool isDying = false;
+    private BoxCollider col;
 
     #endregion
 
@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour , IDamageable
     {
         agent = GetComponent<NavMeshAgent>();
         visualChild = this.transform.GetChild(0);
+        col = GetComponent<BoxCollider>();
         //enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
     }
 
@@ -43,20 +44,29 @@ public class Enemy : MonoBehaviour , IDamageable
 
     private void Update()
     {
-        if (hasTarget)
+        if (hasTarget && !isDying)
         {
             agent.SetDestination(targetTransform.position);
         }
 
-        if (agent.velocity.x <= 0)
+        if (!isDying)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
-            visualChild.transform.rotation = Quaternion.Slerp(visualChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            if (agent.velocity.x <= 0)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+                visualChild.transform.rotation = Quaternion.Slerp(visualChild.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+            else if (agent.velocity.x > 0)
+            {
+                visualChild.transform.rotation = Quaternion.Slerp(visualChild.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+            }
         }
-        else if (agent.velocity.x > 0)
+        else if (isDying)
         {
-            visualChild.transform.rotation = Quaternion.Slerp(visualChild.transform.rotation, Quaternion.identity, rotationSpeed * Time.deltaTime);
+            agent.enabled = false;
+            transform.Rotate(0, 10, 0 ,Space.Self);
         }
+        
         
     }
 
@@ -96,10 +106,30 @@ public class Enemy : MonoBehaviour , IDamageable
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            isDying = true;
+            col.enabled = false;
+            StartCoroutine(EnemyDying());
         }
     }
-    
+
+    private IEnumerator EnemyDying()
+    {
+        while (transform.position.y < -2f)
+        {
+            transform.position += new Vector3(0,1,-1) * (2 * Time.deltaTime);
+            yield return null;
+        }
+
+        
+        while (transform.position.y > -5f)
+        {
+            transform.position -= new Vector3(0,1,2) * (5 * Time.deltaTime);
+            yield return null;
+        }
+        
+        Destroy(gameObject);
+    }
+
     #endregion
    
 }

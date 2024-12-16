@@ -4,11 +4,17 @@ using UnityEngine.Events;
 
 public class TriggerBehavior : MonoBehaviour
 {
+    #region Variables
+
     //bool for collider is active or not
     private bool setActive = true;
     public UnityEvent triggerEnterEvent;
     public UnityEvent triggerExitEvent;
     private BoxCollider col;
+
+    #endregion
+
+    #region Unity Methods
 
     private void Awake()
     {
@@ -31,4 +37,6 @@ public class TriggerBehavior : MonoBehaviour
             triggerExitEvent?.Invoke();
         }
     }
+
+    #endregion
 }
