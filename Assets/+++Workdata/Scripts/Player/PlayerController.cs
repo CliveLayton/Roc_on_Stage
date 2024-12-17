@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float rotationSpeed = 50f;
     public int maxHealth;
     public LayerMask groundLayer;
+    public CinemachineVirtualCamera cm;
 
     public Vector2 moveInput;
     private Rigidbody rb;
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     //private bool usedStompAttack = false;
     public bool isLanding = false;
     public bool isAttacking = false;
+    public bool isCountering = false;
+    private bool canCounter = false;
     public int attackID = 0;
     private SpriteRenderer[] playerVisuals;
     private int currentHealth;
@@ -35,6 +39,23 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float invincibleTime = 0.5f;
     private Material playerMaterial;
     private Quaternion targetRotation;
+    
+    public float activeTime = 2f;
+
+    [Header("Mesh Related")] 
+    public float meshRefreshRate = 0.1f;
+    public float meshDestroyDelay = 3f;
+    public Transform positionToSpawn;
+    public Sprite sprite;
+
+    [Header("Shader Related")] 
+    public Material mat;
+    public string shaderVarRef;
+    public float shaderVarRate = 0.1f;
+    public float shaderVarRefreshRate = 0.05f;
+
+    private bool isTrailActive;
+    private SpriteRenderer[] spriteRenderers;
 
 
     #endregion
@@ -54,15 +75,35 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
-        if (!isLanding)
+        if (!isLanding && !isCountering)
         {
             PlayerMovement();
+        }
+        else if (isCountering)
+        {
+            playerVisuals[0].transform.Rotate(0, 10, 0 ,Space.Self);
         }
     }
 
     private void LateUpdate()
     {
         PlayerAnimations();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            canCounter = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            canCounter = false;
+        }
     }
 
     #endregion
@@ -133,6 +174,17 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    public void OnCounter(InputAction.CallbackContext context)
+    {
+        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering)
+        {
+            isCountering = true;
+            anim.SetTrigger("Counter");
+            StartCoroutine(ActivateTrail(0.6f));
+            cm.m_LookAt = playerVisuals[0].transform;
+        }
+    }
+
     #endregion
 
     #region Player Movement
@@ -166,7 +218,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Damage(int damageAmount)
     {
-        if (!allowDamage)
+        if (!allowDamage || isCountering)
         {
             return;
         }
@@ -222,6 +274,50 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         
         playerMaterial.SetColor("_SpriteColor", startColor);
+    }
+    
+    private IEnumerator ActivateTrail(float timeActive)
+    {
+        while (timeActive > 0)
+        {
+            timeActive -= meshRefreshRate;
+
+            if (spriteRenderers == null)
+            {
+                spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+            }
+
+            for (int i = 0; i < spriteRenderers.Length; i++)
+            {
+                GameObject gObj = new GameObject();
+                gObj.transform.SetPositionAndRotation(positionToSpawn.position, positionToSpawn.rotation);
+                
+                SpriteRenderer sr =  gObj.AddComponent<SpriteRenderer>();
+
+                sr.sprite = sprite;
+                sr.material = mat;
+
+                StartCoroutine(AnimateMaterialFloat(sr.material, 0, shaderVarRate, shaderVarRefreshRate));
+                
+                Destroy(gObj, meshDestroyDelay);
+            }
+
+            yield return new WaitForSeconds(meshRefreshRate);
+        }
+
+        isTrailActive = false;
+    }
+
+    private IEnumerator AnimateMaterialFloat(Material mat, float goal, float rate, float refreshRate)
+    {
+        float valueToAnimate = mat.GetFloat(shaderVarRef);
+
+        while (valueToAnimate > goal)
+        {
+            valueToAnimate -= rate;
+            mat.SetFloat(shaderVarRef, valueToAnimate);
+            yield return new WaitForSeconds(refreshRate);
+        }
     }
 
     #endregion

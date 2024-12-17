@@ -44,6 +44,8 @@ public class PlayerInputManager : MonoBehaviour
 
       gameInput.Player.Attack.performed += playerController.OnAttacking;
 
+      gameInput.Player.Counter.performed += playerController.OnCounter;
+
       //gameInput.Player.Shoot.performed += playerAimAndShoot.OnShoot;
       //gameInput.Player.Shoot.canceled += playerAimAndShoot.OnShoot;
    }
@@ -69,6 +71,8 @@ public class PlayerInputManager : MonoBehaviour
       //gameInput.Player.StompAttack.performed -= playerController.OnStompAttack;
       
       gameInput.Player.Attack.performed -= playerController.OnAttacking;
+
+      gameInput.Player.Counter.performed -= playerController.OnCounter;
 
       //gameInput.Player.Shoot.performed -= playerAimAndShoot.OnShoot;
       //gameInput.Player.Shoot.canceled -= playerAimAndShoot.OnShoot;

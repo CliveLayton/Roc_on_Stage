@@ -5484,6 +5484,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &945249680
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1251440690406669752, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772838453055619407, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330328845228904452, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 333d697c84615a04bbdf83c8e699078f, type: 3}
 --- !u!1 &947760709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,12 +5768,23 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  cm: {fileID: 1919090804}
   moveInput: {x: 0, y: 0}
   speed: 0
   isLanding: 0
   isAttacking: 0
+  isCountering: 0
   attackID: 0
   invincibleTime: 1.5
+  activeTime: 2
+  meshRefreshRate: 0.1
+  meshDestroyDelay: 0.3
+  positionToSpawn: {fileID: 1164039502}
+  sprite: {fileID: 1934740791, guid: 4d99b063f76ef7b4daf10d3655f9b908, type: 3}
+  mat: {fileID: 2100000, guid: ab4a712e84fd1054c94e0bd3fdc071a7, type: 2}
+  shaderVarRef: _Alpha
+  shaderVarRate: 0.1
+  shaderVarRefreshRate: 0.05
 --- !u!4 &979023186
 Transform:
   m_ObjectHideFlags: 0
@@ -14810,3 +14894,4 @@ SceneRoots:
   - {fileID: 644759048}
   - {fileID: 302752200}
   - {fileID: 5706750563194052639}
+  - {fileID: 945249680}

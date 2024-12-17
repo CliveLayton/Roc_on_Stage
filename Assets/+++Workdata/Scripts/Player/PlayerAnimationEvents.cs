@@ -44,4 +44,11 @@ public class PlayerAnimationEvents : MonoBehaviour
         player.attackID = 0;
         player.isAttacking = false;
     }
+
+    public void OutCounter()
+    {
+        player.isCountering = false;
+        player.transform.position = this.transform.position;
+        player.cm.m_LookAt = player.transform;
+    }
 }
