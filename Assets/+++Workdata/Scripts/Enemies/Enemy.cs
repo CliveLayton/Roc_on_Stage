@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour , IDamageable
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private float knockbackPower = 4f;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private GameObject keyPrefab;   
     // [SerializeField] private float outlineThickness = 5f;
     // [ColorUsage(showAlpha:true, hdr:true)]
     // [SerializeField] private Color outlineGlowColor;
@@ -16,6 +17,7 @@ public class Enemy : MonoBehaviour , IDamageable
     // [SerializeField] private Color resetOutlineColor;
     public bool hasTarget = false;
     public Transform targetTransform;
+    public bool dropKey = false;
     
     private NavMeshAgent agent;
     //private Material enemyMaterial;
@@ -24,6 +26,8 @@ public class Enemy : MonoBehaviour , IDamageable
     private int currentHealth;
     private bool isDying = false;
     private BoxCollider col;
+
+    private PlayerController player;
 
     #endregion
 
@@ -39,17 +43,23 @@ public class Enemy : MonoBehaviour , IDamageable
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerController>();
         currentHealth = maxHealth;
     }
 
     private void Update()
     {
-        if (hasTarget && !isDying)
+        if (hasTarget && !isDying && !player.isCountering)
         {
+            agent.isStopped = false;
             agent.SetDestination(targetTransform.position);
         }
+        else if (player.isCountering && !isDying)
+        {
+            agent.isStopped = true;
+        }
 
-        if (!isDying)
+        if (!isDying && !player.isCountering)
         {
             if (agent.velocity.x <= 0)
             {
@@ -120,13 +130,17 @@ public class Enemy : MonoBehaviour , IDamageable
             yield return null;
         }
 
-        
+        if (dropKey)
+        {
+            Instantiate(keyPrefab, transform.position, Quaternion.identity);
+        }
+
         while (transform.position.y > -5f)
         {
             transform.position -= new Vector3(0,1,2) * (5 * Time.deltaTime);
             yield return null;
         }
-        
+
         Destroy(gameObject);
     }
 

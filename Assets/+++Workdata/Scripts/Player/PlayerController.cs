@@ -33,29 +33,31 @@ public class PlayerController : MonoBehaviour, IDamageable
     public bool isCountering = false;
     private bool canCounter = false;
     public int attackID = 0;
-    private SpriteRenderer[] playerVisuals;
+    //private SpriteRenderer[] playerVisuals;
+    private SpriteRenderer playerVisual;
     private int currentHealth;
     private bool allowDamage = true;
     public float invincibleTime = 0.5f;
     private Material playerMaterial;
     private Quaternion targetRotation;
+    private bool hasKey = false;
     
     public float activeTime = 2f;
 
+    //Mesh Trail Variables
     [Header("Mesh Related")] 
     public float meshRefreshRate = 0.1f;
     public float meshDestroyDelay = 3f;
     public Transform positionToSpawn;
-    public Sprite sprite;
+    public GameObject playerCounterPrefab;
 
-    [Header("Shader Related")] 
-    public Material mat;
+    [Header("Shader Related")]
     public string shaderVarRef;
     public float shaderVarRate = 0.1f;
     public float shaderVarRefreshRate = 0.05f;
-
-    private bool isTrailActive;
+    
     private SpriteRenderer[] spriteRenderers;
+    private Material[] counterMaterials;
 
 
     #endregion
@@ -66,7 +68,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        playerVisuals = GetComponentsInChildren<SpriteRenderer>();
+        playerVisual = GetComponentInChildren<SpriteRenderer>();
         playerMaterial = GetComponentInChildren<SpriteRenderer>().material;
 
         speed = normalSpeed;
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         else if (isCountering)
         {
-            playerVisuals[0].transform.Rotate(0, 10, 0 ,Space.Self);
+            playerVisual.transform.Rotate(0, 10, 0 ,Space.Self);
         }
     }
 
@@ -95,6 +97,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (other.gameObject.CompareTag("Enemy"))
         {
             canCounter = true;
+        }
+
+        if (other.gameObject.CompareTag("Key"))
+        {
+            hasKey = true;
         }
     }
 
@@ -176,12 +183,23 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnCounter(InputAction.CallbackContext context)
     {
-        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering)
+        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering && Mathf.Abs(playerVisual.transform.rotation.y) < 0.3f)
         {
             isCountering = true;
             anim.SetTrigger("Counter");
             StartCoroutine(ActivateTrail(0.6f));
-            cm.m_LookAt = playerVisuals[0].transform;
+            cm.m_LookAt = playerVisual.transform;
+            Time.timeScale = 0.7f;
+            StartCoroutine(InvincibleTime());
+        }
+        else if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering && Mathf.Abs(playerVisual.transform.rotation.y) > 0.3f)
+        {
+            isCountering = true;
+            anim.SetTrigger("CounterMirror");
+            StartCoroutine(ActivateTrail(0.6f));
+            cm.m_LookAt = playerVisual.transform;
+            Time.timeScale = 0.7f;
+            StartCoroutine(InvincibleTime());
         }
     }
 
@@ -202,10 +220,12 @@ public class PlayerController : MonoBehaviour, IDamageable
             targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
         }
         
-        foreach (var sprite in playerVisuals)
-        {
-            sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
+        // foreach (var sprite in playerVisuals)
+        // {
+        //     sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // }
+        playerVisual.transform.rotation = Quaternion.Slerp(playerVisual.transform.rotation, targetRotation,
+            rotationSpeed * Time.deltaTime);
         
         rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
         
@@ -289,34 +309,36 @@ public class PlayerController : MonoBehaviour, IDamageable
 
             for (int i = 0; i < spriteRenderers.Length; i++)
             {
-                GameObject gObj = new GameObject();
-                gObj.transform.SetPositionAndRotation(positionToSpawn.position, positionToSpawn.rotation);
+                // GameObject gObj = playerCounterPrefab;
+                // gObj.transform.SetPositionAndRotation(positionToSpawn.position, positionToSpawn.rotation);
+                GameObject gObj = Instantiate(playerCounterPrefab, positionToSpawn.position, positionToSpawn.rotation);
                 
-                SpriteRenderer sr =  gObj.AddComponent<SpriteRenderer>();
+                SpriteRenderer mainsr =  gObj.GetComponent<SpriteRenderer>();
+                SpriteRenderer secondSr = gObj.GetComponentInChildren<SpriteRenderer>();
 
-                sr.sprite = sprite;
-                sr.material = mat;
+                counterMaterials = new[] { mainsr.material, secondSr.material };
 
-                StartCoroutine(AnimateMaterialFloat(sr.material, 0, shaderVarRate, shaderVarRefreshRate));
+                StartCoroutine(AnimateMaterialFloat( counterMaterials, 0, shaderVarRate, shaderVarRefreshRate));
                 
                 Destroy(gObj, meshDestroyDelay);
             }
 
             yield return new WaitForSeconds(meshRefreshRate);
         }
-
-        isTrailActive = false;
     }
 
-    private IEnumerator AnimateMaterialFloat(Material mat, float goal, float rate, float refreshRate)
+    private IEnumerator AnimateMaterialFloat(Material[] mats, float goal, float rate, float refreshRate)
     {
-        float valueToAnimate = mat.GetFloat(shaderVarRef);
-
-        while (valueToAnimate > goal)
+        foreach (Material mat  in mats)
         {
-            valueToAnimate -= rate;
-            mat.SetFloat(shaderVarRef, valueToAnimate);
-            yield return new WaitForSeconds(refreshRate);
+            float valueToAnimate = mat.GetFloat(shaderVarRef);
+            
+            while (valueToAnimate > goal)
+            {
+                valueToAnimate -= rate;
+                mat.SetFloat(shaderVarRef, valueToAnimate);
+                yield return new WaitForSeconds(refreshRate);
+            }
         }
     }
 

@@ -50,5 +50,6 @@ public class PlayerAnimationEvents : MonoBehaviour
         player.isCountering = false;
         player.transform.position = this.transform.position;
         player.cm.m_LookAt = player.transform;
+        Time.timeScale = 1f;
     }
 }

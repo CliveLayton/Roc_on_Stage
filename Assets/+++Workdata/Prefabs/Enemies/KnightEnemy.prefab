@@ -156,8 +156,11 @@ MonoBehaviour:
   maxHealth: 1
   knockbackPower: 4
   rotationSpeed: 6
+  keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
+    type: 3}
   hasTarget: 0
   targetTransform: {fileID: 0}
+  dropKey: 0
 --- !u!195 &3610633622258922171
 NavMeshAgent:
   m_ObjectHideFlags: 0
