@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2128844506252420062}
   - component: {fileID: 6183451177369404970}
   - component: {fileID: 7330368744382780850}
+  - component: {fileID: 7077492315711897710}
   m_Layer: 9
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +107,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7077492315711897710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752343627662267174}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1724138, y: 1.8600001, z: 0.9755728}
+  m_Center: {x: 1.1476426, y: 0.93000007, z: 0.030758739}
 --- !u!1 &8773575616953278916
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,11 +175,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d112b292200845d4c8e0e6d1eb5c2693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   knockbackPower: 4
   rotationSpeed: 6
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
     type: 3}
+  stickPrefab: {fileID: 662217787892721799, guid: 9ee029ff565af5542b37bdee1753b43e,
+    type: 3}
+  lancePrefab: {fileID: 4692135636210197933, guid: be5d966f7ea69e84785191f4871d0073,
+    type: 3}
+  isBoss1: 0
+  isBoos2: 0
   hasTarget: 0
   targetTransform: {fileID: 0}
   dropKey: 0

@@ -9,7 +9,11 @@ public class Enemy : MonoBehaviour , IDamageable
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private float knockbackPower = 4f;
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private GameObject keyPrefab;   
+    [SerializeField] private GameObject keyPrefab;
+    [SerializeField] private GameObject stickPrefab;
+    [SerializeField] private GameObject lancePrefab;
+    [SerializeField] private bool isBoss1;
+    [SerializeField] private bool isBoos2;
     // [SerializeField] private float outlineThickness = 5f;
     // [ColorUsage(showAlpha:true, hdr:true)]
     // [SerializeField] private Color outlineGlowColor;
@@ -133,6 +137,16 @@ public class Enemy : MonoBehaviour , IDamageable
         if (dropKey)
         {
             Instantiate(keyPrefab, transform.position, Quaternion.identity);
+        }
+
+        if (isBoss1)
+        {
+            Instantiate(stickPrefab, transform.position, Quaternion.identity);
+        }
+
+        if (isBoos2)
+        {
+            Instantiate(lancePrefab, transform.position, Quaternion.identity);
         }
 
         while (transform.position.y > -5f)

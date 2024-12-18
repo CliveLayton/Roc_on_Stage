@@ -103,6 +103,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             hasKey = true;
         }
+
+        if (other.gameObject.CompareTag("Blockade"))
+        {
+            if (isAttacking && hasKey)
+            {
+                hasKey = false;
+                other.GetComponent<Cage>().OpenCage();
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)

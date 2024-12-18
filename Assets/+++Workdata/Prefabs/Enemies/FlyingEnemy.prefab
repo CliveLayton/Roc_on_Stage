@@ -48,11 +48,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d112b292200845d4c8e0e6d1eb5c2693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 1
   knockbackPower: 4
   rotationSpeed: 0
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
     type: 3}
+  stickPrefab: {fileID: 662217787892721799, guid: 9ee029ff565af5542b37bdee1753b43e,
+    type: 3}
+  lancePrefab: {fileID: 4692135636210197933, guid: be5d966f7ea69e84785191f4871d0073,
+    type: 3}
+  isBoss1: 0
+  isBoos2: 0
   hasTarget: 0
   targetTransform: {fileID: 0}
   dropKey: 0

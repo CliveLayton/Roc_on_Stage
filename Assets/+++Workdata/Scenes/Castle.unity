@@ -2319,16 +2319,27 @@ MonoBehaviour:
   inActionSpeed: 3
   jumpPower: 8
   rotationSpeed: 6
-  maxHealth: 3
+  maxHealth: 10
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  cm: {fileID: 0}
   moveInput: {x: 0, y: 0}
   speed: 0
   isLanding: 0
   isAttacking: 0
+  isCountering: 0
   attackID: 0
   invincibleTime: 1.5
+  activeTime: 2
+  meshRefreshRate: 0.1
+  meshDestroyDelay: 0.3
+  positionToSpawn: {fileID: 1164039502}
+  playerCounterPrefab: {fileID: 7307975639225225155, guid: cfd56acc9e1a6c346870612e38954eba,
+    type: 3}
+  shaderVarRef: _Alpha
+  shaderVarRate: 0.1
+  shaderVarRefreshRate: 0.05
 --- !u!4 &979023186
 Transform:
   m_ObjectHideFlags: 0
@@ -5812,6 +5823,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 1108810846}
   - {fileID: 1261480675}
+  containsKey: 1
 --- !u!65 &1918057599
 BoxCollider:
   m_ObjectHideFlags: 0
