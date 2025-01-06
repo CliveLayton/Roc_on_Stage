@@ -1163,7 +1163,6 @@ GameObject:
   - component: {fileID: 675393241}
   - component: {fileID: 675393243}
   - component: {fileID: 675393242}
-  - component: {fileID: 675393244}
   m_Layer: 8
   m_Name: SpotLight
   m_TagString: Untagged
@@ -1180,12 +1179,12 @@ Transform:
   m_GameObject: {fileID: 675393240}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5, y: 6.013, z: 3.23}
+  m_LocalPosition: {x: 0, y: 8.75, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1123362267}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 979023186}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &675393242
 MonoBehaviour:
@@ -1272,21 +1271,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &675393244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675393240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d64d5321b815648a6122a025b50888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 9, z: -0.3}
-  smoothTime: 0.25
-  player: {fileID: 979023186}
 --- !u!1 &773486627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,12 +1635,22 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  cm: {fileID: 0}
   moveInput: {x: 0, y: 0}
   speed: 0
   isLanding: 0
   isAttacking: 0
+  isCountering: 0
   attackID: 0
   invincibleTime: 1.5
+  activeTime: 2
+  meshRefreshRate: 0.1
+  meshDestroyDelay: 3
+  positionToSpawn: {fileID: 0}
+  playerCounterPrefab: {fileID: 0}
+  shaderVarRef: 
+  shaderVarRate: 0.1
+  shaderVarRefreshRate: 0.05
 --- !u!4 &979023186
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,6 +1665,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1164039502}
+  - {fileID: 675393241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &979023187
@@ -3903,6 +3898,7 @@ MonoBehaviour:
   - {fileID: 397239756}
   - {fileID: 406218969}
   - {fileID: 1325577749}
+  containsKey: 0
 --- !u!65 &1918057599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4216,7 +4212,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1724254855}
-  - {fileID: 675393241}
   - {fileID: 979023186}
   - {fileID: 1373395098}
   - {fileID: 651928273}

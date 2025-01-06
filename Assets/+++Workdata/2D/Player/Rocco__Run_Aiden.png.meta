@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eee671ce5787149489e6ec06ee4d96af
+guid: 1385c4390e72d1541a79b30926785abf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roco_Walk_0
+      name: Rocco__Run_Aiden_0
       rect:
         serializedVersion: 2
-        x: 220
-        y: 527
-        width: 468
-        height: 604
+        x: 53
+        y: 526
+        width: 286
+        height: 368
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbe3d682446471b4fa513826856ba31c
-      internalID: 664849736
+      spriteID: 653c6419be510d14f9a70770eec76cc5
+      internalID: -1829298504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roco_Walk_1
+      name: Rocco__Run_Aiden_1
       rect:
         serializedVersion: 2
-        x: 742
+        x: 374
+        y: 528
+        width: 308
+        height: 360
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195a926592199a646924f332ce6a2984
+      internalID: 1374108070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__Run_Aiden_2
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 531
+        width: 319
+        height: 362
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9bf2a5660a93343a9e3a0e285f264a
+      internalID: -139022076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__Run_Aiden_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 535
+        width: 306
+        height: 360
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9b4b9745d3b8c4eb0805a2e1110ca6
+      internalID: 1769995196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__Run_Aiden_5
+      rect:
+        serializedVersion: 2
+        x: 1410
         y: 536
-        width: 502
-        height: 591
+        width: 286
+        height: 368
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2f3185bc3dc5054dbe7da3f8791f808
-      internalID: -1233688850
+      spriteID: 8f91fde3359bc8a4084cea8a9e976513
+      internalID: 1007693162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roco_Walk_2
+      name: Rocco__Run_Aiden_6
       rect:
         serializedVersion: 2
-        x: 1309
-        y: 539
-        width: 520
-        height: 593
+        x: 1713
+        y: 529
+        width: 302
+        height: 370
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +216,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6fbdeb747922cf418e2992665680e9e
-      internalID: -614594711
+      spriteID: b2e9cfb308c00ad40bf60fc40659d827
+      internalID: 599270103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__Run_Aiden_7
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 532
+        width: 309
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476e24fb2a4d9574198a127384a22f35
+      internalID: -1456157861
       vertices: []
       indices: 
       edges: []
@@ -162,7 +246,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0044723bd70896f44bc04b5548fe2f84
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -170,9 +254,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Roco_Walk_0: 664849736
-      Roco_Walk_1: -1233688850
-      Roco_Walk_2: -614594711
+      Rocco__Run_Aiden_0: -1829298504
+      Rocco__Run_Aiden_1: 1374108070
+      Rocco__Run_Aiden_2: -139022076
+      Rocco__Run_Aiden_3: -429574141
+      Rocco__Run_Aiden_4: 1769995196
+      Rocco__Run_Aiden_5: 1007693162
+      Rocco__Run_Aiden_6: 599270103
+      Rocco__Run_Aiden_7: -1456157861
+      Rocco__Run_Aiden_8: -1143407586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

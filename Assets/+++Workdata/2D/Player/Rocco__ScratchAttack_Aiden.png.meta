@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c94cf9f3d65fde40ba30f86d62de233
+guid: 57c36a81b9e392b46b538fe772f123d5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roco_Idle_0
+      name: Rocco__ScratchAttack_Aiden_0
       rect:
         serializedVersion: 2
-        x: 831
-        y: 532
-        width: 469
-        height: 604
+        x: 10
+        y: 525
+        width: 399
+        height: 514
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90955f2235cbac42882eaf3c305000c
-      internalID: -664542797
+      spriteID: 7af1c98e639fe4b40bf5bd7f1e671bb9
+      internalID: 726060772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roco_Idle_1
+      name: Rocco__ScratchAttack_Aiden_1
       rect:
         serializedVersion: 2
-        x: 1300
-        y: 540
-        width: 488
-        height: 599
+        x: 415
+        y: 520
+        width: 426
+        height: 534
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0b742f5c30fcc64a9c445e92a0da2d1
-      internalID: -2144515814
+      spriteID: 3687065e04159b3429557e28b740818f
+      internalID: -192455026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__ScratchAttack_Aiden_2
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 518
+        width: 445
+        height: 534
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a4981808b1d3546b389917d191c08a
+      internalID: -1374294737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__ScratchAttack_Aiden_3
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 516
+        width: 446
+        height: 528
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988d4220174b92c499c057a34b35f0be
+      internalID: -580999683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco__ScratchAttack_Aiden_4
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 510
+        width: 424
+        height: 524
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875209dd050a7b947b9c3e7270b8b6ab
+      internalID: 303079444
       vertices: []
       indices: 
       edges: []
@@ -141,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0cc4b14aa9e44704e84ce292b117421b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -149,8 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Roco_Idle_0: -664542797
-      Roco_Idle_1: -2144515814
+      Rocco__ScratchAttack_Aiden_0: 726060772
+      Rocco__ScratchAttack_Aiden_1: -192455026
+      Rocco__ScratchAttack_Aiden_2: -1374294737
+      Rocco__ScratchAttack_Aiden_3: -580999683
+      Rocco__ScratchAttack_Aiden_4: 303079444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
