@@ -55,12 +55,11 @@ public class Enemy : MonoBehaviour , IDamageable
     {
         if (hasTarget && !isDying && !player.isCountering)
         {
-            agent.isStopped = false;
             agent.SetDestination(targetTransform.position);
         }
         else if (player.isCountering && !isDying)
         {
-            agent.isStopped = true;
+            StartCoroutine(EnemyStunned());
         }
 
         if (!isDying && !player.isCountering)
@@ -124,6 +123,13 @@ public class Enemy : MonoBehaviour , IDamageable
             col.enabled = false;
             StartCoroutine(EnemyDying());
         }
+    }
+
+    private IEnumerator EnemyStunned()
+    {
+        agent.isStopped = true;
+        yield return new WaitForSeconds(2f);
+        agent.isStopped = false;
     }
 
     private IEnumerator EnemyDying()

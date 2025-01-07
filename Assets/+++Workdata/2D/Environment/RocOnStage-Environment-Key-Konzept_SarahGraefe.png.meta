@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9665c4d8e79929a42810c1c59eb7b8aa
+guid: d4fc2f7aa510e964a9372269b4513664
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,106 +97,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocco__StickAttack_Aiden_0
+      name: RocOnStage-Environment-Key-Konzept_SarahGraefe_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 524
-        width: 415
-        height: 513
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 48
+        y: 24
+        width: 197
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9aba0c70dc8a82409aba8a3d0157b2c
-      internalID: 1081731660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocco__StickAttack_Aiden_1
-      rect:
-        serializedVersion: 2
-        x: 462
-        y: 521
-        width: 414
-        height: 534
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd676748a5db6f8439c15706a984d65f
-      internalID: -592137698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocco__StickAttack_Aiden_2
-      rect:
-        serializedVersion: 2
-        x: 902
-        y: 518
-        width: 432
-        height: 533
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 555a920e37ca55f478d03388350c7f2a
-      internalID: -1815364790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocco__StickAttack_Aiden_3
-      rect:
-        serializedVersion: 2
-        x: 1366
-        y: 517
-        width: 424
-        height: 524
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6de6ab27ec4d58141974d4dab9983ba2
-      internalID: -1618832554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocco__StickAttack_Aiden_4
-      rect:
-        serializedVersion: 2
-        x: 1832
-        y: 506
-        width: 519
-        height: 526
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85c1e8f0fbbee8545b7ec022a8a1658f
-      internalID: -978944548
+      spriteID: af534b9121ae2304cb1075303a846f6c
+      internalID: -1276416945
       vertices: []
       indices: 
       edges: []
@@ -204,7 +120,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 39d67ff1ac1f3a84aadc304e8120f764
     internalID: 0
     vertices: []
     indices: 
@@ -212,11 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rocco__StickAttack_Aiden_0: 1081731660
-      Rocco__StickAttack_Aiden_1: -592137698
-      Rocco__StickAttack_Aiden_2: -1815364790
-      Rocco__StickAttack_Aiden_3: -1618832554
-      Rocco__StickAttack_Aiden_4: -978944548
+      RocOnStage-Environment-Key-Konzept_SarahGraefe_0: -1276416945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     #region Variables
 
+    private enum PlayerState
+    {
+        Claws,
+        Stick, 
+        Lance
+    }
+    
     public float normalSpeed = 5f;
     public float sprintSpeed = 10f;
     public float inActionSpeed = 3f;
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Material playerMaterial;
     private Quaternion targetRotation;
     private bool hasKey = false;
+    private PlayerState playerState;
     
     public float activeTime = 2f;
 
@@ -70,6 +78,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         anim = GetComponentInChildren<Animator>();
         playerVisual = GetComponentInChildren<SpriteRenderer>();
         playerMaterial = GetComponentInChildren<SpriteRenderer>().material;
+        playerState = PlayerState.Claws;
 
         speed = normalSpeed;
         currentHealth = maxHealth;
@@ -102,6 +111,18 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (other.gameObject.CompareTag("Key"))
         {
             hasKey = true;
+        }
+
+        if (other.gameObject.CompareTag("Stick"))
+        {
+            playerState = PlayerState.Stick;
+            GetComponentInChildren<SwordBehavior>().swordDamage = 2;
+        }
+
+        if (other.gameObject.CompareTag("Lance"))
+        {
+            playerState = PlayerState.Lance;
+            GetComponentInChildren<SwordBehavior>().swordDamage = 3;
         }
 
         if (other.gameObject.CompareTag("Blockade"))
@@ -182,11 +203,19 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (context.performed && !isAttacking)
         {
             isAttacking = true;
+            switch (playerState)
+            {
+                case PlayerState.Claws:
+                    attackID = 0;
+                    break;
+                case PlayerState.Stick:
+                    attackID = 1;
+                    break;
+                case PlayerState.Lance:
+                    attackID = 2;
+                    break;
+            }
             anim.SetTrigger("Attack");
-        }
-        else if (context.performed && isAttacking)
-        {
-            attackID = 1;
         }
     }
 
@@ -360,7 +389,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         anim.SetFloat("speed", Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
         //anim.SetBool("isDodgeRolling", isRolling);
         //anim.SetBool("isStompAttacking", usedStompAttack);
-        anim.SetBool("isAttacking", isAttacking);
         anim.SetInteger("ActionID", attackID);
 
         if (isGrounded())

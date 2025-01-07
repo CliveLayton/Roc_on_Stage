@@ -9,7 +9,7 @@ public class SwordBehavior : MonoBehaviour
     #region Variables
 
     [SerializeField] private LayerMask whatSwordDamages;
-    [SerializeField] private int swordDamage = 1;
+    public int swordDamage = 1;
     private CinemachineImpulseSource cmImpulse;
 
     #endregion

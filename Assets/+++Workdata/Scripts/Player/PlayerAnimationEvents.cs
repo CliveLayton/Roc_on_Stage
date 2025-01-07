@@ -32,16 +32,9 @@ public class PlayerAnimationEvents : MonoBehaviour
         player.speed = player.inActionSpeed;
     }
 
-    public void OutAttack1()
+    public void OutAttack()
     {
         player.speed = player.inActionSpeed;
-        player.isAttacking = false;
-    }
-
-    public void OutAttack2()
-    {
-        player.speed = player.inActionSpeed;
-        player.attackID = 0;
         player.isAttacking = false;
     }
 
