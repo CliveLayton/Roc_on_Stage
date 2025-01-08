@@ -5,32 +5,32 @@ public class EnemyDetection : MonoBehaviour
     #region Variables
 
     [SerializeField] private Enemy[] enemies;
-    [SerializeField] private bool containsKey;
+    //[SerializeField] private bool containsKey;
 
-    private bool checkForNull = false;
+    //private bool checkForNull = false;
 
     #endregion
 
     #region Unity Methods
 
-    private void Update()
-    {
-        if (checkForNull && containsKey)
-        {
-            GetLastRemainingEnemy();
-            
-            if (AllItemsNull())
-            {
-                this.gameObject.SetActive(false);
-            } 
-        }
-    }
+    // private void Update()
+    // {
+    //     if (checkForNull && containsKey)
+    //     {
+    //         GetLastRemainingEnemy();
+    //         
+    //         if (AllItemsNull())
+    //         {
+    //             this.gameObject.SetActive(false);
+    //         } 
+    //     }
+    // }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            checkForNull = true;
+            //checkForNull = true;
             foreach (Enemy enemy in enemies)
             {
                 enemy.targetTransform = other.transform;

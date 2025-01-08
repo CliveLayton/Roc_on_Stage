@@ -9,6 +9,8 @@ public class SwordBehavior : MonoBehaviour
     #region Variables
 
     [SerializeField] private LayerMask whatSwordDamages;
+    [SerializeField] private float slowAmount = 0.1f;
+    [SerializeField] private float slowTimeOnHit = 0.01f;
     public int swordDamage = 1;
     private CinemachineImpulseSource cmImpulse;
 
@@ -48,8 +50,8 @@ public class SwordBehavior : MonoBehaviour
 
     private IEnumerator SlowTimeShortly()
     {
-        Time.timeScale = 0.1f;
-        yield return new WaitForSeconds(0.01f);
+        Time.timeScale = slowAmount;
+        yield return new WaitForSeconds(slowTimeOnHit);
         Time.timeScale = 1f;
     }
 

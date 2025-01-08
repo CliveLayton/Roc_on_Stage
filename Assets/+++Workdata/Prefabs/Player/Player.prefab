@@ -140,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.8179202, y: 1.8, z: 0.2}
-  m_Center: {x: 0.8427627, y: 0.9, z: 0}
+  m_Size: {x: 1.1272368, y: 1.8, z: 0.60015225}
+  m_Center: {x: 0.997421, y: 0.9, z: -0.005174279}
 --- !u!114 &7526715545151039177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +157,8 @@ MonoBehaviour:
   whatSwordDamages:
     serializedVersion: 2
     m_Bits: 512
+  slowAmount: 0.1
+  slowTimeOnHit: 0.01
   swordDamage: 1
 --- !u!1 &1953370934761965818
 GameObject:

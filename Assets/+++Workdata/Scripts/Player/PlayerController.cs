@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Quaternion targetRotation;
     private bool hasKey = false;
     private PlayerState playerState;
+    private Vector3 enemyPos;
+    private bool parryToRight = true;
     
     public float activeTime = 2f;
 
@@ -106,6 +108,16 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (other.gameObject.CompareTag("Enemy"))
         {
             canCounter = true;
+            if (other.transform.position.x < transform.position.x)
+            {
+                enemyPos = other.transform.position + Vector3.left * 2;
+                parryToRight = false;
+            }
+            else if (other.transform.position.x > transform.position.x)
+            {
+                enemyPos = other.transform.position + Vector3.right * 2;
+                parryToRight = true;
+            }
         }
 
         if (other.gameObject.CompareTag("Key"))
@@ -221,24 +233,25 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnCounter(InputAction.CallbackContext context)
     {
-        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering && Mathf.Abs(playerVisual.transform.rotation.y) < 0.3f)
+        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering)
         {
             isCountering = true;
-            anim.SetTrigger("Counter");
+            //anim.SetTrigger("Counter");
+            StartCoroutine(ParryMovement());
             StartCoroutine(ActivateTrail(0.6f));
             cm.m_LookAt = playerVisual.transform;
             Time.timeScale = 0.7f;
             StartCoroutine(InvincibleTime());
         }
-        else if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering && Mathf.Abs(playerVisual.transform.rotation.y) > 0.3f)
-        {
-            isCountering = true;
-            anim.SetTrigger("CounterMirror");
-            StartCoroutine(ActivateTrail(0.6f));
-            cm.m_LookAt = playerVisual.transform;
-            Time.timeScale = 0.7f;
-            StartCoroutine(InvincibleTime());
-        }
+        // else if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering && Mathf.Abs(playerVisual.transform.rotation.y) > 0.3f)
+        // {
+        //     isCountering = true;
+        //     anim.SetTrigger("CounterMirror");
+        //     StartCoroutine(ActivateTrail(0.6f));
+        //     cm.m_LookAt = playerVisual.transform;
+        //     Time.timeScale = 0.7f;
+        //     StartCoroutine(InvincibleTime());
+        // }
     }
 
     #endregion
@@ -332,6 +345,44 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         
         playerMaterial.SetColor("_SpriteColor", startColor);
+    }
+
+    private IEnumerator ParryMovement()
+    {
+        Vector3 startPos = this.transform.position;
+        float distance = (enemyPos - startPos).magnitude;
+        float totalTime = 0.5f;
+        float parrySpeed = distance / totalTime;
+        float time = 0f;
+        
+        while (time < totalTime)
+        {
+            time += Time.deltaTime;
+            if (parryToRight)
+            {
+                startPos.x += parrySpeed * Time.deltaTime;
+            }
+            else
+            {
+                startPos.x -= parrySpeed * Time.deltaTime;
+            }
+            
+            if (time < totalTime / 2)
+            {
+                startPos.z -= 0.04f;
+            }
+            else if(time > totalTime/2)
+            {
+                startPos.z += 0.04f;
+            }
+
+            transform.position = startPos;
+            yield return null;
+        }
+
+        transform.position = enemyPos;
+        isCountering = false;
+        Time.timeScale = 1f;
     }
     
     private IEnumerator ActivateTrail(float timeActive)

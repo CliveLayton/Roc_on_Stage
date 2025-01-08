@@ -3364,6 +3364,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6183451177369404970, guid: 1ea5edf5281f62b498257600f23c23b9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52276b3da1513e14aaac5039b4ec3e62, type: 2}
+    - target: {fileID: 8764940023597077810, guid: 1ea5edf5281f62b498257600f23c23b9,
+        type: 3}
+      propertyPath: dropKey
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8773575616953278916, guid: 1ea5edf5281f62b498257600f23c23b9,
         type: 3}
       propertyPath: m_Name
@@ -5302,7 +5312,6 @@ MonoBehaviour:
   enemies:
   - {fileID: 1108810846}
   - {fileID: 1261480675}
-  containsKey: 1
 --- !u!65 &1918057599
 BoxCollider:
   m_ObjectHideFlags: 0

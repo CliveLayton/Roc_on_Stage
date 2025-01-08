@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private int currentHealth;
     private bool isDying = false;
     private BoxCollider col;
+    private Material enemyMaterial;
 
     private PlayerController player;
 
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour , IDamageable
         agent = GetComponent<NavMeshAgent>();
         visualChild = this.transform.GetChild(0);
         col = GetComponent<BoxCollider>();
+        enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
         //enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
     }
 
@@ -59,7 +61,7 @@ public class Enemy : MonoBehaviour , IDamageable
         }
         else if (player.isCountering && !isDying)
         {
-            StartCoroutine(EnemyStunned());
+            StartCoroutine(EnemyStunned(2f));
         }
 
         if (!isDying && !player.isCountering)
@@ -123,13 +125,45 @@ public class Enemy : MonoBehaviour , IDamageable
             col.enabled = false;
             StartCoroutine(EnemyDying());
         }
+
+        StartCoroutine(EnemyStunned(0.5f));
+        StartCoroutine(LerpBetweenColors());
     }
 
-    private IEnumerator EnemyStunned()
+    private IEnumerator EnemyStunned(float stunTime)
     {
         agent.isStopped = true;
         yield return new WaitForSeconds(2f);
         agent.isStopped = false;
+    }
+    
+    private IEnumerator LerpBetweenColors()
+    {
+        float duration = 0.2f;
+        float elapsedTime = 0f;
+        Color startColor = Color.black;
+        Color endColor = Color.red;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float time = elapsedTime / duration;
+            enemyMaterial.SetColor("_SpriteColor", Color.Lerp(startColor,endColor, time));
+            yield return null;
+        }
+        
+        enemyMaterial.SetColor("_SpriteColor", endColor);
+        elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float time = elapsedTime / duration;
+            enemyMaterial.SetColor("_SpriteColor", Color.Lerp(endColor, startColor,time));
+            yield return null;
+        }
+        
+        enemyMaterial.SetColor("_SpriteColor", startColor);
     }
 
     private IEnumerator EnemyDying()

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyMaterial
+  m_Name: EnemyKeyMat
   m_Shader: {fileID: -6465566751694194690, guid: 34471d5287568e7419d90ff711bba7d4,
     type: 3}
   m_Parent: {fileID: 0}
@@ -44,9 +44,9 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Thickness: 0
+    - _Thickness: 10
     m_Colors:
-    - _OutlineColor: {r: 0.7490196, g: 0.5699341, b: 0.058885034, a: 1}
+    - _OutlineColor: {r: 11.984314, g: 9.118946, b: 0.94216055, a: 1}
     - _SpriteColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2400580735846805286

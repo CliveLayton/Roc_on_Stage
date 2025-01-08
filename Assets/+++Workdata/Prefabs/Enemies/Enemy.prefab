@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d112b292200845d4c8e0e6d1eb5c2693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 2
   knockbackPower: 4
   rotationSpeed: 6
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
