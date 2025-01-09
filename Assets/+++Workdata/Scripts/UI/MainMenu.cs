@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup mainMenuScreen;
     [SerializeField] private CanvasGroup optionScreen;
     [SerializeField] private CanvasGroup exitScreen;
+    [SerializeField] private GameObject light;
 
     #endregion
 
@@ -27,6 +28,30 @@ public class MainMenu : MonoBehaviour
     public void StartNewGame()
     {
        GameStateManager.instance.StartNewGame();
+    }
+
+    public void OpenMainMenu()
+    {
+        mainMenuScreen.ShowCanvasGroup();
+        optionScreen.HideCanvasGroup();
+        exitScreen.HideCanvasGroup();
+        light.SetActive(true);
+    }
+
+    public void OpenOptionMenu()
+    {
+        optionScreen.ShowCanvasGroup();
+        mainMenuScreen.HideCanvasGroup();
+        exitScreen.HideCanvasGroup();
+        light.SetActive(false);
+    }
+
+    public void OpenExitMenu()
+    {
+        exitScreen.ShowCanvasGroup();
+        mainMenuScreen.HideCanvasGroup();
+        optionScreen.HideCanvasGroup();
+        light.SetActive(false);
     }
 
     public void QuitGame()

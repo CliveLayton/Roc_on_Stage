@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SwordBehavior : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SwordBehavior : MonoBehaviour
     [SerializeField] private LayerMask whatSwordDamages;
     [SerializeField] private float slowAmount = 0.1f;
     [SerializeField] private float slowTimeOnHit = 0.01f;
+    [SerializeField] private VisualEffect slashEffect;
     public int swordDamage = 1;
     private CinemachineImpulseSource cmImpulse;
 
@@ -32,6 +34,7 @@ public class SwordBehavior : MonoBehaviour
             //play sound FX
             //Screenshake
             StartCoroutine(SlowTimeShortly());
+            slashEffect.Play();
             cmImpulse.GenerateImpulse();
             
             //Damage Enemy
