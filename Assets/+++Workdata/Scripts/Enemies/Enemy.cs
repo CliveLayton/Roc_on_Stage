@@ -118,6 +118,7 @@ public class Enemy : MonoBehaviour , IDamageable
     public void Damage(int damageAmount)
     {
         currentHealth -= damageAmount;
+        MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.damageEnemy);
 
         if (currentHealth <= 0)
         {

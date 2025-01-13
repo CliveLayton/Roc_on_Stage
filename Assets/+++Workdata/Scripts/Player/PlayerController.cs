@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerState playerState;
     private Vector3 enemyPos;
     private bool parryToRight = true;
+    private InGameUI inGameUI;
+    private HeartBarUI heartBar;
     
     public float activeTime = 2f;
 
@@ -84,6 +86,12 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         speed = normalSpeed;
         currentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
+        heartBar = FindObjectOfType<HeartBarUI>().GetComponent<HeartBarUI>();
+        inGameUI = FindObjectOfType<InGameUI>().GetComponent<InGameUI>();
     }
 
     private void FixedUpdate()
@@ -236,6 +244,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering)
         {
             isCountering = true;
+            MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.parry);
             //anim.SetTrigger("Counter");
             StartCoroutine(ParryMovement());
             StartCoroutine(ActivateTrail(0.6f));
@@ -297,10 +306,13 @@ public class PlayerController : MonoBehaviour, IDamageable
         StartCoroutine(InvincibleTime());
         StartCoroutine(LerpBetweenColors());
         currentHealth -= damageAmount;
+        heartBar.UpdateHearts(currentHealth);
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.gameOver);
+            inGameUI.OpenGameOverMenu();
+            heartBar.UpdateHearts(maxHealth);
         }
     }
 
@@ -314,7 +326,17 @@ public class PlayerController : MonoBehaviour, IDamageable
     private IEnumerator InvincibleTime()
     {
         allowDamage = false;
-        yield return new WaitForSeconds(invincibleTime);
+        float elapsedTime = 0f;
+        yield return new WaitForSeconds(0.4f);
+
+        while (elapsedTime < invincibleTime)
+        {
+            elapsedTime += 0.2f;
+            playerMaterial.SetFloat("_Alpha", 0.5f);
+            yield return new WaitForSeconds(0.1f);
+            playerMaterial.SetFloat("_Alpha", 1f);
+            yield return new WaitForSeconds(0.1f);
+        }
         allowDamage = true;
     }
     
@@ -433,7 +455,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     #endregion
 
-    #region Animation Methods
+    #region Animation/Sound Methods
 
     private void PlayerAnimations()
     {

@@ -38,5 +38,10 @@ public class TriggerBehavior : MonoBehaviour
         }
     }
 
+    public void CollectItemSound()
+    {
+        MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.collectItem);
+    }
+
     #endregion
 }

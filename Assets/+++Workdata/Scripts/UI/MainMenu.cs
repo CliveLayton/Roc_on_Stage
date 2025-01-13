@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup mainMenuScreen;
     [SerializeField] private CanvasGroup optionScreen;
     [SerializeField] private CanvasGroup exitScreen;
-    [SerializeField] private GameObject light;
+    [SerializeField] private new GameObject light;
 
     #endregion
 

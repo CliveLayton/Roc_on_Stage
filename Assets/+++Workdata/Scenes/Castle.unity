@@ -824,7 +824,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.117500454, y: 0.0000000073989677, z: -8.754463e-10, w: 0.99307287}
-  m_LocalPosition: {x: -5, y: 0.263, z: -6.52}
+  m_LocalPosition: {x: -5.036238, y: 0.24000001, z: -7.171362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4191,6 +4191,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6705476010948536530, guid: 796f6fae4a3d3b84da160bfbf92d1fbe,
         type: 3}
+      propertyPath: music
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705476010948536530, guid: 796f6fae4a3d3b84da160bfbf92d1fbe,
+        type: 3}
+      propertyPath: scene
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705476010948536530, guid: 796f6fae4a3d3b84da160bfbf92d1fbe,
+        type: 3}
       propertyPath: sceneName
       value: Boss
       objectReference: {fileID: 0}
@@ -5624,6 +5634,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 1108810846}
   - {fileID: 1261480675}
+  music: 2
 --- !u!65 &1918057599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5682,8 +5693,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 2094704697}
+  m_Follow: {fileID: 2094704697}
   m_Lens:
     FieldOfView: 30
     OrthographicSize: 3
@@ -5712,7 +5723,7 @@ Transform:
   m_GameObject: {fileID: 1919090803}
   serializedVersion: 2
   m_LocalRotation: {x: 0.11750043, y: 0.0000000073989668, z: -8.7544616e-10, w: 0.99307287}
-  m_LocalPosition: {x: -5, y: 0.263, z: -6.52}
+  m_LocalPosition: {x: -5.036238, y: 0.24000001, z: -7.171362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6217,6 +6228,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb33bea6e6b453c4c92d4d5351dcf6cf, type: 3}
+--- !u!4 &2094704697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7997481231258327835, guid: eb33bea6e6b453c4c92d4d5351dcf6cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2094704696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2099503734
 GameObject:
   m_ObjectHideFlags: 0

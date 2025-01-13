@@ -62,7 +62,7 @@ public class GameStateManager : MonoBehaviour
             onStateChanged(currentState);
         }
         LoadSceneManager.instance.SwitchScene(mainMenuSceneName,showLoadingScreen);
-        //MusicManager.Instance.PlayMusic(MusicManager.Instance.mainMenuMusic, 0.1f);
+        MusicManager.Instance.PlayMusic(MusicManager.Instance.townMusic, 0.1f);
     }
 
     //called to start a new game. Also changes the game state.
@@ -74,6 +74,7 @@ public class GameStateManager : MonoBehaviour
             onStateChanged(currentState);
         }
         LoadSceneManager.instance.SwitchScene(level1SceneName);
+        MusicManager.Instance.PlayMusic(MusicManager.Instance.forestMusic, 0.1f);
     }
 
     public void LoadNewGameplayScene(string sceneName)

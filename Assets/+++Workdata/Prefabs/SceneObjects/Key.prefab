@@ -105,8 +105,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1332064, y: 1.1797724, z: 0.9815632}
-  m_Center: {x: -0.04833436, y: -0.008300215, z: 0.020806432}
+  m_Size: {x: 1.0658159, y: 0.84230345, z: 0.9815632}
+  m_Center: {x: 0.014938474, y: 0.06601855, z: 0.020806432}
 --- !u!114 &9033342994962188220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9033342994962188220}
+        m_TargetAssemblyTypeName: TriggerBehavior, Assembly-CSharp
+        m_MethodName: CollectItemSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

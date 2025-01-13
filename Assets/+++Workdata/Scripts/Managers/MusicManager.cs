@@ -9,21 +9,31 @@ public class MusicManager : MonoBehaviour
 
     [Header("Audio Sources")] 
     [SerializeField] private AudioSource musicAudio;
-    [SerializeField] private AudioSource ambienceAudio;
+    [SerializeField] private AudioSource playerFootsteps;
     [SerializeField] private AudioSource uiSFXAudio;
     [SerializeField] private AudioSource inGameSFXAudio;
 
     [Header("Music")] 
-    public AudioClip mainMenuMusic;
-
-    [Header("Ambience")] 
-    public AudioClip theatreAmbience;
+    public AudioClip creditsMusic;
+    public AudioClip combatMusic;
+    public AudioClip townMusic;
+    public AudioClip comicMusic;
+    public AudioClip castleMusic;
+    public AudioClip forestMusic;
 
     [Header("Player Footsteps")] 
-    public AudioClip[] woodSteps = new AudioClip[5];
+    public AudioClip playerSteps;
 
     [Header("InGame SFX")] 
-    public AudioClip openDoor;
+    public AudioClip curtainMoving;
+    public AudioClip stageRevolving;
+    public AudioClip npcHarmonica;
+    public AudioClip parry;
+    public AudioClip[] weaponAttacks = new AudioClip[3];
+    public AudioClip collectItem;
+    public AudioClip gameOver;
+    public AudioClip damageEnemy;
+    public AudioClip clawAttack;
 
     [Header("UI SFX")] 
     public AudioClip buttonHover;
@@ -52,12 +62,11 @@ public class MusicManager : MonoBehaviour
     }
 
     /// <summary>
-    /// stops current ambience and plays the new clip
+    /// plays player footsteps audio clip one time
     /// </summary>
-    /// <param name="clip">audio clip to play</param>
-    public void PlayAmbience(AudioClip clip, float fadeDuration)
+    public void PlayFootsteps()
     {
-        ambienceAudio.FadingInOut(clip, fadeDuration);
+       playerFootsteps.PlayOneShot(playerSteps);
     }
 
     /// <summary>
@@ -76,6 +85,11 @@ public class MusicManager : MonoBehaviour
     public void PlayInGameSFX(AudioClip clip)
     {
         inGameSFXAudio.PlayOneShot(clip);
+    }
+
+    public void StopInGameSFX()
+    {
+        inGameSFXAudio.Stop();
     }
 
     #endregion

@@ -15,7 +15,7 @@ public class LoadSceneManager : MonoBehaviour
     [SerializeField] private CanvasGroup loadingScreen;
 
     public static LoadSceneManager instance;
-    private string currentScene; //this saves whatever the current loaded main scene is.
+    public string currentScene; //this saves whatever the current loaded main scene is.
 
     public bool sceneLoaded = true;
 
@@ -90,11 +90,13 @@ public class LoadSceneManager : MonoBehaviour
     public void ShowLoadingScreen()
     {
         loadingScreen.ShowCanvasGroup();
+        MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.stageRevolving);
     }
 
     public void HideLoadingScreen()
     {
         loadingScreen.HideCanvasGroup();
+        MusicManager.Instance.StopInGameSFX();
     }
 
     #endregion
