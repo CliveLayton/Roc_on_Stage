@@ -7,12 +7,21 @@ using Random = UnityEngine.Random;
 public class PlayerAnimationEvents : MonoBehaviour
 {
     private PlayerController player;
+    
+    private InGameUI inGameUI;
+    private HeartBarUI heartBar;
 
     private void Awake()
     {
         player = GetComponentInParent<PlayerController>();
     }
-    
+
+    private void Start()
+    {
+        heartBar = FindObjectOfType<HeartBarUI>().GetComponent<HeartBarUI>();
+        inGameUI = FindObjectOfType<InGameUI>().GetComponent<InGameUI>();
+    }
+
     /*public void EndDodgeRoll()
     {
         player.isRolling = false;
@@ -60,5 +69,18 @@ public class PlayerAnimationEvents : MonoBehaviour
     public void FootStepsSound()
     {
         MusicManager.Instance.PlayFootsteps();
+    }
+
+    public void StopRotateOnDying()
+    {
+        player.isDying = false;
+        player.isGameover = true;
+    }
+
+    public void DyingEnd()
+    {
+        inGameUI.OpenGameOverMenu();
+        heartBar.UpdateHearts(3);
+        player.isGameover = false;
     }
 }

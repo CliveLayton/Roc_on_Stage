@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
@@ -7,7 +8,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup mainMenuScreen;
     [SerializeField] private CanvasGroup optionScreen;
     [SerializeField] private CanvasGroup exitScreen;
-    [SerializeField] private new GameObject light;
+
+    private Animator anim;
+    private string menu;
 
     #endregion
 
@@ -19,6 +22,7 @@ public class MainMenu : MonoBehaviour
         mainMenuScreen.ShowCanvasGroup();
         optionScreen.HideCanvasGroup();
         exitScreen.HideCanvasGroup();
+        anim = GetComponent<Animator>();
     }
 
     #endregion
@@ -32,31 +36,49 @@ public class MainMenu : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        mainMenuScreen.ShowCanvasGroup();
-        optionScreen.HideCanvasGroup();
-        exitScreen.HideCanvasGroup();
-        light.SetActive(true);
+        menu = "Main";
+        anim.SetTrigger("Close");
     }
 
-    public void OpenOptionMenu()
+    public void OpenOptionsMenu()
     {
-        optionScreen.ShowCanvasGroup();
-        mainMenuScreen.HideCanvasGroup();
-        exitScreen.HideCanvasGroup();
-        light.SetActive(false);
+        menu = "Options";
+        anim.SetTrigger("Close");
     }
 
     public void OpenExitMenu()
     {
-        exitScreen.ShowCanvasGroup();
-        mainMenuScreen.HideCanvasGroup();
-        optionScreen.HideCanvasGroup();
-        light.SetActive(false);
+        menu = "Exit";
+        anim.SetTrigger("Close");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public IEnumerator WaitToOpenCurtain()
+    {
+        switch (menu)
+        {
+            case "Main":
+                mainMenuScreen.ShowCanvasGroup();
+                optionScreen.HideCanvasGroup();
+                exitScreen.HideCanvasGroup();
+                break;
+            case "Options":
+                optionScreen.ShowCanvasGroup();
+                mainMenuScreen.HideCanvasGroup();
+                exitScreen.HideCanvasGroup();
+                break;
+            case "Exit":
+                exitScreen.ShowCanvasGroup();
+                mainMenuScreen.HideCanvasGroup();
+                optionScreen.HideCanvasGroup();
+                break;
+        }
+        yield return new WaitForSeconds(0.5f);
+        anim.SetTrigger("Open");
     }
 
     #endregion

@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     private SpriteRenderer playerVisual;
     private int currentHealth;
     private bool allowDamage = true;
+    public bool isDying = false;
+    public bool isGameover = false;
     public float invincibleTime = 0.5f;
     private Material playerMaterial;
     private Quaternion targetRotation;
@@ -51,7 +53,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerState playerState;
     private Vector3 enemyPos;
     private bool parryToRight = true;
-    private InGameUI inGameUI;
     private HeartBarUI heartBar;
     
     public float activeTime = 2f;
@@ -91,18 +92,22 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Start()
     {
         heartBar = FindObjectOfType<HeartBarUI>().GetComponent<HeartBarUI>();
-        inGameUI = FindObjectOfType<InGameUI>().GetComponent<InGameUI>();
+        allowDamage = true;
     }
 
     private void FixedUpdate()
     {
-        if (!isLanding && !isCountering)
+        if (!isLanding && !isCountering && !isDying && !isGameover)
         {
             PlayerMovement();
         }
-        else if (isCountering)
+        else if (isCountering || isDying && !isGameover)
         {
             playerVisual.transform.Rotate(0, 10, 0 ,Space.Self);
+        }
+        else if (isGameover)
+        {
+            playerVisual.transform.Rotate(5, 0, 0 ,Space.Self);
         }
     }
 
@@ -269,7 +274,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void PlayerMovement()
     {
-        
         if (moveInput.x > 0)
         {
             targetRotation = Quaternion.identity;
@@ -279,16 +283,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
         }
-        
+
         // foreach (var sprite in playerVisuals)
         // {
         //     sprite.transform.rotation = Quaternion.Slerp(sprite.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         // }
         playerVisual.transform.rotation = Quaternion.Slerp(playerVisual.transform.rotation, targetRotation,
             rotationSpeed * Time.deltaTime);
-        
+
         rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
-        
     }
     
 
@@ -298,22 +301,25 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void Damage(int damageAmount)
     {
-        if (!allowDamage || isCountering)
+        if (!allowDamage || isCountering || isDying)
         {
             return;
         }
-
-        StartCoroutine(InvincibleTime());
-        StartCoroutine(LerpBetweenColors());
+        
         currentHealth -= damageAmount;
         heartBar.UpdateHearts(currentHealth);
 
         if (currentHealth <= 0)
         {
+            isDying = true;
             MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.gameOver);
-            inGameUI.OpenGameOverMenu();
-            heartBar.UpdateHearts(maxHealth);
+            anim.SetTrigger("Die");
+            allowDamage = false;
+            return;
         }
+        
+        StartCoroutine(InvincibleTime());
+        StartCoroutine(LerpBetweenColors());
     }
 
     private bool isGrounded()

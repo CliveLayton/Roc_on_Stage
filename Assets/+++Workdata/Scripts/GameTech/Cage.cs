@@ -24,6 +24,6 @@ public class Cage : MonoBehaviour
 
     public void HideLoadingScreen()
     {
-        LoadSceneManager.instance.HideLoadingScreen();
+        LoadSceneManager.instance.OpenLoadingScreen();
     }
 }

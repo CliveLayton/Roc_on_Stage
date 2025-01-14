@@ -19,6 +19,8 @@ public class LoadSceneManager : MonoBehaviour
 
     public bool sceneLoaded = true;
 
+    private Animator loadingAnim;
+
     #endregion
 
     #region Unity Methods
@@ -26,6 +28,7 @@ public class LoadSceneManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        loadingAnim = loadingScreen.GetComponent<Animator>();
     }
 
     #endregion
@@ -51,6 +54,7 @@ public class LoadSceneManager : MonoBehaviour
         if (showLoadingScreen)
         {
             ShowLoadingScreen();
+            yield return new WaitForSeconds(2f);
         }
 
         sceneLoaded = false;
@@ -77,26 +81,30 @@ public class LoadSceneManager : MonoBehaviour
 
         if (showLoadingScreen)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
         }
 
         sceneLoaded = true;
-        showLoadingScreen = true;
         //lastly, we disable the loading screen and set the current scene accordingly
-        HideLoadingScreen();
+        if (showLoadingScreen)
+        {
+            OpenLoadingScreen();
+        }
+        showLoadingScreen = true;
+        
+        
         currentScene = newSceneName;
     }
 
     public void ShowLoadingScreen()
     {
         loadingScreen.ShowCanvasGroup();
-        MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.stageRevolving);
+        loadingAnim.SetTrigger("Close");
     }
 
-    public void HideLoadingScreen()
+    public void OpenLoadingScreen()
     {
-        loadingScreen.HideCanvasGroup();
-        MusicManager.Instance.StopInGameSFX();
+        loadingAnim.SetTrigger("Open");
     }
 
     #endregion

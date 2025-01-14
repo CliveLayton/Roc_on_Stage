@@ -43,7 +43,7 @@ public class GameStateManager : MonoBehaviour
     private void Start()
     {
         //when we start the game, we first want to enter the main menu
-        GoToMainMenu();
+        GoToMainMenu(false);
     }
 
     #endregion
