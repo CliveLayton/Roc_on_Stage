@@ -27,16 +27,6 @@ public class PlayerAnimationEvents : MonoBehaviour
         player.isRolling = false;
     }*/
 
-    public void StartLanding()
-    {
-        player.isLanding = true;
-    }
-
-    public void EndLanding()
-    {
-        player.isLanding = false;
-    }
-
     public void InAttacking()
     {
         player.speed = player.inActionSpeed;

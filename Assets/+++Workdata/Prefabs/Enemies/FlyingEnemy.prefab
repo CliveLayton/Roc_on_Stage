@@ -51,6 +51,8 @@ MonoBehaviour:
   maxHealth: 1
   knockbackPower: 4
   rotationSpeed: 0
+  slowAmount: 0.1
+  slowTimeOnHit: 0.02
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
     type: 3}
   stickPrefab: {fileID: 662217787892721799, guid: 9ee029ff565af5542b37bdee1753b43e,
@@ -59,6 +61,8 @@ MonoBehaviour:
     type: 3}
   isBoss1: 0
   isBoos2: 0
+  isKnight: 0
+  attackThreshold: 0
   hasTarget: 0
   targetTransform: {fileID: 0}
   dropKey: 0

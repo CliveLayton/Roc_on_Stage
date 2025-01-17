@@ -33,14 +33,15 @@ public class SwordBehavior : MonoBehaviour
             //spawn particles
             //play sound FX
             //Screenshake
-            StartCoroutine(SlowTimeShortly());
             slashEffect.Play();
-            cmImpulse.GenerateImpulse();
+            
             
             //Damage Enemy
             IDamageable iDamageable = other.gameObject.GetComponent<IDamageable>();
             if (iDamageable != null)
             {
+                StartCoroutine(SlowTimeShortly());
+                cmImpulse.GenerateImpulse();
                 iDamageable.Damage(swordDamage);
             }
             

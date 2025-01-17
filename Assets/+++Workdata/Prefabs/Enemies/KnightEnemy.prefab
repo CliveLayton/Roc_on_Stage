@@ -126,8 +126,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1724138, y: 1.8600001, z: 0.9755728}
-  m_Center: {x: 1.1476426, y: 0.93000007, z: 0.030758739}
+  m_Size: {x: 1.0574479, y: 1.8600001, z: 0.9755728}
+  m_Center: {x: 1.1910958, y: 0.93000007, z: 0.030758739}
 --- !u!1 &8773575616953278916
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1363749550238258760}
   - component: {fileID: 8764940023597077810}
   - component: {fileID: 3610633622258922171}
-  - component: {fileID: 2848324354106848303}
+  - component: {fileID: 8916741086603878377}
   m_Layer: 9
   m_Name: KnightEnemy
   m_TagString: Enemy
@@ -178,6 +178,8 @@ MonoBehaviour:
   maxHealth: 6
   knockbackPower: 4
   rotationSpeed: 6
+  slowAmount: 0.1
+  slowTimeOnHit: 0.02
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
     type: 3}
   stickPrefab: {fileID: 662217787892721799, guid: 9ee029ff565af5542b37bdee1753b43e,
@@ -186,6 +188,8 @@ MonoBehaviour:
     type: 3}
   isBoss1: 0
   isBoos2: 0
+  isKnight: 1
+  attackThreshold: 0
   hasTarget: 0
   targetTransform: {fileID: 0}
   dropKey: 0
@@ -211,7 +215,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &2848324354106848303
+--- !u!65 &8916741086603878377
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,5 +234,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5595869, y: 1.5716765, z: 1.0268946}
-  m_Center: {x: -0.018079221, y: 0.8517834, z: 0.00813967}
+  m_Size: {x: 1.9993422, y: 1.5127494, z: 0.8664598}
+  m_Center: {x: -0.029031634, y: 0.8349196, z: 0.06677011}

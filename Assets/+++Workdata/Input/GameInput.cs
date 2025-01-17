@@ -513,6 +513,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipCredits"",
+                    ""type"": ""Button"",
+                    ""id"": ""917ee2c5-c31e-49e4-9bfd-11527d5ad468"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -955,6 +964,28 @@ namespace UnityEngine.InputSystem
                     ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7460088-9adc-4d0a-a691-a567ac0831a4"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SkipCredits"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""267b41fd-4bf9-439e-83e1-87b254554447"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipCredits"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1046,6 +1077,7 @@ namespace UnityEngine.InputSystem
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
             m_UI_PauseGame = m_UI.FindAction("PauseGame", throwIfNotFound: true);
+            m_UI_SkipCredits = m_UI.FindAction("SkipCredits", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1228,6 +1260,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_UI_TrackedDevicePosition;
         private readonly InputAction m_UI_TrackedDeviceOrientation;
         private readonly InputAction m_UI_PauseGame;
+        private readonly InputAction m_UI_SkipCredits;
         public struct UIActions
         {
             private @GameInput m_Wrapper;
@@ -1243,6 +1276,7 @@ namespace UnityEngine.InputSystem
             public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
             public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
             public InputAction @PauseGame => m_Wrapper.m_UI_PauseGame;
+            public InputAction @SkipCredits => m_Wrapper.m_UI_SkipCredits;
             public InputActionMap Get() { return m_Wrapper.m_UI; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1285,6 +1319,9 @@ namespace UnityEngine.InputSystem
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
+                @SkipCredits.started += instance.OnSkipCredits;
+                @SkipCredits.performed += instance.OnSkipCredits;
+                @SkipCredits.canceled += instance.OnSkipCredits;
             }
 
             private void UnregisterCallbacks(IUIActions instance)
@@ -1322,6 +1359,9 @@ namespace UnityEngine.InputSystem
                 @PauseGame.started -= instance.OnPauseGame;
                 @PauseGame.performed -= instance.OnPauseGame;
                 @PauseGame.canceled -= instance.OnPauseGame;
+                @SkipCredits.started -= instance.OnSkipCredits;
+                @SkipCredits.performed -= instance.OnSkipCredits;
+                @SkipCredits.canceled -= instance.OnSkipCredits;
             }
 
             public void RemoveCallbacks(IUIActions instance)
@@ -1409,6 +1449,7 @@ namespace UnityEngine.InputSystem
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
             void OnPauseGame(InputAction.CallbackContext context);
+            void OnSkipCredits(InputAction.CallbackContext context);
         }
     }
 }

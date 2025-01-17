@@ -10,13 +10,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     #region Variables
 
-    private enum PlayerState
-    {
-        Claws,
-        Stick, 
-        Lance
-    }
-    
     public float normalSpeed = 5f;
     public float sprintSpeed = 10f;
     public float inActionSpeed = 3f;
@@ -24,10 +17,12 @@ public class PlayerController : MonoBehaviour, IDamageable
     //public float rollSpeed = 10f;
     //public float stompPower = 10f;
     public float rotationSpeed = 50f;
+    [SerializeField] private float slowAmount = 0.1f;
+    [SerializeField] private float slowTimeOnHit = 0.01f;
     public int maxHealth;
     public LayerMask groundLayer;
     public CinemachineVirtualCamera cm;
-
+    public GameObject parrySymbol;
     public Vector2 moveInput;
     private Rigidbody rb;
     private Animator anim;
@@ -35,7 +30,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     //private bool hasDoubleJump = true;
     //public bool isRolling = false;
     //private bool usedStompAttack = false;
-    public bool isLanding = false;
     public bool isAttacking = false;
     public bool isCountering = false;
     private bool canCounter = false;
@@ -50,10 +44,10 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Material playerMaterial;
     private Quaternion targetRotation;
     private bool hasKey = false;
-    private PlayerState playerState;
     private Vector3 enemyPos;
     private bool parryToRight = true;
     private HeartBarUI heartBar;
+    private CinemachineImpulseSource cmImpulse;
 
     public float activeTime = 2f;
 
@@ -83,7 +77,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         anim = GetComponentInChildren<Animator>();
         playerVisual = GetComponentInChildren<SpriteRenderer>();
         playerMaterial = GetComponentInChildren<SpriteRenderer>().material;
-        playerState = PlayerState.Claws;
 
         speed = normalSpeed;
         currentHealth = maxHealth;
@@ -92,12 +85,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Start()
     {
         heartBar = FindObjectOfType<HeartBarUI>().GetComponent<HeartBarUI>();
+        cmImpulse = FindObjectOfType<CinemachineImpulseSource>();
+        heartBar.UpdateHearts(maxHealth);
         allowDamage = true;
     }
 
     private void FixedUpdate()
     {
-        if (!isLanding && !isCountering && !isDying && !isGameover)
+        if (!isCountering && !isDying && !isGameover)
         {
             PlayerMovement();
         }
@@ -120,6 +115,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            parrySymbol.SetActive(true);
             canCounter = true;
             if (other.transform.position.x < transform.position.x)
             {
@@ -140,13 +136,13 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (other.gameObject.CompareTag("Stick"))
         {
-            playerState = PlayerState.Stick;
+            GameStateManager.instance.currentPlayerState = GameStateManager.PlayerState.Stick;
             GetComponentInChildren<SwordBehavior>().swordDamage = 2;
         }
 
         if (other.gameObject.CompareTag("Lance"))
         {
-            playerState = PlayerState.Lance;
+            GameStateManager.instance.currentPlayerState = GameStateManager.PlayerState.Lance;
             GetComponentInChildren<SwordBehavior>().swordDamage = 3;
         }
 
@@ -164,6 +160,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            parrySymbol.SetActive(false);
             canCounter = false;
         }
     }
@@ -228,15 +225,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (context.performed && !isAttacking && !isDying && !isGameover)
         {
             isAttacking = true;
-            switch (playerState)
+            switch (GameStateManager.instance.currentPlayerState)
             {
-                case PlayerState.Claws:
+                case GameStateManager.PlayerState.Claws:
                     attackID = 0;
                     break;
-                case PlayerState.Stick:
+                case GameStateManager.PlayerState.Stick:
                     attackID = 1;
                     break;
-                case PlayerState.Lance:
+                case GameStateManager.PlayerState.Lance:
                     attackID = 2;
                     break;
             }
@@ -306,6 +303,8 @@ public class PlayerController : MonoBehaviour, IDamageable
             return;
         }
         
+        StartCoroutine(SlowTimeShortly());
+        cmImpulse.GenerateImpulse();
         currentHealth -= damageAmount;
         heartBar.UpdateHearts(currentHealth);
 
@@ -458,6 +457,13 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
         }
     }
+    
+    private IEnumerator SlowTimeShortly()
+    {
+        Time.timeScale = slowAmount;
+        yield return new WaitForSeconds(slowTimeOnHit);
+        Time.timeScale = 1f;
+    }
 
     #endregion
 
@@ -465,19 +471,11 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void PlayerAnimations()
     {
+        anim.SetBool("isGrounded", isGrounded());
         anim.SetFloat("speed", Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
         //anim.SetBool("isDodgeRolling", isRolling);
         //anim.SetBool("isStompAttacking", usedStompAttack);
         anim.SetInteger("ActionID", attackID);
-
-        if (isGrounded())
-        {
-            anim.SetBool("isLanding", true);
-        }
-        else
-        {
-            anim.SetBool("isLanding", false);
-        }
 
         if (rb.velocity.y < 0)
         {

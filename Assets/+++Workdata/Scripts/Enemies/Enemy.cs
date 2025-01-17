@@ -1,4 +1,5 @@
 using System.Collections;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +15,8 @@ public class Enemy : MonoBehaviour , IDamageable
     [SerializeField] private GameObject lancePrefab;
     [SerializeField] private bool isBoss1;
     [SerializeField] private bool isBoos2;
+    [SerializeField] private bool isKnight;
+    [SerializeField] private float attackThreshold = 0.0f;
     // [SerializeField] private float outlineThickness = 5f;
     // [ColorUsage(showAlpha:true, hdr:true)]
     // [SerializeField] private Color outlineGlowColor;
@@ -33,6 +36,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private Material enemyMaterial;
 
     private PlayerController player;
+    
 
     #endregion
 
@@ -117,6 +121,20 @@ public class Enemy : MonoBehaviour , IDamageable
 
     public void Damage(int damageAmount)
     {
+        if (isKnight)
+        {
+            //get the direction from the enemy to the attacker
+            Vector3 directionToAttacker = (targetTransform.position - visualChild.position).normalized;
+
+            float dotProduct = Vector3.Dot(visualChild.right, directionToAttacker);
+            
+            //Check if the attacker is behind the enemy
+            if (dotProduct >= attackThreshold)
+            {
+                return;
+            }
+        }
+        
         currentHealth -= damageAmount;
         MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.damageEnemy);
 
@@ -134,7 +152,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private IEnumerator EnemyStunned(float stunTime)
     {
         agent.isStopped = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(stunTime);
         agent.isStopped = false;
     }
     
@@ -198,6 +216,7 @@ public class Enemy : MonoBehaviour , IDamageable
 
         Destroy(gameObject);
     }
+
 
     #endregion
    

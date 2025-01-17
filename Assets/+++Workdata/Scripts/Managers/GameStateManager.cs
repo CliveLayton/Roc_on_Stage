@@ -24,12 +24,21 @@ public class GameStateManager : MonoBehaviour
         InMainMenu = 0,
         InGame = 1
     }
+    
+    public enum PlayerState
+    {
+        Claws,
+        Stick, 
+        Lance
+    }
 
     //this event notifies any objects that need to know about the changing of the game state.
     public event Action<GameState> onStateChanged;
     
     //the current state
     public GameState currentState { get; private set; } = GameState.InMainMenu;
+
+    public PlayerState currentPlayerState = PlayerState.Claws;
 
     #endregion
 
