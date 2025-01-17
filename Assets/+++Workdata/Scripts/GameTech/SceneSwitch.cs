@@ -15,10 +15,19 @@ public class SceneSwitch : MonoBehaviour
 
     public NextScene scene;
 
+    private PlayerInputManager playerInput;
+
+    private void Start()
+    {
+        playerInput = FindObjectOfType<PlayerInputManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            playerInput.enabled = false;
+            
             switch (scene)
             {
                 case NextScene.Forest:

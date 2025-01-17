@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Vector3 enemyPos;
     private bool parryToRight = true;
     private HeartBarUI heartBar;
-    
+
     public float activeTime = 2f;
 
     //Mesh Trail Variables
@@ -179,7 +179,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded())
+        if (context.performed && isGrounded() && !isDying && !isGameover)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower), ForceMode.Impulse);
             anim.SetBool("isJumping", true);
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnAttacking(InputAction.CallbackContext context)
     {
-        if (context.performed && !isAttacking)
+        if (context.performed && !isAttacking && !isDying && !isGameover)
         {
             isAttacking = true;
             switch (playerState)
@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void OnCounter(InputAction.CallbackContext context)
     {
-        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering)
+        if (context.performed && !isAttacking && isGrounded() && canCounter && !isCountering && !isDying && !isGameover)
         {
             isCountering = true;
             MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.parry);

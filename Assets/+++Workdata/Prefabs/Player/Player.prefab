@@ -227,6 +227,8 @@ MonoBehaviour:
   isAttacking: 0
   isCountering: 0
   attackID: 0
+  isDying: 0
+  isGameover: 0
   invincibleTime: 1.5
   activeTime: 2
   meshRefreshRate: 0.1
@@ -292,7 +294,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953370934761965818}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9eac941c6eefe48a22f5f9f4868ba1, type: 3}
   m_Name: 

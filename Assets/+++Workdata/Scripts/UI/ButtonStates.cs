@@ -8,6 +8,8 @@ public class ButtonStates : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
 {
     #region Variables
 
+    [SerializeField] private GameObject blockImage;
+
     private Button button;
 
     #endregion
@@ -26,6 +28,8 @@ public class ButtonStates : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
     public void OnPointerDown(PointerEventData eventData)
     {
         MusicManager.Instance.PlayUISFX(MusicManager.Instance.buttonPress);
+        StartCoroutine(SetInteractable());
+        button.onClick?.Invoke();
     }
     
     /// <summary>
@@ -44,16 +48,13 @@ public class ButtonStates : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
     /// <summary>
     /// deactivate interactable of button and set it back active after 0.2 seconds
     /// </summary>
-    private void SetInteractable()
+    private IEnumerator SetInteractable()
     {
-        button.interactable = false;
-        StartCoroutine(ResetInteractable());
-    }
+        blockImage.SetActive(true);
 
-    private IEnumerator ResetInteractable()
-    {
-        yield return new WaitForSeconds(0.2f);
-        button.interactable = true;
+        yield return new WaitForSeconds(1f);
+
+        blockImage.SetActive(false);
     }
 
     #endregion

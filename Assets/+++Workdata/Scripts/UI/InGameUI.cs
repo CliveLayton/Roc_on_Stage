@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class InGameUI : MonoBehaviour
 {
     #region Variables
-
+    
     //all objects in the InGameHUD
     [SerializeField] private CanvasGroup optionMenu;
     [SerializeField] private CanvasGroup controlsMenu;
@@ -105,7 +105,6 @@ public class InGameUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameStateManager.instance.LoadNewGameplayScene(LoadSceneManager.instance.currentScene);
-        gameOverMenu.HideCanvasGroup();
     }
 
     public void OpenGameOverMenu()
@@ -116,7 +115,7 @@ public class InGameUI : MonoBehaviour
     
     public void GoToMainMenu()
     {
-        GameStateManager.instance.GoToMainMenu();
+        GameStateManager.instance.GoToMainMenu(false);
         CloseInGameUI();
     }
 

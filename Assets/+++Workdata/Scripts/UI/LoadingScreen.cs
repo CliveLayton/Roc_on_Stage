@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LoadingScreen : MonoBehaviour
 {
+    [SerializeField] private GameObject playerLifeBar;
+    [SerializeField] private CanvasGroup gameOverMenu;
     private CanvasGroup loadingPanel;
 
     private void Awake()
@@ -14,6 +16,8 @@ public class LoadingScreen : MonoBehaviour
 
     public void HideLoadingScreen()
     {
+        PlayerInputManager playerInput = FindObjectOfType<PlayerInputManager>();
+        playerInput.enabled = true;
         loadingPanel.HideCanvasGroup();
     }
 
@@ -24,6 +28,8 @@ public class LoadingScreen : MonoBehaviour
 
     public void StartMusic()
     {
+        gameOverMenu.HideCanvasGroup();
+        playerLifeBar.SetActive(true);
         MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.stageRevolving);
     }
 }
