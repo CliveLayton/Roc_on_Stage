@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 806c6634021cbcd4290bf6fc234d4d54
+guid: 7b80a99adef5b1148bcf6d148dfc3d9b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_0
+      name: Rocco_RunLance_Aiden_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1011
-        width: 513
-        height: 626
+        x: 3
+        y: 518
+        width: 429
+        height: 339
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b95c7a844ec9d424e9daadb74be4b5ad
-      internalID: -1688846375
+      spriteID: 7451d2ee687a3f64489fe83b72ac4637
+      internalID: -1647298434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_1
+      name: Rocco_RunLance_Aiden_1
       rect:
         serializedVersion: 2
-        x: 551
-        y: 1015
-        width: 519
-        height: 624
+        x: 442
+        y: 517
+        width: 426
+        height: 335
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85345235a7d34574fb0eee9460d60c8b
-      internalID: -1768127001
+      spriteID: 190c9ae585ad1604a803d53a4c79256d
+      internalID: -561890037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_3
+      name: Rocco_RunLance_Aiden_2
       rect:
         serializedVersion: 2
-        x: 1093
-        y: 1016
-        width: 555
-        height: 624
+        x: 879
+        y: 518
+        width: 428
+        height: 339
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e0b2d38fb127484e8878b6af220c8d1
-      internalID: -553365140
+      spriteID: 1d70b0a0527f6ca42903d890ea5d8ae1
+      internalID: -777314964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_5
+      name: Rocco_RunLance_Aiden_3
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 1011
-        width: 568
-        height: 625
+        x: 1314
+        y: 523
+        width: 422
+        height: 347
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e852d5c0c0fa64684d472e7769f70b
-      internalID: 1963726938
+      spriteID: 581c68876b5f11a48a1ac93860be7c9d
+      internalID: 1340951489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_7
+      name: Rocco_RunLance_Aiden_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 280
-        width: 568
-        height: 632
+        x: 1740
+        y: 518
+        width: 429
+        height: 347
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1486db78499cb214ab1856d23dbd6e02
-      internalID: -117632544
+      spriteID: 7056bf891fa3c2348b0c43a005d4246e
+      internalID: 353597826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_8
+      name: Rocco_RunLance_Aiden_6
       rect:
         serializedVersion: 2
-        x: 593
-        y: 282
-        width: 577
-        height: 622
+        x: 22
+        y: 141
+        width: 433
+        height: 346
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7f7da181b0d9c245b3e6f7afe0e57e1
-      internalID: -1285912301
+      spriteID: b9cbe99b243089b47b03c4d3d54d6ab7
+      internalID: -1412001877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_9
+      name: Rocco_RunLance_Aiden_7
       rect:
         serializedVersion: 2
-        x: 1178
-        y: 287
-        width: 561
-        height: 631
+        x: 466
+        y: 139
+        width: 430
+        height: 346
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a030ecc1b9299e640bc7c322c9035371
-      internalID: -2003848211
+      spriteID: 401f848d284af8644bae4ced8f99d4ab
+      internalID: -845868806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPC_HappyDance_Aiden_11
+      name: Rocco_RunLance_Aiden_8
       rect:
         serializedVersion: 2
-        x: 1763
-        y: 288
-        width: 597
-        height: 622
+        x: 913
+        y: 140
+        width: 422
+        height: 347
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2573722549e923249af15699b853fb03
-      internalID: 735231432
+      spriteID: 7bc8729e3be3ae74c986f248849fd66e
+      internalID: -492396804
       vertices: []
       indices: 
       edges: []
@@ -275,18 +275,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NPC_HappyDance_Aiden_0: -1688846375
-      NPC_HappyDance_Aiden_1: -1768127001
-      NPC_HappyDance_Aiden_10: -396329119
-      NPC_HappyDance_Aiden_11: 735231432
-      NPC_HappyDance_Aiden_2: -1924424388
-      NPC_HappyDance_Aiden_3: -553365140
-      NPC_HappyDance_Aiden_4: -1417911559
-      NPC_HappyDance_Aiden_5: 1963726938
-      NPC_HappyDance_Aiden_6: -1099028972
-      NPC_HappyDance_Aiden_7: -117632544
-      NPC_HappyDance_Aiden_8: -1285912301
-      NPC_HappyDance_Aiden_9: -2003848211
+      Rocco_RunLance_Aiden_0: -1647298434
+      Rocco_RunLance_Aiden_1: -561890037
+      Rocco_RunLance_Aiden_10: -867853011
+      Rocco_RunLance_Aiden_11: 1745417889
+      Rocco_RunLance_Aiden_12: -2054188842
+      Rocco_RunLance_Aiden_2: -777314964
+      Rocco_RunLance_Aiden_3: 1340951489
+      Rocco_RunLance_Aiden_4: 353597826
+      Rocco_RunLance_Aiden_5: 1183807826
+      Rocco_RunLance_Aiden_6: -1412001877
+      Rocco_RunLance_Aiden_7: -845868806
+      Rocco_RunLance_Aiden_8: -492396804
+      Rocco_RunLance_Aiden_9: 2000411454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

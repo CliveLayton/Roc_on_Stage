@@ -18,6 +18,7 @@ public class GameStateManager : MonoBehaviour
     public const string level2SceneName = "Town";
     public const string level3SceneName = "Castle";
     public const string level4SceneName = "Boss";
+    public const string creditSceneName = "Credits";
 
     public enum GameState
     {
@@ -39,6 +40,11 @@ public class GameStateManager : MonoBehaviour
     public GameState currentState { get; private set; } = GameState.InMainMenu;
 
     public PlayerState currentPlayerState = PlayerState.Claws;
+
+    public int maxNpcCounter = 3;
+    public int npcCounter = 0;
+    public int playerKeys = 0;
+    public int playerSwordDamage = 1;
 
     #endregion
 
@@ -72,6 +78,7 @@ public class GameStateManager : MonoBehaviour
         }
         LoadSceneManager.instance.SwitchScene(mainMenuSceneName,showLoadingScreen);
         MusicManager.Instance.PlayMusic(MusicManager.Instance.townMusic, 0.1f);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     //called to start a new game. Also changes the game state.
@@ -84,6 +91,7 @@ public class GameStateManager : MonoBehaviour
         }
         LoadSceneManager.instance.SwitchScene(level1SceneName);
         MusicManager.Instance.PlayMusic(MusicManager.Instance.forestMusic, 0.1f);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void LoadNewGameplayScene(string sceneName)

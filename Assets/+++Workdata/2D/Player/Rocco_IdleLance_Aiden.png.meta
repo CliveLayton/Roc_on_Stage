@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 600c341ae8755264398ba4104bc6306e
+guid: 424cd6972278edf4899cb6946eeebf07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stock_AidenOchmann_0
+      name: Rocco_IdleLance_Aiden_0
       rect:
         serializedVersion: 2
-        x: 847
-        y: 605
-        width: 247
-        height: 171
+        x: 913
+        y: 140
+        width: 421
+        height: 347
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8c3252589574e14ca35a82f921a6d9b
-      internalID: 349273012
+      spriteID: 0dad4107040550f438493e0d1e61b1ce
+      internalID: -854359658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocco_IdleLance_Aiden_1
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 136
+        width: 425
+        height: 339
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ebd13d5a2984b42a6ee17bd9a9e640
+      internalID: 936411353
       vertices: []
       indices: 
       edges: []
@@ -120,7 +141,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d3853f5c371f9e744ba8bfa507e15d12
+    spriteID: 9a32f88aa5c61e042825bf61e82eef6f
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +149,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Stock_AidenOchmann_0: 349273012
+      Rocco_IdleLance_Aiden_0: -854359658
+      Rocco_IdleLance_Aiden_1: 936411353
+      Rocco_IdleLance_Aiden_2: 761819837
+      Rocco_IdleLance_Aiden_3: -739938222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

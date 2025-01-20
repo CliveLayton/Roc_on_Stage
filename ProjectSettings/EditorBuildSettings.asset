@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/+++Workdata/Scenes/Boss.unity
     guid: 3c8401c0d9aa0bc4b95c419fe555acd1
+  - enabled: 1
+    path: Assets/+++Workdata/Scenes/Credits.unity
+    guid: 906355ce873bd9f439964746f10aaa8a
   m_configObjects: {}

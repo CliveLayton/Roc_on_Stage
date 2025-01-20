@@ -13,7 +13,7 @@ public class SwordBehavior : MonoBehaviour
     [SerializeField] private float slowAmount = 0.1f;
     [SerializeField] private float slowTimeOnHit = 0.01f;
     [SerializeField] private VisualEffect slashEffect;
-    public int swordDamage = 1;
+    private int swordDamage = 1;
     private CinemachineImpulseSource cmImpulse;
 
     #endregion
@@ -23,6 +23,7 @@ public class SwordBehavior : MonoBehaviour
     private void Start()
     {
         cmImpulse = FindObjectOfType<CinemachineImpulseSource>();
+        swordDamage = GameStateManager.instance.playerSwordDamage;
     }
 
     private void OnTriggerEnter(Collider other)

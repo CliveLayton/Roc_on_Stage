@@ -83,6 +83,8 @@ public class InGameUI : MonoBehaviour
             playerInput = FindObjectOfType<PlayerInputManager>().gameObject.GetComponent<PlayerInputManager>();
             playerInput.enabled = false;
         }
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
         
         optionMenu.ShowCanvasGroup();
         controlsMenu.HideCanvasGroup();
@@ -99,16 +101,20 @@ public class InGameUI : MonoBehaviour
         {
             playerInput.enabled = true;
         }
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ReloadScene()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         GameStateManager.instance.LoadNewGameplayScene(LoadSceneManager.instance.currentScene);
     }
 
     public void OpenGameOverMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
         gameOverMenu.ShowCanvasGroup();
         Time.timeScale = 0f;
     }

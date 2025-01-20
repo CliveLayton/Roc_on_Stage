@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Cage : MonoBehaviour
 {
+    [SerializeField] private Animator npcAnim;
     private Animator anim;
 
     private void Awake()
@@ -15,6 +16,7 @@ public class Cage : MonoBehaviour
     public void OpenCage()
     {
         anim.SetTrigger("Open");
+        GameStateManager.instance.npcCounter += 1;
     }
 
     public void ShowLoadingScreen()
@@ -25,5 +27,10 @@ public class Cage : MonoBehaviour
     public void HideLoadingScreen()
     {
         LoadSceneManager.instance.OpenLoadingScreen();
+    }
+
+    public void HappyNpc()
+    {
+        npcAnim.SetTrigger("Happy");
     }
 }

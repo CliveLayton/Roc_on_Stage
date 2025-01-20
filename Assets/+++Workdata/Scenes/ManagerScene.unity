@@ -2311,6 +2311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fb6bc6a46e2394ca8d96b6432a7a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPlayerState: 0
+  maxNpcCounter: 3
+  npcCounter: 0
 --- !u!1 &926374415
 GameObject:
   m_ObjectHideFlags: 0

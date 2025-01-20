@@ -193,19 +193,25 @@ public class Enemy : MonoBehaviour , IDamageable
             yield return null;
         }
 
+        Vector3 dropPoint = transform.position;
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit))
+        {
+           dropPoint = hit.point;
+        }
+
         if (dropKey)
         {
-            Instantiate(keyPrefab, transform.position, Quaternion.identity);
+            Instantiate(keyPrefab, dropPoint, Quaternion.identity);
         }
 
         if (isBoss1)
         {
-            Instantiate(stickPrefab, transform.position, Quaternion.identity);
+            Instantiate(stickPrefab, dropPoint, Quaternion.identity);
         }
 
         if (isBoos2)
         {
-            Instantiate(lancePrefab, transform.position, Quaternion.identity);
+            Instantiate(lancePrefab, dropPoint, Quaternion.identity);
         }
 
         while (transform.position.y > -5f)

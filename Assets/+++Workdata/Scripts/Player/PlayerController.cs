@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float invincibleTime = 0.5f;
     private Material playerMaterial;
     private Quaternion targetRotation;
-    private bool hasKey = false;
     private Vector3 enemyPos;
     private bool parryToRight = true;
     private HeartBarUI heartBar;
@@ -80,6 +79,19 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         speed = normalSpeed;
         currentHealth = maxHealth;
+
+        switch (GameStateManager.instance.currentPlayerState)
+        {
+            case GameStateManager.PlayerState.Claws:
+                attackID = 0;
+                break;
+            case GameStateManager.PlayerState.Stick:
+                attackID = 1;
+                break;
+            case GameStateManager.PlayerState.Lance:
+                attackID = 2;
+                break;
+        }
     }
 
     private void Start()
@@ -131,26 +143,28 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         if (other.gameObject.CompareTag("Key"))
         {
-            hasKey = true;
+            GameStateManager.instance.playerKeys += 1;
         }
 
         if (other.gameObject.CompareTag("Stick"))
         {
             GameStateManager.instance.currentPlayerState = GameStateManager.PlayerState.Stick;
-            GetComponentInChildren<SwordBehavior>().swordDamage = 2;
+            attackID = 1;
+            GameStateManager.instance.playerSwordDamage = 2;
         }
 
         if (other.gameObject.CompareTag("Lance"))
         {
             GameStateManager.instance.currentPlayerState = GameStateManager.PlayerState.Lance;
-            GetComponentInChildren<SwordBehavior>().swordDamage = 3;
+            attackID = 2;
+            GameStateManager.instance.playerSwordDamage = 3;
         }
 
         if (other.gameObject.CompareTag("Blockade"))
         {
-            if (isAttacking && hasKey)
+            if (isAttacking && GameStateManager.instance.playerKeys > 0)
             {
-                hasKey = false;
+                GameStateManager.instance.playerKeys -= 1;
                 other.GetComponent<Cage>().OpenCage();
             }
         }
@@ -225,18 +239,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (context.performed && !isAttacking && !isDying && !isGameover)
         {
             isAttacking = true;
-            switch (GameStateManager.instance.currentPlayerState)
-            {
-                case GameStateManager.PlayerState.Claws:
-                    attackID = 0;
-                    break;
-                case GameStateManager.PlayerState.Stick:
-                    attackID = 1;
-                    break;
-                case GameStateManager.PlayerState.Lance:
-                    attackID = 2;
-                    break;
-            }
             anim.SetTrigger("Attack");
         }
     }
