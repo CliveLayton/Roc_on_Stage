@@ -1,21 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CreditsLogic : MonoBehaviour
+public class Story : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField] private TextMeshProUGUI npcCounterText;
-
     private GameInput inputActions;
-    
+
     //in game menu script
     private GameObject inGameUI;
     
-    //bool to check if player can skip the credits
+    //bool to check if player can skip the story
     private bool allowSkip;
 
     #endregion
@@ -31,11 +29,10 @@ public class CreditsLogic : MonoBehaviour
             inGameUI.SetActive(false);
         }
 
-        npcCounterText.text = GameStateManager.instance.npcCounter + " / " + GameStateManager.instance.maxNpcCounter;
-        
         //start music
-
-        StartCoroutine(WaitforSkip());
+        MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.storyLine);
+        
+        StartCoroutine(WaitForSkip());
     }
 
     private void OnEnable()
@@ -54,32 +51,31 @@ public class CreditsLogic : MonoBehaviour
 
     #endregion
 
-    #region CreditsLogic Methods
+    #region Story Methods
 
-    //if the allowSkip is true, loads main menu and set allowSkip back to false
-    void SkipCredits(InputAction.CallbackContext context)
+    private void SkipCredits(InputAction.CallbackContext context)
     {
         if (context.performed && allowSkip)
         {
             allowSkip = false;
-            GameStateManager.instance.GoToMainMenu();
+            StartLevel();
         }
-            
     }
 
-    //loads the main menu
-    public void EndCredits()
+    public void StartLevel()
     {
-        GameStateManager.instance.GoToMainMenu();
+        MusicManager.Instance.StopInGameSFX();
+        GameStateManager.instance.StartNewGame();
     }
 
     /// <summary>
     /// waits 2 seconds and turn allowSkip to true
     /// </summary>
     /// <returns></returns>
-    private IEnumerator WaitforSkip()
+    private IEnumerator WaitForSkip()
     {
         yield return new WaitForSeconds(2f);
+        
         allowSkip = true;
     }
 

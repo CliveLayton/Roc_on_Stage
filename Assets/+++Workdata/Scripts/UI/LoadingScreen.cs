@@ -17,7 +17,10 @@ public class LoadingScreen : MonoBehaviour
     public void HideLoadingScreen()
     {
         PlayerInputManager playerInput = FindObjectOfType<PlayerInputManager>();
-        playerInput.enabled = true;
+        if (playerInput != null)
+        {
+            playerInput.enabled = true;
+        }
         loadingPanel.HideCanvasGroup();
     }
 

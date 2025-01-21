@@ -28,7 +28,10 @@ public class ButtonStates : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
     public void OnPointerDown(PointerEventData eventData)
     {
         MusicManager.Instance.PlayUISFX(MusicManager.Instance.buttonPress);
-        StartCoroutine(SetInteractable());
+        if (GameStateManager.instance.currentState == GameStateManager.GameState.InMainMenu)
+        {
+            StartCoroutine(SetInteractable());
+        }
         button.onClick?.Invoke();
     }
     

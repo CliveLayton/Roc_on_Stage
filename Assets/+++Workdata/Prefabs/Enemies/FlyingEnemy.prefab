@@ -32,8 +32,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 651301985922464799}
   - {fileID: 3983774469679159263}
+  - {fileID: 651301985922464799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &875967841134058678
@@ -51,8 +51,6 @@ MonoBehaviour:
   maxHealth: 1
   knockbackPower: 4
   rotationSpeed: 0
-  slowAmount: 0.1
-  slowTimeOnHit: 0.02
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
     type: 3}
   stickPrefab: {fileID: 662217787892721799, guid: 9ee029ff565af5542b37bdee1753b43e,
@@ -66,6 +64,7 @@ MonoBehaviour:
   hasTarget: 0
   targetTransform: {fileID: 0}
   dropKey: 0
+  isDying: 0
 --- !u!195 &1521045329829992782
 NavMeshAgent:
   m_ObjectHideFlags: 0

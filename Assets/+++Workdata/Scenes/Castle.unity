@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 86027175}
   - component: {fileID: 86027177}
   - component: {fileID: 86027176}
+  - component: {fileID: 86027178}
   m_Layer: 0
   m_Name: kiste1 (1)
   m_TagString: Untagged
@@ -288,6 +289,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &86027178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86027174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &95659250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -367,6 +384,7 @@ GameObject:
   - component: {fileID: 105571609}
   - component: {fileID: 105571611}
   - component: {fileID: 105571610}
+  - component: {fileID: 105571612}
   m_Layer: 0
   m_Name: Kronleuchter_2_RocOnStage_AnnaKania (2)
   m_TagString: Untagged
@@ -462,6 +480,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &105571612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105571608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &163101438
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +507,7 @@ GameObject:
   - component: {fileID: 163101439}
   - component: {fileID: 163101441}
   - component: {fileID: 163101440}
+  - component: {fileID: 163101442}
   m_Layer: 0
   m_Name: kiste3
   m_TagString: Untagged
@@ -568,6 +603,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &163101442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163101438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &168839746
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +630,7 @@ GameObject:
   - component: {fileID: 168839747}
   - component: {fileID: 168839749}
   - component: {fileID: 168839748}
+  - component: {fileID: 168839750}
   m_Layer: 0
   m_Name: Kerzenstander_2_RocOnStage_AnnaKania
   m_TagString: Untagged
@@ -674,6 +726,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &168839750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168839746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &174321814
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +753,7 @@ GameObject:
   - component: {fileID: 174321815}
   - component: {fileID: 174321817}
   - component: {fileID: 174321816}
+  - component: {fileID: 174321818}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (1)
   m_TagString: Untagged
@@ -780,6 +849,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &174321818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174321814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &302752199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1296,7 @@ GameObject:
   - component: {fileID: 446422362}
   - component: {fileID: 446422364}
   - component: {fileID: 446422363}
+  - component: {fileID: 446422365}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania
   m_TagString: Untagged
@@ -1306,6 +1392,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &446422365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446422361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &467149881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1419,7 @@ GameObject:
   - component: {fileID: 467149882}
   - component: {fileID: 467149884}
   - component: {fileID: 467149883}
+  - component: {fileID: 467149885}
   m_Layer: 0
   m_Name: Kerzenstander_2_RocOnStage_AnnaKania (1)
   m_TagString: Untagged
@@ -1412,6 +1515,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &467149885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467149881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &469836335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1978,7 @@ GameObject:
   - component: {fileID: 761355686}
   - component: {fileID: 761355688}
   - component: {fileID: 761355687}
+  - component: {fileID: 761355689}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (5)
   m_TagString: Untagged
@@ -1954,6 +2074,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &761355689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761355685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &773486627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2493,7 @@ GameObject:
   - component: {fileID: 964134193}
   - component: {fileID: 964134195}
   - component: {fileID: 964134194}
+  - component: {fileID: 964134196}
   m_Layer: 0
   m_Name: Kerzenstander_2_RocOnStage_AnnaKania (3)
   m_TagString: Untagged
@@ -2452,6 +2589,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &964134196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964134192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &976937189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2616,7 @@ GameObject:
   - component: {fileID: 976937190}
   - component: {fileID: 976937192}
   - component: {fileID: 976937191}
+  - component: {fileID: 976937193}
   m_Layer: 0
   m_Name: kiste2 (4)
   m_TagString: Untagged
@@ -2558,6 +2712,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &976937193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976937189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &988634153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,6 +2845,7 @@ GameObject:
   - component: {fileID: 1001128003}
   - component: {fileID: 1001128005}
   - component: {fileID: 1001128004}
+  - component: {fileID: 1001128006}
   m_Layer: 0
   m_Name: kiste3 (1)
   m_TagString: Untagged
@@ -2770,6 +2941,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1001128006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001128002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1009036861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2872,6 +3059,7 @@ GameObject:
   - component: {fileID: 1032963953}
   - component: {fileID: 1032963955}
   - component: {fileID: 1032963954}
+  - component: {fileID: 1032963956}
   m_Layer: 0
   m_Name: kiste1 (2)
   m_TagString: Untagged
@@ -2967,6 +3155,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1032963956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032963952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1051099447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,6 +3182,7 @@ GameObject:
   - component: {fileID: 1051099448}
   - component: {fileID: 1051099450}
   - component: {fileID: 1051099449}
+  - component: {fileID: 1051099451}
   m_Layer: 0
   m_Name: kiste3 (2)
   m_TagString: Untagged
@@ -3073,6 +3278,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1051099451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051099447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1084557798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,6 +3305,7 @@ GameObject:
   - component: {fileID: 1084557799}
   - component: {fileID: 1084557801}
   - component: {fileID: 1084557800}
+  - component: {fileID: 1084557802}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (3)
   m_TagString: Untagged
@@ -3179,6 +3401,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1084557802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084557798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1108810844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3276,6 +3514,7 @@ GameObject:
   - component: {fileID: 1143238172}
   - component: {fileID: 1143238174}
   - component: {fileID: 1143238173}
+  - component: {fileID: 1143238175}
   m_Layer: 0
   m_Name: kiste1
   m_TagString: Untagged
@@ -3371,6 +3610,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1143238175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143238171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1189937775
 GameObject:
   m_ObjectHideFlags: 3
@@ -3479,6 +3734,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3487,7 +3747,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.82
+      value: 2.37
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -3563,6 +3823,7 @@ GameObject:
   - component: {fileID: 1258375322}
   - component: {fileID: 1258375324}
   - component: {fileID: 1258375323}
+  - component: {fileID: 1258375325}
   m_Layer: 0
   m_Name: kiste2
   m_TagString: Untagged
@@ -3658,6 +3919,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1258375325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258375321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1261480673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3887,6 +4164,7 @@ GameObject:
   - component: {fileID: 1346451542}
   - component: {fileID: 1346451544}
   - component: {fileID: 1346451543}
+  - component: {fileID: 1346451545}
   m_Layer: 0
   m_Name: kiste1 (3)
   m_TagString: Untagged
@@ -3982,6 +4260,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1346451545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346451541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1355147992
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,6 +4393,7 @@ GameObject:
   - component: {fileID: 1366819877}
   - component: {fileID: 1366819879}
   - component: {fileID: 1366819878}
+  - component: {fileID: 1366819880}
   m_Layer: 0
   m_Name: Kronleuchter_2_RocOnStage_AnnaKania
   m_TagString: Untagged
@@ -4194,6 +4489,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1366819880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366819876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1372060033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4307,7 +4618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -4335,7 +4646,7 @@ Transform:
   m_GameObject: {fileID: 1373395096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.9, z: 0}
+  m_LocalPosition: {x: 0, y: 5.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4458,6 +4769,7 @@ GameObject:
   - component: {fileID: 1479308494}
   - component: {fileID: 1479308496}
   - component: {fileID: 1479308495}
+  - component: {fileID: 1479308497}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (8)
   m_TagString: Untagged
@@ -4553,6 +4865,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1479308497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479308493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1535780764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4720,6 +5048,7 @@ GameObject:
   - component: {fileID: 1575809969}
   - component: {fileID: 1575809971}
   - component: {fileID: 1575809970}
+  - component: {fileID: 1575809972}
   m_Layer: 0
   m_Name: Kronleuchter_2_RocOnStage_AnnaKania (4)
   m_TagString: Untagged
@@ -4736,7 +5065,7 @@ Transform:
   m_GameObject: {fileID: 1575809968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.29, y: 3.49, z: 3.85}
+  m_LocalPosition: {x: 23.29, y: 2.3, z: 3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4815,6 +5144,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1575809972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575809968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1576817214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,6 +5392,7 @@ GameObject:
   - component: {fileID: 1656837336}
   - component: {fileID: 1656837338}
   - component: {fileID: 1656837337}
+  - component: {fileID: 1656837339}
   m_Layer: 0
   m_Name: Kronleuchter_2_RocOnStage_AnnaKania (3)
   m_TagString: Untagged
@@ -5142,6 +5488,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1656837339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656837335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1724254854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,6 +5551,7 @@ GameObject:
   - component: {fileID: 1729031384}
   - component: {fileID: 1729031386}
   - component: {fileID: 1729031385}
+  - component: {fileID: 1729031387}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (4)
   m_TagString: Untagged
@@ -5284,6 +5647,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1729031387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729031383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1757725987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,6 +5674,7 @@ GameObject:
   - component: {fileID: 1757725988}
   - component: {fileID: 1757725990}
   - component: {fileID: 1757725989}
+  - component: {fileID: 1757725991}
   m_Layer: 0
   m_Name: Kerzenstander_2_RocOnStage_AnnaKania (2)
   m_TagString: Untagged
@@ -5390,6 +5770,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1757725991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757725987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1780034636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,6 +5836,7 @@ GameObject:
   - component: {fileID: 1802160622}
   - component: {fileID: 1802160624}
   - component: {fileID: 1802160623}
+  - component: {fileID: 1802160625}
   m_Layer: 0
   m_Name: kiste2 (3)
   m_TagString: Untagged
@@ -5535,6 +5932,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1802160625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802160621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1806900113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,6 +5959,7 @@ GameObject:
   - component: {fileID: 1806900114}
   - component: {fileID: 1806900116}
   - component: {fileID: 1806900115}
+  - component: {fileID: 1806900117}
   m_Layer: 0
   m_Name: Kronleuchter_2_RocOnStage_AnnaKania (1)
   m_TagString: Untagged
@@ -5641,6 +6055,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1806900117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806900113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1812637559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5654,6 +6084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5662,7 +6097,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.82
+      value: 2.37
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -5738,6 +6173,7 @@ GameObject:
   - component: {fileID: 1823717050}
   - component: {fileID: 1823717052}
   - component: {fileID: 1823717051}
+  - component: {fileID: 1823717053}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (6)
   m_TagString: Untagged
@@ -5833,6 +6269,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1823717053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823717049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1859368804
 GameObject:
   m_ObjectHideFlags: 0
@@ -6525,6 +6977,7 @@ GameObject:
   - component: {fileID: 1981399575}
   - component: {fileID: 1981399577}
   - component: {fileID: 1981399576}
+  - component: {fileID: 1981399578}
   m_Layer: 0
   m_Name: kiste2 (1)
   m_TagString: Untagged
@@ -6620,6 +7073,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1981399578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981399574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2073331491
 GameObject:
   m_ObjectHideFlags: 0
@@ -6631,6 +7100,7 @@ GameObject:
   - component: {fileID: 2073331492}
   - component: {fileID: 2073331494}
   - component: {fileID: 2073331493}
+  - component: {fileID: 2073331495}
   m_Layer: 0
   m_Name: Banner_1_RocOnStage_AnnaKania (2)
   m_TagString: Untagged
@@ -6726,6 +7196,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2073331495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073331491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &2094704696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6816,6 +7302,7 @@ GameObject:
   - component: {fileID: 2099503735}
   - component: {fileID: 2099503737}
   - component: {fileID: 2099503736}
+  - component: {fileID: 2099503738}
   m_Layer: 0
   m_Name: kiste3 (3)
   m_TagString: Untagged
@@ -6911,6 +7398,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2099503738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099503734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.7, y: 5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

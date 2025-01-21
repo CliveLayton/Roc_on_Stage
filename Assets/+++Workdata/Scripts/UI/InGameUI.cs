@@ -121,8 +121,8 @@ public class InGameUI : MonoBehaviour
     
     public void GoToMainMenu()
     {
-        GameStateManager.instance.GoToMainMenu(false);
         CloseInGameUI();
+        GameStateManager.instance.GoToMainMenu(false);
     }
 
     public void OpenOptionsMenu()

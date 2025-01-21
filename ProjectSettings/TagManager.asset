@@ -9,6 +9,7 @@ TagManager:
   - Blockade
   - Stick
   - Lance
+  - InGameHUD
   layers:
   - Default
   - TransparentFX

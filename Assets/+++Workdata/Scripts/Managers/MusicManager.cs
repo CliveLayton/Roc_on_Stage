@@ -21,6 +21,9 @@ public class MusicManager : MonoBehaviour
     public AudioClip castleMusic;
     public AudioClip forestMusic;
 
+    [Header("VoiceLines")] 
+    public AudioClip storyLine;
+
     [Header("Player Footsteps")] 
     public AudioClip playerSteps;
 

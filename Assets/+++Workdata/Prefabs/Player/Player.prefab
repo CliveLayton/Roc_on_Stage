@@ -161,7 +161,6 @@ MonoBehaviour:
   slowAmount: 0.1
   slowTimeOnHit: 0.01
   slashEffect: {fileID: 8798170425075400349}
-  swordDamage: 1
 --- !u!1 &1953370934761965818
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +214,7 @@ MonoBehaviour:
   normalSpeed: 5
   sprintSpeed: 10
   inActionSpeed: 3
-  jumpPower: 8
+  jumpPower: 6
   rotationSpeed: 6
   slowAmount: 0.1
   slowTimeOnHit: 0.02

@@ -15,10 +15,16 @@ public class EnemyAimAndShoot : MonoBehaviour
     public Animator anim;
     private bool isCovered;
     private Vector3 directionToPredictedPosition;
+    private Enemy enemyBase;
 
     #endregion
 
     #region Unity Methods
+
+    private void Awake()
+    {
+        enemyBase = GetComponentInParent<Enemy>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -64,7 +70,7 @@ public class EnemyAimAndShoot : MonoBehaviour
 
     public void ThrowBullet()
     {
-        if (!isCovered)
+        if (!isCovered && !enemyBase.isDying)
         {
             GameObject bulletInst = ObjectPooling.Instance.GetPooledObject(); 
             if (bulletInst != null)

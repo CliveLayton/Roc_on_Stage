@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour , IDamageable
     private Transform visualChild;
 
     private int currentHealth;
-    private bool isDying = false;
+    public bool isDying = false;
     private BoxCollider col;
     private Material enemyMaterial;
 
@@ -143,6 +143,7 @@ public class Enemy : MonoBehaviour , IDamageable
             isDying = true;
             col.enabled = false;
             StartCoroutine(EnemyDying());
+            return;
         }
 
         StartCoroutine(EnemyStunned(0.5f));
@@ -153,7 +154,10 @@ public class Enemy : MonoBehaviour , IDamageable
     {
         agent.isStopped = true;
         yield return new WaitForSeconds(stunTime);
-        agent.isStopped = false;
+        if (!isDying)
+        {
+            agent.isStopped = false; 
+        }
     }
     
     private IEnumerator LerpBetweenColors()
@@ -194,9 +198,9 @@ public class Enemy : MonoBehaviour , IDamageable
         }
 
         Vector3 dropPoint = transform.position;
-        if (Physics.Raycast(transform.position, Vector3.down, out var hit))
+        if (Physics.Raycast(transform.position, Vector3.down, out var hit,Mathf.Infinity, LayerMask.GetMask("Ground")))
         {
-           dropPoint = hit.point;
+            dropPoint = hit.point;
         }
 
         if (dropKey)

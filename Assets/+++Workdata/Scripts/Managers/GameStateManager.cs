@@ -19,6 +19,7 @@ public class GameStateManager : MonoBehaviour
     public const string level3SceneName = "Castle";
     public const string level4SceneName = "Boss";
     public const string creditSceneName = "Credits";
+    public const string storySceneName = "Story";
 
     public enum GameState
     {
@@ -41,7 +42,7 @@ public class GameStateManager : MonoBehaviour
 
     public PlayerState currentPlayerState = PlayerState.Claws;
 
-    public int maxNpcCounter = 3;
+    public int maxNpcCounter = 4;
     public int npcCounter = 0;
     public int playerKeys = 0;
     public int playerSwordDamage = 1;
@@ -89,6 +90,12 @@ public class GameStateManager : MonoBehaviour
         {
             onStateChanged(currentState);
         }
+
+        npcCounter = 0;
+        playerKeys = 0;
+        playerSwordDamage = 1;
+        currentPlayerState = PlayerState.Claws;
+        
         LoadSceneManager.instance.SwitchScene(level1SceneName);
         MusicManager.Instance.PlayMusic(MusicManager.Instance.forestMusic, 0.1f);
         Cursor.lockState = CursorLockMode.Locked;

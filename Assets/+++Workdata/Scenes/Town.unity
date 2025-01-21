@@ -469,6 +469,7 @@ GameObject:
   - component: {fileID: 21181538}
   - component: {fileID: 21181540}
   - component: {fileID: 21181539}
+  - component: {fileID: 21181541}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Tree1-Konzept_SarahGraefe
   m_TagString: Untagged
@@ -564,6 +565,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &21181541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21181537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 10, z: 0.5}
+  m_Center: {x: 0.7, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &25845044
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +676,7 @@ GameObject:
   - component: {fileID: 33631910}
   - component: {fileID: 33631912}
   - component: {fileID: 33631911}
+  - component: {fileID: 33631913}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (3)
   m_TagString: Untagged
@@ -754,6 +772,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &33631913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33631909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &35670061
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +799,7 @@ GameObject:
   - component: {fileID: 35670062}
   - component: {fileID: 35670064}
   - component: {fileID: 35670063}
+  - component: {fileID: 35670065}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (2)
   m_TagString: Untagged
@@ -860,6 +895,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &35670065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35670061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &46488456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1081,25 +1132,50 @@ Transform:
   m_Children:
   - {fileID: 136841007}
   - {fileID: 88032742}
+  - {fileID: 808653729}
+  - {fileID: 1371840286}
+  - {fileID: 1560704886}
+  - {fileID: 371326822}
+  - {fileID: 1350032746}
+  - {fileID: 1603449879}
+  - {fileID: 845547692}
+  - {fileID: 2032435755}
+  - {fileID: 1392562438}
+  - {fileID: 21181538}
+  - {fileID: 2015959778}
+  - {fileID: 1529735096}
   - {fileID: 66574069}
   - {fileID: 2059007053}
   - {fileID: 1319349939}
   - {fileID: 1934519291}
   - {fileID: 837636842}
-  - {fileID: 1448831013}
-  - {fileID: 2010381275}
-  - {fileID: 472075699}
-  - {fileID: 416983147}
-  - {fileID: 528433277}
-  - {fileID: 21181538}
-  - {fileID: 1603449879}
-  - {fileID: 845547692}
-  - {fileID: 2032435755}
-  - {fileID: 1392562438}
-  - {fileID: 1051155289}
   - {fileID: 379708480}
   - {fileID: 914882337}
   - {fileID: 1988473572}
+  - {fileID: 1448831013}
+  - {fileID: 2010381275}
+  - {fileID: 677821281}
+  - {fileID: 1207547366}
+  - {fileID: 1560563395}
+  - {fileID: 472075699}
+  - {fileID: 416983147}
+  - {fileID: 528433277}
+  - {fileID: 994592489}
+  - {fileID: 1371364606}
+  - {fileID: 2130101379}
+  - {fileID: 793811276}
+  - {fileID: 1051155289}
+  - {fileID: 1226097726}
+  - {fileID: 700405054}
+  - {fileID: 543524198}
+  - {fileID: 1268536585}
+  - {fileID: 1216308502}
+  - {fileID: 943971315}
+  - {fileID: 840894154}
+  - {fileID: 453129397}
+  - {fileID: 1697484740}
+  - {fileID: 793705902}
+  - {fileID: 627296802}
   - {fileID: 653204498}
   - {fileID: 164172802}
   - {fileID: 162026554}
@@ -1114,40 +1190,15 @@ Transform:
   - {fileID: 2039190908}
   - {fileID: 1294979895}
   - {fileID: 849537535}
-  - {fileID: 808653729}
-  - {fileID: 1371840286}
-  - {fileID: 1560704886}
-  - {fileID: 371326822}
-  - {fileID: 1350032746}
-  - {fileID: 2015959778}
-  - {fileID: 1529735096}
-  - {fileID: 1226097726}
-  - {fileID: 700405054}
-  - {fileID: 543524198}
-  - {fileID: 994592489}
-  - {fileID: 1371364606}
-  - {fileID: 2130101379}
-  - {fileID: 793811276}
   - {fileID: 2015280223}
   - {fileID: 1125598432}
-  - {fileID: 1697484740}
-  - {fileID: 793705902}
-  - {fileID: 627296802}
-  - {fileID: 943971315}
-  - {fileID: 840894154}
-  - {fileID: 453129397}
-  - {fileID: 677821281}
-  - {fileID: 1207547366}
-  - {fileID: 1560563395}
-  - {fileID: 1268536585}
-  - {fileID: 1216308502}
   - {fileID: 219571209}
-  - {fileID: 1422858073}
-  - {fileID: 968615521}
   - {fileID: 1167770108}
   - {fileID: 1983477736}
-  - {fileID: 1592164337}
+  - {fileID: 1422858073}
+  - {fileID: 968615521}
   - {fileID: 97464907}
+  - {fileID: 1592164337}
   - {fileID: 714289268}
   - {fileID: 412486720}
   - {fileID: 688810011}
@@ -1170,6 +1221,7 @@ GameObject:
   - component: {fileID: 66574069}
   - component: {fileID: 66574071}
   - component: {fileID: 66574070}
+  - component: {fileID: 66574072}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Tree3-Konzept_SarahGraefe
   m_TagString: Untagged
@@ -1265,6 +1317,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &66574072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66574068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 10, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &71098816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1512,7 @@ GameObject:
   - component: {fileID: 88032742}
   - component: {fileID: 88032744}
   - component: {fileID: 88032743}
+  - component: {fileID: 88032745}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush1-Konzept_SarahGraefe (1)
   m_TagString: Untagged
@@ -1539,6 +1608,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &88032745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88032741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &97464906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,6 +2163,7 @@ GameObject:
   - component: {fileID: 136841007}
   - component: {fileID: 136841009}
   - component: {fileID: 136841008}
+  - component: {fileID: 136841010}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush1-Konzept_SarahGraefe
   m_TagString: Untagged
@@ -2173,6 +2259,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &136841010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136841006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &138288587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2272,6 +2374,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2280,7 +2387,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -2610,6 +2717,7 @@ GameObject:
   - component: {fileID: 162026554}
   - component: {fileID: 162026556}
   - component: {fileID: 162026555}
+  - component: {fileID: 162026557}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Small_SarahGraefe (2)
   m_TagString: Untagged
@@ -2705,6 +2813,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &162026557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162026553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &164172801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2840,7 @@ GameObject:
   - component: {fileID: 164172802}
   - component: {fileID: 164172804}
   - component: {fileID: 164172803}
+  - component: {fileID: 164172805}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Small_SarahGraefe (1)
   m_TagString: Untagged
@@ -2811,6 +2936,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &164172805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164172801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &176848926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,6 +4253,7 @@ GameObject:
   - component: {fileID: 371326822}
   - component: {fileID: 371326824}
   - component: {fileID: 371326823}
+  - component: {fileID: 371326825}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush2-Konzept_SarahGraefe (4)
   m_TagString: Untagged
@@ -4207,6 +4349,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &371326825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371326821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &379142879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4304,6 +4462,7 @@ GameObject:
   - component: {fileID: 379708480}
   - component: {fileID: 379708482}
   - component: {fileID: 379708481}
+  - component: {fileID: 379708483}
   m_Layer: 0
   m_Name: haus2_RocOnStage
   m_TagString: Untagged
@@ -4399,6 +4558,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &379708483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379708479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &394888211
 GameObject:
   m_ObjectHideFlags: 0
@@ -4612,6 +4787,7 @@ GameObject:
   - component: {fileID: 412486720}
   - component: {fileID: 412486722}
   - component: {fileID: 412486721}
+  - component: {fileID: 412486723}
   m_Layer: 0
   m_Name: Brunnen_2_neu_RocOnStage_AnnaKania
   m_TagString: Untagged
@@ -4707,6 +4883,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &412486723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412486719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &414705906
 GameObject:
   m_ObjectHideFlags: 0
@@ -4802,6 +4994,7 @@ GameObject:
   - component: {fileID: 416983147}
   - component: {fileID: 416983149}
   - component: {fileID: 416983148}
+  - component: {fileID: 416983150}
   m_Layer: 0
   m_Name: heu1 (1)
   m_TagString: Untagged
@@ -4897,6 +5090,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &416983150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416983146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &418484327
 GameObject:
   m_ObjectHideFlags: 0
@@ -5398,6 +5607,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5406,7 +5620,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -5734,6 +5948,7 @@ GameObject:
   - component: {fileID: 453129397}
   - component: {fileID: 453129399}
   - component: {fileID: 453129398}
+  - component: {fileID: 453129400}
   m_Layer: 0
   m_Name: Mauer3 (2)
   m_TagString: Untagged
@@ -5829,6 +6044,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &453129400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453129396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 6, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &455661319
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,6 +6323,7 @@ GameObject:
   - component: {fileID: 472075699}
   - component: {fileID: 472075701}
   - component: {fileID: 472075700}
+  - component: {fileID: 472075702}
   m_Layer: 0
   m_Name: heu1
   m_TagString: Untagged
@@ -6187,6 +6419,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &472075702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472075698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &482179615
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,6 +6698,7 @@ GameObject:
   - component: {fileID: 528433277}
   - component: {fileID: 528433279}
   - component: {fileID: 528433278}
+  - component: {fileID: 528433280}
   m_Layer: 0
   m_Name: heu1 (2)
   m_TagString: Untagged
@@ -6545,6 +6794,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &528433280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528433276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &543524197
 GameObject:
   m_ObjectHideFlags: 0
@@ -6556,6 +6821,7 @@ GameObject:
   - component: {fileID: 543524198}
   - component: {fileID: 543524200}
   - component: {fileID: 543524199}
+  - component: {fileID: 543524201}
   m_Layer: 0
   m_Name: Mauer1 (2)
   m_TagString: Untagged
@@ -6651,6 +6917,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &543524201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543524197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 7, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &559166071
 GameObject:
   m_ObjectHideFlags: 0
@@ -7252,6 +7534,7 @@ GameObject:
   - component: {fileID: 627296803}
   - component: {fileID: 627296806}
   - component: {fileID: 627296805}
+  - component: {fileID: 627296807}
   m_Layer: 0
   m_Name: Mauer4 (2)
   m_TagString: Untagged
@@ -7389,6 +7672,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8511028, y: 3.665, z: 0.2}
   m_Center: {x: 2.4594488, y: 0, z: 0}
+--- !u!114 &627296807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627296801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 7, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &641214652
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,6 +7937,7 @@ GameObject:
   - component: {fileID: 653204498}
   - component: {fileID: 653204500}
   - component: {fileID: 653204499}
+  - component: {fileID: 653204501}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Small_SarahGraefe
   m_TagString: Untagged
@@ -7733,6 +8033,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &653204501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653204497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &662761220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7883,6 +8199,7 @@ GameObject:
   - component: {fileID: 677821281}
   - component: {fileID: 677821283}
   - component: {fileID: 677821282}
+  - component: {fileID: 677821284}
   m_Layer: 0
   m_Name: haus4_RocOnStage
   m_TagString: Untagged
@@ -7978,6 +8295,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &677821284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677821280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &680942621
 GameObject:
   m_ObjectHideFlags: 0
@@ -8151,6 +8484,7 @@ GameObject:
   - component: {fileID: 688810011}
   - component: {fileID: 688810013}
   - component: {fileID: 688810012}
+  - component: {fileID: 688810014}
   m_Layer: 0
   m_Name: Markstand_RocOnStage_AnnaKania
   m_TagString: Untagged
@@ -8246,6 +8580,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &688810014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688810010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &700405053
 GameObject:
   m_ObjectHideFlags: 0
@@ -8257,6 +8607,7 @@ GameObject:
   - component: {fileID: 700405054}
   - component: {fileID: 700405056}
   - component: {fileID: 700405055}
+  - component: {fileID: 700405057}
   m_Layer: 0
   m_Name: Mauer1 (1)
   m_TagString: Untagged
@@ -8352,6 +8703,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &700405057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700405053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 7, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &706984687
 GameObject:
   m_ObjectHideFlags: 0
@@ -9031,6 +9398,8 @@ GameObject:
   - component: {fileID: 793705904}
   - component: {fileID: 793705903}
   - component: {fileID: 793705905}
+  - component: {fileID: 793705907}
+  - component: {fileID: 793705906}
   m_Layer: 0
   m_Name: Mauer4 (1)
   m_TagString: Untagged
@@ -9147,6 +9516,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7838802, y: 3.665, z: 0.2}
   m_Center: {x: 2.49306, y: 0, z: 0}
+--- !u!114 &793705906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793705901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 4, z: 0.5}
+  m_Center: {x: 2.4, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!114 &793705907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793705901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.5, y: 4, z: 0.5}
+  m_Center: {x: -2.2, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &793811275
 GameObject:
   m_ObjectHideFlags: 0
@@ -9158,6 +9559,7 @@ GameObject:
   - component: {fileID: 793811276}
   - component: {fileID: 793811278}
   - component: {fileID: 793811277}
+  - component: {fileID: 793811279}
   m_Layer: 0
   m_Name: heu3 (1)
   m_TagString: Untagged
@@ -9253,6 +9655,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &793811279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793811275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &794601412
 GameObject:
   m_ObjectHideFlags: 0
@@ -9467,6 +9885,7 @@ GameObject:
   - component: {fileID: 808653729}
   - component: {fileID: 808653731}
   - component: {fileID: 808653730}
+  - component: {fileID: 808653732}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush2-Konzept_SarahGraefe
   m_TagString: Untagged
@@ -9562,6 +9981,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &808653732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808653728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9622,6 +10057,7 @@ GameObject:
   - component: {fileID: 837636842}
   - component: {fileID: 837636844}
   - component: {fileID: 837636843}
+  - component: {fileID: 837636845}
   m_Layer: 0
   m_Name: haus1_RocOnStage (2)
   m_TagString: Untagged
@@ -9717,6 +10153,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &837636845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837636841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &837817865
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,6 +10348,7 @@ GameObject:
   - component: {fileID: 840894154}
   - component: {fileID: 840894156}
   - component: {fileID: 840894155}
+  - component: {fileID: 840894157}
   m_Layer: 0
   m_Name: Mauer3 (1)
   m_TagString: Untagged
@@ -9991,6 +10444,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &840894157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840894153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 4, z: 0.5}
+  m_Center: {x: 1.1, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &845547691
 GameObject:
   m_ObjectHideFlags: 0
@@ -10002,6 +10471,7 @@ GameObject:
   - component: {fileID: 845547692}
   - component: {fileID: 845547694}
   - component: {fileID: 845547693}
+  - component: {fileID: 845547695}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush3-Konzept_SarahGraefe (1)
   m_TagString: Untagged
@@ -10097,6 +10567,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &845547695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845547691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &849537534
 GameObject:
   m_ObjectHideFlags: 0
@@ -10108,6 +10594,7 @@ GameObject:
   - component: {fileID: 849537535}
   - component: {fileID: 849537537}
   - component: {fileID: 849537536}
+  - component: {fileID: 849537538}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (7)
   m_TagString: Untagged
@@ -10203,6 +10690,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &849537538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849537534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &861114693
 GameObject:
   m_ObjectHideFlags: 0
@@ -10718,6 +11221,7 @@ GameObject:
   - component: {fileID: 898676644}
   - component: {fileID: 898676646}
   - component: {fileID: 898676645}
+  - component: {fileID: 898676647}
   m_Layer: 0
   m_Name: Markstand_RocOnStage_AnnaKania (1)
   m_TagString: Untagged
@@ -10813,6 +11317,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &898676647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898676643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &914882336
 GameObject:
   m_ObjectHideFlags: 0
@@ -10824,6 +11344,7 @@ GameObject:
   - component: {fileID: 914882337}
   - component: {fileID: 914882339}
   - component: {fileID: 914882338}
+  - component: {fileID: 914882340}
   m_Layer: 0
   m_Name: haus2_RocOnStage (1)
   m_TagString: Untagged
@@ -10919,6 +11440,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &914882340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914882336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &919299925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11020,6 +11557,7 @@ GameObject:
   - component: {fileID: 943971315}
   - component: {fileID: 943971317}
   - component: {fileID: 943971316}
+  - component: {fileID: 943971318}
   m_Layer: 0
   m_Name: Mauer3
   m_TagString: Untagged
@@ -11115,6 +11653,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &943971318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943971314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 4, z: 0.5}
+  m_Center: {x: 1.1, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &951428127
 GameObject:
   m_ObjectHideFlags: 0
@@ -11674,6 +12228,7 @@ GameObject:
   - component: {fileID: 994592489}
   - component: {fileID: 994592488}
   - component: {fileID: 994592487}
+  - component: {fileID: 994592490}
   m_Layer: 0
   m_Name: heu2
   m_TagString: Untagged
@@ -11769,6 +12324,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 51419499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994592490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994592486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &997953304
 GameObject:
   m_ObjectHideFlags: 0
@@ -12151,6 +12722,7 @@ GameObject:
   - component: {fileID: 1051155289}
   - component: {fileID: 1051155291}
   - component: {fileID: 1051155290}
+  - component: {fileID: 1051155292}
   m_Layer: 0
   m_Name: zaun2
   m_TagString: Untagged
@@ -12246,6 +12818,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1051155292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051155288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 7, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1053695788
 GameObject:
   m_ObjectHideFlags: 0
@@ -12929,6 +13517,7 @@ GameObject:
   - component: {fileID: 1125598432}
   - component: {fileID: 1125598434}
   - component: {fileID: 1125598433}
+  - component: {fileID: 1125598435}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Large_SarahGraefe (1)
   m_TagString: Untagged
@@ -13024,6 +13613,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1125598435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125598431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1128075326
 GameObject:
   m_ObjectHideFlags: 0
@@ -13154,6 +13759,7 @@ GameObject:
   - component: {fileID: 1157656343}
   - component: {fileID: 1157656345}
   - component: {fileID: 1157656344}
+  - component: {fileID: 1157656346}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Small_SarahGraefe (4)
   m_TagString: Untagged
@@ -13249,6 +13855,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1157656346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157656342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1162264348
 GameObject:
   m_ObjectHideFlags: 0
@@ -14148,6 +14770,7 @@ GameObject:
   - component: {fileID: 1207547366}
   - component: {fileID: 1207547368}
   - component: {fileID: 1207547367}
+  - component: {fileID: 1207547369}
   m_Layer: 0
   m_Name: haus4_RocOnStage (1)
   m_TagString: Untagged
@@ -14243,6 +14866,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1207547369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207547365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1208293268
 GameObject:
   m_ObjectHideFlags: 0
@@ -14338,6 +14977,7 @@ GameObject:
   - component: {fileID: 1216308502}
   - component: {fileID: 1216308504}
   - component: {fileID: 1216308503}
+  - component: {fileID: 1216308505}
   m_Layer: 0
   m_Name: Mauer2 (1)
   m_TagString: Untagged
@@ -14433,6 +15073,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1216308505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216308501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 4, z: 0.5}
+  m_Center: {x: -1.1, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1220645174
 GameObject:
   m_ObjectHideFlags: 0
@@ -14708,6 +15364,7 @@ GameObject:
   - component: {fileID: 1226097726}
   - component: {fileID: 1226097728}
   - component: {fileID: 1226097727}
+  - component: {fileID: 1226097729}
   m_Layer: 0
   m_Name: Mauer1
   m_TagString: Untagged
@@ -14803,6 +15460,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1226097729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226097725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 7, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1226537957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14904,6 +15577,7 @@ GameObject:
   - component: {fileID: 1236606007}
   - component: {fileID: 1236606009}
   - component: {fileID: 1236606008}
+  - component: {fileID: 1236606010}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe
   m_TagString: Untagged
@@ -14999,6 +15673,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1236606010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236606006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1249059037
 GameObject:
   m_ObjectHideFlags: 0
@@ -15346,6 +16036,7 @@ GameObject:
   - component: {fileID: 1268536585}
   - component: {fileID: 1268536587}
   - component: {fileID: 1268536586}
+  - component: {fileID: 1268536588}
   m_Layer: 0
   m_Name: Mauer2
   m_TagString: Untagged
@@ -15441,6 +16132,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1268536588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268536584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 4, z: 0.5}
+  m_Center: {x: -1.1, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1282097911
 GameObject:
   m_ObjectHideFlags: 0
@@ -15536,6 +16243,7 @@ GameObject:
   - component: {fileID: 1294979895}
   - component: {fileID: 1294979897}
   - component: {fileID: 1294979896}
+  - component: {fileID: 1294979898}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (6)
   m_TagString: Untagged
@@ -15631,6 +16339,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1294979898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294979894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1296051502
 GameObject:
   m_ObjectHideFlags: 0
@@ -15691,6 +16415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312658720}
   - component: {fileID: 1312658721}
+  - component: {fileID: 1312658722}
   m_Layer: 0
   m_Name: Beet (4)
   m_TagString: Untagged
@@ -15741,6 +16466,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7131882, y: 4.398523, z: 1}
   m_Center: {x: 0.09509277, y: 1.6992619, z: 0}
+--- !u!114 &1312658722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312658719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 5, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1319349938
 GameObject:
   m_ObjectHideFlags: 0
@@ -15752,6 +16493,7 @@ GameObject:
   - component: {fileID: 1319349939}
   - component: {fileID: 1319349941}
   - component: {fileID: 1319349940}
+  - component: {fileID: 1319349942}
   m_Layer: 0
   m_Name: haus1_RocOnStage
   m_TagString: Untagged
@@ -15847,6 +16589,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1319349942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319349938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1350032745
 GameObject:
   m_ObjectHideFlags: 0
@@ -15858,6 +16616,7 @@ GameObject:
   - component: {fileID: 1350032746}
   - component: {fileID: 1350032748}
   - component: {fileID: 1350032747}
+  - component: {fileID: 1350032749}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush2-Konzept_SarahGraefe (1)
   m_TagString: Untagged
@@ -15953,6 +16712,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1350032749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350032745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1355147992
 GameObject:
   m_ObjectHideFlags: 0
@@ -16154,6 +16929,7 @@ GameObject:
   - component: {fileID: 1371364606}
   - component: {fileID: 1371364608}
   - component: {fileID: 1371364607}
+  - component: {fileID: 1371364609}
   m_Layer: 0
   m_Name: heu2 (1)
   m_TagString: Untagged
@@ -16249,6 +17025,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1371364609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371364605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1371840285
 GameObject:
   m_ObjectHideFlags: 0
@@ -16260,6 +17052,7 @@ GameObject:
   - component: {fileID: 1371840286}
   - component: {fileID: 1371840288}
   - component: {fileID: 1371840287}
+  - component: {fileID: 1371840289}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush2-Konzept_SarahGraefe (2)
   m_TagString: Untagged
@@ -16355,6 +17148,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1371840289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371840285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1373395096
 GameObject:
   m_ObjectHideFlags: 0
@@ -16384,7 +17193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -16412,7 +17221,7 @@ Transform:
   m_GameObject: {fileID: 1373395096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 5.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16596,6 +17405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390147358}
   - component: {fileID: 1390147359}
+  - component: {fileID: 1390147360}
   m_Layer: 0
   m_Name: Beet (2)
   m_TagString: Untagged
@@ -16646,6 +17456,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.164421, y: 4.451137, z: 1}
   m_Center: {x: -0.03508377, y: 1.7255685, z: 0}
+--- !u!114 &1390147360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390147357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 5, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1392562437
 GameObject:
   m_ObjectHideFlags: 0
@@ -16657,6 +17483,7 @@ GameObject:
   - component: {fileID: 1392562438}
   - component: {fileID: 1392562440}
   - component: {fileID: 1392562439}
+  - component: {fileID: 1392562441}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush3-Konzept_SarahGraefe (3)
   m_TagString: Untagged
@@ -16752,6 +17579,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1392562441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392562437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1395262319
 GameObject:
   m_ObjectHideFlags: 0
@@ -17375,6 +18218,7 @@ GameObject:
   - component: {fileID: 1448831013}
   - component: {fileID: 1448831015}
   - component: {fileID: 1448831014}
+  - component: {fileID: 1448831016}
   m_Layer: 0
   m_Name: haus3_RocOnStage
   m_TagString: Untagged
@@ -17470,6 +18314,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1448831016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448831012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1453284251
 GameObject:
   m_ObjectHideFlags: 0
@@ -18007,6 +18867,7 @@ GameObject:
   - component: {fileID: 1529735096}
   - component: {fileID: 1529735098}
   - component: {fileID: 1529735097}
+  - component: {fileID: 1529735099}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Tree2-Konzept_SarahGraefe (1)
   m_TagString: Untagged
@@ -18102,6 +18963,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1529735099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529735095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 10, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1534738660
 GameObject:
   m_ObjectHideFlags: 0
@@ -18365,6 +19242,7 @@ GameObject:
   - component: {fileID: 1560563395}
   - component: {fileID: 1560563397}
   - component: {fileID: 1560563396}
+  - component: {fileID: 1560563398}
   m_Layer: 0
   m_Name: haus4_RocOnStage (3)
   m_TagString: Untagged
@@ -18460,6 +19338,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1560563398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560563394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1560704885
 GameObject:
   m_ObjectHideFlags: 0
@@ -18471,6 +19365,7 @@ GameObject:
   - component: {fileID: 1560704886}
   - component: {fileID: 1560704888}
   - component: {fileID: 1560704887}
+  - component: {fileID: 1560704889}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush2-Konzept_SarahGraefe (3)
   m_TagString: Untagged
@@ -18566,6 +19461,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1560704889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560704885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1576817214
 GameObject:
   m_ObjectHideFlags: 0
@@ -19130,6 +20041,7 @@ GameObject:
   - component: {fileID: 1603449879}
   - component: {fileID: 1603449881}
   - component: {fileID: 1603449880}
+  - component: {fileID: 1603449882}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush3-Konzept_SarahGraefe
   m_TagString: Untagged
@@ -19225,6 +20137,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1603449882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603449878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1603838320
 GameObject:
   m_ObjectHideFlags: 0
@@ -19404,6 +20332,7 @@ GameObject:
   - component: {fileID: 1615366137}
   - component: {fileID: 1615366139}
   - component: {fileID: 1615366138}
+  - component: {fileID: 1615366140}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Small_SarahGraefe (5)
   m_TagString: Untagged
@@ -19499,6 +20428,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1615366140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615366136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1622236911
 GameObject:
   m_ObjectHideFlags: 0
@@ -19880,6 +20825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1684212465}
   - component: {fileID: 1684212466}
+  - component: {fileID: 1684212467}
   m_Layer: 0
   m_Name: Beet (1)
   m_TagString: Untagged
@@ -19930,6 +20876,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3019028, y: 4.395252, z: 1}
   m_Center: {x: 0.06207657, y: 1.6976259, z: 0}
+--- !u!114 &1684212467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684212464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 5, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1697484739
 GameObject:
   m_ObjectHideFlags: 0
@@ -19942,6 +20904,8 @@ GameObject:
   - component: {fileID: 1697484742}
   - component: {fileID: 1697484741}
   - component: {fileID: 1697484743}
+  - component: {fileID: 1697484745}
+  - component: {fileID: 1697484744}
   m_Layer: 0
   m_Name: Mauer4
   m_TagString: Untagged
@@ -20058,6 +21022,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9259739, y: 3.665, z: 0.2}
   m_Center: {x: 2.4220133, y: 0, z: 0}
+--- !u!114 &1697484744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697484739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 4, z: 0.5}
+  m_Center: {x: 2.4, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!114 &1697484745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697484739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.5, y: 4, z: 0.5}
+  m_Center: {x: -2.2, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1698864478
 GameObject:
   m_ObjectHideFlags: 0
@@ -20888,6 +21884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20896,7 +21897,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -21055,6 +22056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801191276}
   - component: {fileID: 1801191277}
+  - component: {fileID: 1801191278}
   m_Layer: 0
   m_Name: Beet (3)
   m_TagString: Untagged
@@ -21105,6 +22107,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.300621, y: 4.5773735, z: 1}
   m_Center: {x: 0.03598404, y: 1.7886868, z: 0}
+--- !u!114 &1801191278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801191275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 5, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1807484374
 GameObject:
   m_ObjectHideFlags: 0
@@ -21370,6 +22388,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21378,7 +22401,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -21454,6 +22477,7 @@ GameObject:
   - component: {fileID: 1827874586}
   - component: {fileID: 1827874588}
   - component: {fileID: 1827874587}
+  - component: {fileID: 1827874589}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (4)
   m_TagString: Untagged
@@ -21549,6 +22573,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1827874589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827874585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1856221560
 GameObject:
   m_ObjectHideFlags: 0
@@ -21876,6 +22916,11 @@ PrefabInstance:
       propertyPath: dropKey
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1521045329829992782, guid: 858398fb9685f994693c3613a7f345e5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
     - target: {fileID: 6151223702644492873, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21889,7 +22934,7 @@ PrefabInstance:
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7838408827013337318, guid: 858398fb9685f994693c3613a7f345e5,
         type: 3}
@@ -22698,6 +23743,7 @@ GameObject:
   - component: {fileID: 1934519291}
   - component: {fileID: 1934519293}
   - component: {fileID: 1934519292}
+  - component: {fileID: 1934519294}
   m_Layer: 0
   m_Name: haus1_RocOnStage (1)
   m_TagString: Untagged
@@ -22793,6 +23839,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1934519294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934519290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1939456528
 GameObject:
   m_ObjectHideFlags: 0
@@ -23444,6 +24506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1980832066}
   - component: {fileID: 1980832067}
+  - component: {fileID: 1980832068}
   m_Layer: 0
   m_Name: Beet
   m_TagString: Untagged
@@ -23494,6 +24557,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2985153, y: 4.3609543, z: 1}
   m_Center: {x: 0.08510208, y: 1.6804771, z: 0}
+--- !u!114 &1980832068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980832065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 5, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1983477735
 GameObject:
   m_ObjectHideFlags: 0
@@ -23611,6 +24690,7 @@ GameObject:
   - component: {fileID: 1988473572}
   - component: {fileID: 1988473574}
   - component: {fileID: 1988473573}
+  - component: {fileID: 1988473575}
   m_Layer: 0
   m_Name: haus2_RocOnStage (2)
   m_TagString: Untagged
@@ -23706,6 +24786,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1988473575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988473571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2010381274
 GameObject:
   m_ObjectHideFlags: 0
@@ -23717,6 +24813,7 @@ GameObject:
   - component: {fileID: 2010381275}
   - component: {fileID: 2010381277}
   - component: {fileID: 2010381276}
+  - component: {fileID: 2010381278}
   m_Layer: 0
   m_Name: haus3_RocOnStage (1)
   m_TagString: Untagged
@@ -23812,6 +24909,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2010381278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010381274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 5, y: 6, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2011759363
 GameObject:
   m_ObjectHideFlags: 0
@@ -23823,6 +24936,7 @@ GameObject:
   - component: {fileID: 2011759364}
   - component: {fileID: 2011759366}
   - component: {fileID: 2011759365}
+  - component: {fileID: 2011759367}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (1)
   m_TagString: Untagged
@@ -23918,6 +25032,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2011759367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011759363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2011835576
 GameObject:
   m_ObjectHideFlags: 0
@@ -24013,6 +25143,7 @@ GameObject:
   - component: {fileID: 2015280223}
   - component: {fileID: 2015280225}
   - component: {fileID: 2015280224}
+  - component: {fileID: 2015280226}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Large_SarahGraefe
   m_TagString: Untagged
@@ -24108,6 +25239,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2015280226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015280222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 4, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2015959777
 GameObject:
   m_ObjectHideFlags: 0
@@ -24119,6 +25266,7 @@ GameObject:
   - component: {fileID: 2015959778}
   - component: {fileID: 2015959780}
   - component: {fileID: 2015959779}
+  - component: {fileID: 2015959781}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Tree2-Konzept_SarahGraefe
   m_TagString: Untagged
@@ -24214,6 +25362,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2015959781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015959777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 10, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2028908372
 GameObject:
   m_ObjectHideFlags: 0
@@ -24309,6 +25473,7 @@ GameObject:
   - component: {fileID: 2032435755}
   - component: {fileID: 2032435757}
   - component: {fileID: 2032435756}
+  - component: {fileID: 2032435758}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Bush3-Konzept_SarahGraefe (2)
   m_TagString: Untagged
@@ -24404,6 +25569,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2032435758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032435754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 4, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2033451008
 GameObject:
   m_ObjectHideFlags: 0
@@ -24499,6 +25680,7 @@ GameObject:
   - component: {fileID: 2039190908}
   - component: {fileID: 2039190910}
   - component: {fileID: 2039190909}
+  - component: {fileID: 2039190911}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Middle_SarahGraefe (5)
   m_TagString: Untagged
@@ -24594,6 +25776,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2039190911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039190907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2057738284
 GameObject:
   m_ObjectHideFlags: 0
@@ -24689,6 +25887,7 @@ GameObject:
   - component: {fileID: 2059007053}
   - component: {fileID: 2059007055}
   - component: {fileID: 2059007054}
+  - component: {fileID: 2059007056}
   m_Layer: 0
   m_Name: RocOnStage-Environment-Tree3-Konzept_SarahGraefe (1)
   m_TagString: Untagged
@@ -24784,6 +25983,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2059007056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059007052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 10, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2061808802
 GameObject:
   m_ObjectHideFlags: 0
@@ -24998,6 +26213,7 @@ GameObject:
   - component: {fileID: 2090233694}
   - component: {fileID: 2090233696}
   - component: {fileID: 2090233695}
+  - component: {fileID: 2090233697}
   m_Layer: 0
   m_Name: RocOnStage-Backstage-Crate-Small_SarahGraefe (3)
   m_TagString: Untagged
@@ -25093,6 +26309,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2090233697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090233693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2106116289
 GameObject:
   m_ObjectHideFlags: 0
@@ -25440,6 +26672,7 @@ GameObject:
   - component: {fileID: 2130101379}
   - component: {fileID: 2130101378}
   - component: {fileID: 2130101377}
+  - component: {fileID: 2130101380}
   m_Layer: 0
   m_Name: heu3
   m_TagString: Untagged
@@ -25535,6 +26768,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 51419499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130101380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130101376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2135476484
 GameObject:
   m_ObjectHideFlags: 0

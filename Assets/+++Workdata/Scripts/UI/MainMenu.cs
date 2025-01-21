@@ -31,7 +31,8 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-       GameStateManager.instance.StartNewGame();
+       LoadSceneManager.instance.SwitchScene(GameStateManager.storySceneName,false);
+       Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OpenMainMenu()
