@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 444648227, guid: 891ed8f01302d3e4a9f92634250f1a20, type: 3}
+  m_Sprite: {fileID: 621974059, guid: f62c1ca7a5e6e45489a401bae43931a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -565,6 +565,11 @@ PrefabInstance:
       propertyPath: cm
       value: 
       objectReference: {fileID: 1919090804}
+    - target: {fileID: 7672820516935211190, guid: eb33bea6e6b453c4c92d4d5351dcf6cf,
+        type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 734972097}
     - target: {fileID: 7997481231258327835, guid: eb33bea6e6b453c4c92d4d5351dcf6cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -632,7 +637,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 173436623}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1978689714}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9eac941c6eefe48a22f5f9f4868ba1, type: 3}
@@ -2353,6 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 173436625}
+  player: {fileID: 1978689714}
   faboCage: {fileID: 1441444758}
   volume: {fileID: 734972097}
   direction: 0.8
@@ -2471,7 +2477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: dee69daea57d1a64692288ff3c1d661a, type: 2}
@@ -5582,6 +5588,12 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0ddec8f6750870543804a4bd226f8c95, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1978689714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1953370934761965818, guid: eb33bea6e6b453c4c92d4d5351dcf6cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 173436623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

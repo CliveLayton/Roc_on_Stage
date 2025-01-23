@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAimAndShoot : MonoBehaviour
@@ -10,9 +8,10 @@ public class EnemyAimAndShoot : MonoBehaviour
     [SerializeField] private LayerMask layersToCover;
     [SerializeField] private float bulletSpeed;
     
+    public Animator anim;
+    
     private GameObject target;
     private Coroutine detectPlayerCoroutine;
-    public Animator anim;
     private bool isCovered;
     private Vector3 directionToPredictedPosition;
     private Enemy enemyBase;
@@ -48,9 +47,12 @@ public class EnemyAimAndShoot : MonoBehaviour
 
     #endregion
 
-
     #region EnemyAimAndShoot Methods
 
+    /// <summary>
+    /// calculate the position where to throw the bulb and check if the target is covered
+    /// </summary>
+    /// <returns></returns>
     IEnumerator DetectPlayer()
     {
         while (true)
@@ -68,6 +70,9 @@ public class EnemyAimAndShoot : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// get a bulb from the objectpool and set the direction to move it
+    /// </summary>
     public void ThrowBullet()
     {
         if (!isCovered && !enemyBase.isDying)
@@ -83,6 +88,12 @@ public class EnemyAimAndShoot : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// check if the player is covered
+    /// </summary>
+    /// <param name="direction">direction to fire the raycast</param>
+    /// <param name="distanceToTarget">distance to the target</param>
+    /// <returns></returns>
     private bool IsPlayerCovered(Vector3 direction, float distanceToTarget)
     {
         RaycastHit[] hits = Physics.RaycastAll(this.transform.position, direction, distanceToTarget, layersToCover);
@@ -95,6 +106,11 @@ public class EnemyAimAndShoot : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// calculate the position the target would be when bullet would reach him
+    /// </summary>
+    /// <param name="distanceToPlayer">distance to the target</param>
+    /// <returns></returns>
     private Vector3 PredictPlayerPosition(float distanceToPlayer)
     {
         Rigidbody playerRb = target.GetComponent<Rigidbody>();

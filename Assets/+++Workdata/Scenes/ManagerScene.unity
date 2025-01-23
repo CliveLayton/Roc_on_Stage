@@ -1028,11 +1028,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1523423203}
   - {fileID: 1633338274}
   - {fileID: 1593417686}
   - {fileID: 1786880028}
-  - {fileID: 1622542042}
   - {fileID: 1636581298}
   m_Father: {fileID: 1952118536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1057,6 +1055,7 @@ MonoBehaviour:
   controlsMenu: {fileID: 1593417687}
   creditsMenu: {fileID: 1786880029}
   gameOverMenu: {fileID: 1622542043}
+  playerLifeBar: {fileID: 1523423202}
   menuActive: 1
 --- !u!114 &190200875
 MonoBehaviour:
@@ -1643,17 +1642,19 @@ MonoBehaviour:
   playerFootsteps: {fileID: 1806575512}
   uiSFXAudio: {fileID: 1541283153}
   inGameSFXAudio: {fileID: 2075970961}
-  creditsMusic: {fileID: 8300000, guid: 4ad4141e93054654f8b81a4676dd7d38, type: 3}
-  combatMusic: {fileID: 8300000, guid: 2fa3a8b8fc9553a448c52452f642fa82, type: 3}
-  townMusic: {fileID: 8300000, guid: 5900b696174b4584f8f2ee0ad22c6b89, type: 3}
-  comicMusic: {fileID: 8300000, guid: 2fa3a8b8fc9553a448c52452f642fa82, type: 3}
-  castleMusic: {fileID: 8300000, guid: 2268175e0527e4a46808891eb3342c27, type: 3}
-  forestMusic: {fileID: 8300000, guid: 4158abf28c0b8da4ea0f3ca0bdc289fb, type: 3}
-  storyLine: {fileID: 8300000, guid: 7ad17f772e0e23147b9d846e4cf983b3, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 5816470bf77126749a09cb9191d87c80, type: 3}
+  comicMusic: {fileID: 8300000, guid: cc21c30d938030c42b1fb4120b52e677, type: 3}
+  forestMusic: {fileID: 8300000, guid: 6c03b034eeeebe64a939b44be8deaf57, type: 3}
+  townMusic: {fileID: 8300000, guid: 40badb909e34564458559c188a1318c1, type: 3}
+  castleMusic: {fileID: 8300000, guid: d9c076aca539be549957cf0b89640550, type: 3}
+  creditsMusic: {fileID: 8300000, guid: 78308b5e1d489da4894fa94d0f147f7e, type: 3}
+  pauseMenuMusic: {fileID: 8300000, guid: 57ea7f3d484e4e646822bd3479490102, type: 3}
+  storyLine: {fileID: 8300000, guid: f82835b7ab8e2554ba987683aeb1dff1, type: 3}
   playerSteps: {fileID: 8300000, guid: a63a415827540934cb528f9794617a7f, type: 3}
-  curtainMoving: {fileID: 8300000, guid: 96b55f2bf7acc0d4b8308aad2153a63a, type: 3}
+  curtainOpen: {fileID: 8300000, guid: a6343b159e934e74ca3ddf1010966703, type: 3}
+  curtainClose: {fileID: 8300000, guid: 1e7368c67c718d747ad8c30d6bd22586, type: 3}
   stageRevolving: {fileID: 8300000, guid: 21f3e51e6b9c05e4fa1bb504046fc02f, type: 3}
-  npcHarmonica: {fileID: 8300000, guid: 53065055668c13847abe52b4e61ce267, type: 3}
+  npcHarmonica: {fileID: 8300000, guid: 393c269e4079c3942a47d6855d6c1dfa, type: 3}
   parry: {fileID: 8300000, guid: 35b970e138caab14ca780c4e18d7611b, type: 3}
   weaponAttacks:
   - {fileID: 8300000, guid: 19894022b90d9b2448321de483a6e1be, type: 3}
@@ -1663,8 +1664,8 @@ MonoBehaviour:
   gameOver: {fileID: 8300000, guid: 5a64b8097c8e83a4f8ce0c94862eedc7, type: 3}
   damageEnemy: {fileID: 8300000, guid: 40ca36f5d332cd74b8a41c22e282fe76, type: 3}
   clawAttack: {fileID: 8300000, guid: 255982546ac091b459d9011b7d606e48, type: 3}
-  buttonHover: {fileID: 8300000, guid: d79b90be42d48d34094ca4bdca28a2d2, type: 3}
-  buttonPress: {fileID: 8300000, guid: d79b90be42d48d34094ca4bdca28a2d2, type: 3}
+  buttonHover: {fileID: 8300000, guid: 49ca651c44dec75459dd4c05ef892290, type: 3}
+  buttonPress: {fileID: 8300000, guid: 49ca651c44dec75459dd4c05ef892290, type: 3}
 --- !u!81 &457985971
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2150,7 +2151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayerState: 0
-  maxNpcCounter: 3
+  maxNpcCounter: 4
   npcCounter: 0
   playerKeys: 0
   playerSwordDamage: 1
@@ -2681,6 +2682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLifeBar: {fileID: 1523423202}
   gameOverMenu: {fileID: 1622542043}
+  inGameUI: {fileID: 190200872}
 --- !u!1 &1105286327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,7 +3469,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 190200875}
+        m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
+        m_MethodName: SetFullscreen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1478375434
 GameObject:
@@ -3570,7 +3584,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523423202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.22575736, y: 0.22575736, z: 0.22575736}
   m_ConstrainProportionsScale: 0
@@ -3579,7 +3593,7 @@ RectTransform:
   - {fileID: 1147471230}
   - {fileID: 1021158138}
   - {fileID: 1478375435}
-  m_Father: {fileID: 190200873}
+  m_Father: {fileID: 1952118536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3997,13 +4011,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622542041}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1534947244}
-  m_Father: {fileID: 190200873}
+  m_Father: {fileID: 1952118536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4502,6 +4516,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1523423203}
+  - {fileID: 1622542042}
   - {fileID: 190200873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

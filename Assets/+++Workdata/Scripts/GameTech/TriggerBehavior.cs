@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,6 +37,13 @@ public class TriggerBehavior : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Trigger Behavior Methods
+
+    /// <summary>
+    /// play the collect item sound
+    /// </summary>
     public void CollectItemSound()
     {
         MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.collectItem);

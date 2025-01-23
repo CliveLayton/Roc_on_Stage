@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -48,6 +47,10 @@ public class BulletBehavior : MonoBehaviour
     
     #region Bullet Methods
 
+    /// <summary>
+    /// set the direction for the bullet and set velocity
+    /// </summary>
+    /// <param name="direction">direction to target</param>
     public void SetDirection(Vector3 direction)
     {
         targetDirection = direction;
@@ -59,11 +62,18 @@ public class BulletBehavior : MonoBehaviour
         StartCoroutine(SetObjectInactive());
     }
     
+    /// <summary>
+    /// set the velocity for the bullet
+    /// </summary>
     private void SetVelocity()
     {
         rb.velocity = targetDirection * normalBulletSpeed;
     }
 
+    /// <summary>
+    /// sets the object inactive after a short time
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SetObjectInactive()
     {
         float elapsedTime = 0f;

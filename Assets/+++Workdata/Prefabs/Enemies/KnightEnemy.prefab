@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7077492315711897710}
   m_Layer: 9
   m_Name: Visual
-  m_TagString: Enemy
+  m_TagString: Parryable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,8 +126,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0574479, y: 1.8600001, z: 0.9755728}
-  m_Center: {x: 1.1910958, y: 0.93000007, z: 0.030758739}
+  m_Size: {x: 1.154253, y: 1.8600001, z: 0.9755728}
+  m_Center: {x: 1.2394989, y: 0.93000007, z: 0.030758739}
 --- !u!1 &8773575616953278916
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,21 +178,23 @@ MonoBehaviour:
   maxHealth: 6
   knockbackPower: 4
   rotationSpeed: 6
-  slowAmount: 0.1
-  slowTimeOnHit: 0.02
+  isBoss1: 0
+  isBoos2: 0
+  isKnight: 1
+  attackThreshold: 0
   keyPrefab: {fileID: 890390234888132512, guid: b4138e3925a9eba428fe2e58f64c22fe,
     type: 3}
   stickPrefab: {fileID: 662217787892721799, guid: 9ee029ff565af5542b37bdee1753b43e,
     type: 3}
   lancePrefab: {fileID: 4692135636210197933, guid: be5d966f7ea69e84785191f4871d0073,
     type: 3}
-  isBoss1: 0
-  isBoos2: 0
-  isKnight: 1
-  attackThreshold: 0
+  heartPrefab: {fileID: 5876169704007677470, guid: b977d00e40d1b1c4ca7d50c67668a800,
+    type: 3}
   hasTarget: 0
   targetTransform: {fileID: 0}
   dropKey: 0
+  dropHeart: 0
+  isDying: 0
 --- !u!195 &3610633622258922171
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ TagManager:
   - Stick
   - Lance
   - InGameHUD
+  - Door
+  - Parryable
+  - Heart
   layers:
   - Default
   - TransparentFX

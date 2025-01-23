@@ -17,6 +17,10 @@ public class SceneSwitch : MonoBehaviour
 
     private PlayerInputManager playerInput;
 
+    #endregion
+
+    #region Unity Methods
+
     private void Start()
     {
         playerInput = FindObjectOfType<PlayerInputManager>();
@@ -50,6 +54,14 @@ public class SceneSwitch : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region SceneSwitch Methods
+
+    /// <summary>
+    /// loads the new scene
+    /// </summary>
+    /// <param name="sceneToLoad">scene name</param>
     public void SwitchScene(string sceneToLoad)
     {
         GameStateManager.instance.LoadNewGameplayScene(sceneToLoad);

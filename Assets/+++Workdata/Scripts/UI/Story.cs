@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,8 +26,8 @@ public class Story : MonoBehaviour
             inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").gameObject;
             inGameUI.SetActive(false);
         }
-
-        //start music
+        
+        MusicManager.Instance.PlayMusic(MusicManager.Instance.comicMusic,0.1f);
         MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.storyLine);
         
         StartCoroutine(WaitForSkip());
@@ -52,7 +50,7 @@ public class Story : MonoBehaviour
     #endregion
 
     #region Story Methods
-
+    
     private void SkipCredits(InputAction.CallbackContext context)
     {
         if (context.performed && allowSkip)
@@ -62,6 +60,9 @@ public class Story : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// start the game
+    /// </summary>
     public void StartLevel()
     {
         MusicManager.Instance.StopInGameSFX();

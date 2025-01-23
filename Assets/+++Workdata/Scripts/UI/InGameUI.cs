@@ -11,6 +11,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private CanvasGroup controlsMenu;
     [SerializeField] private CanvasGroup creditsMenu;
     [SerializeField] private CanvasGroup gameOverMenu;
+    [SerializeField] private GameObject playerLifeBar;
 
     private PlayerInputManager playerInput;
     private GameInput inputActions;
@@ -76,6 +77,9 @@ public class InGameUI : MonoBehaviour
         gameObject.SetActive(isInGame);
     }
 
+    /// <summary>
+    /// open the ingame ui, unlock cursor and stop the time
+    /// </summary>
     public void OpenInGameUI()
     {
         if (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
@@ -85,12 +89,16 @@ public class InGameUI : MonoBehaviour
         }
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
+        MusicManager.Instance.PlayMusic(MusicManager.Instance.pauseMenuMusic, 0.1f);
         
         optionMenu.ShowCanvasGroup();
         controlsMenu.HideCanvasGroup();
         creditsMenu.HideCanvasGroup();
     }
 
+    /// <summary>
+    /// close the ingame ui, set time to normal and locks cursor
+    /// </summary>
     public void CloseInGameUI()
     {
         optionMenu.HideCanvasGroup();
@@ -103,8 +111,26 @@ public class InGameUI : MonoBehaviour
         }
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
+        
+        //get current scene at set music back to scene music
+        switch (LoadSceneManager.instance.currentScene)
+        {
+            case GameStateManager.level1SceneName:
+                MusicManager.Instance.PlayMusic(MusicManager.Instance.forestMusic, 0.1f);
+                break;
+            case GameStateManager.level2SceneName:
+                MusicManager.Instance.PlayMusic(MusicManager.Instance.townMusic, 0.1f);
+                break;
+            case GameStateManager.level3SceneName:
+            case GameStateManager.level4SceneName:
+                MusicManager.Instance.PlayMusic(MusicManager.Instance.castleMusic, 0.1f);
+                break;
+        }
     }
 
+    /// <summary>
+    /// reload the current scene, set time to normal and lock cursor 
+    /// </summary>
     public void ReloadScene()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -112,6 +138,9 @@ public class InGameUI : MonoBehaviour
         GameStateManager.instance.LoadNewGameplayScene(LoadSceneManager.instance.currentScene);
     }
 
+    /// <summary>
+    /// open the game over menu, stop time and unlock cursor
+    /// </summary>
     public void OpenGameOverMenu()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -119,12 +148,19 @@ public class InGameUI : MonoBehaviour
         Time.timeScale = 0f;
     }
     
+    /// <summary>
+    /// loads the main menu and close the in game ui
+    /// </summary>
     public void GoToMainMenu()
     {
         CloseInGameUI();
+        playerLifeBar.SetActive(false);
         GameStateManager.instance.GoToMainMenu(false);
     }
 
+    /// <summary>
+    /// open options menu
+    /// </summary>
     public void OpenOptionsMenu()
     {
         optionMenu.ShowCanvasGroup();
@@ -132,6 +168,9 @@ public class InGameUI : MonoBehaviour
         creditsMenu.HideCanvasGroup();
     }
 
+    /// <summary>
+    /// open controls menu
+    /// </summary>
     public void OpenControlsMenu()
     {
         optionMenu.HideCanvasGroup();
@@ -139,6 +178,9 @@ public class InGameUI : MonoBehaviour
         creditsMenu.HideCanvasGroup();
     }
 
+    /// <summary>
+    /// open credits menu
+    /// </summary>
     public void OpenCreditsMenu()
     {
         optionMenu.HideCanvasGroup();

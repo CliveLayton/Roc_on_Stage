@@ -3,11 +3,17 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
+    #region Variables
+
     public static ObjectPooling Instance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public Transform objectPoolParent;
     public int amountToPool;
+
+    #endregion
+    
+    #region Unity Methods
 
     void Awake()
     {
@@ -25,7 +31,15 @@ public class ObjectPooling : MonoBehaviour
             pooledObjects.Add(tmp);
         }
     }
-    
+
+    #endregion
+
+    #region ObjectPooling Methods
+
+    /// <summary>
+    /// get a object out of the pool if one is in it
+    /// </summary>
+    /// <returns>a object in the pool or null</returns>
     public GameObject GetPooledObject()
     {
         for(int i = 0; i < amountToPool; i++)
@@ -37,4 +51,7 @@ public class ObjectPooling : MonoBehaviour
         }
         return null;
     }
+
+    #endregion
+    
 }

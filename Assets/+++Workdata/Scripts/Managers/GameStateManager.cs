@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// The GameStateManager lies at the heart of our code.
@@ -40,12 +41,28 @@ public class GameStateManager : MonoBehaviour
     //the current state
     public GameState currentState { get; private set; } = GameState.InMainMenu;
 
+    //the current player state
     public PlayerState currentPlayerState = PlayerState.Claws;
-
+    
+    /// <summary>
+    /// maximal npcs in game
+    /// </summary>
     public int maxNpcCounter = 4;
+    /// <summary>
+    /// current npcs safed in the playthrough
+    /// </summary>
     public int npcCounter = 0;
+    /// <summary>
+    /// current keys the player has in the playthrough
+    /// </summary>
     public int playerKeys = 0;
+    /// <summary>
+    /// current damage the player make
+    /// </summary>
     public int playerSwordDamage = 1;
+
+    private int CounterOnSceneLoad = 0;
+    private int KeysOnSceneLoad = 0;
 
     #endregion
 
@@ -60,6 +77,12 @@ public class GameStateManager : MonoBehaviour
     {
         //when we start the game, we first want to enter the main menu
         GoToMainMenu(false);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     #endregion
@@ -78,7 +101,7 @@ public class GameStateManager : MonoBehaviour
             onStateChanged(currentState);
         }
         LoadSceneManager.instance.SwitchScene(mainMenuSceneName,showLoadingScreen);
-        MusicManager.Instance.PlayMusic(MusicManager.Instance.townMusic, 0.1f);
+        MusicManager.Instance.PlayMusic(MusicManager.Instance.mainMenuMusic, 0.1f);
         Cursor.lockState = CursorLockMode.None;
     }
 
@@ -91,6 +114,7 @@ public class GameStateManager : MonoBehaviour
             onStateChanged(currentState);
         }
 
+        //reset the stats for a new playthrough
         npcCounter = 0;
         playerKeys = 0;
         playerSwordDamage = 1;
@@ -99,6 +123,27 @@ public class GameStateManager : MonoBehaviour
         LoadSceneManager.instance.SwitchScene(level1SceneName);
         MusicManager.Instance.PlayMusic(MusicManager.Instance.forestMusic, 0.1f);
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        if (scene.name == LoadSceneManager.instance.currentScene && npcCounter > CounterOnSceneLoad)
+        {
+            npcCounter = CounterOnSceneLoad;
+        }
+        else
+        {
+            CounterOnSceneLoad = npcCounter;
+        }
+        
+        if (scene.name == LoadSceneManager.instance.currentScene && playerKeys > KeysOnSceneLoad)
+        {
+            playerKeys = KeysOnSceneLoad;
+        }
+        else
+        {
+            KeysOnSceneLoad = playerKeys;
+        }
     }
 
     public void LoadNewGameplayScene(string sceneName)

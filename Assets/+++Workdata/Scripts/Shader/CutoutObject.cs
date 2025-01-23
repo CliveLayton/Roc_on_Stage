@@ -1,21 +1,25 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CutoutObject : MonoBehaviour
 {
+    #region Variables
+
     [SerializeField] private Transform targetObject;
     [SerializeField] private LayerMask wallMask;
     [SerializeField] private float cutoutSize = 0.1f;
     [SerializeField] private float falloffSize = 0.05f;
     private Camera mainCamera;
 
+    #endregion
+
+    #region Unity Methods
+
     private void Awake()
     {
         mainCamera = GetComponent<Camera>();
     }
 
+    //get the target position and change material of object on front of the target to cutout a circle for sight
     private void Update()
     {
         Vector2 cutoutPos = mainCamera.WorldToViewportPoint(targetObject.position);
@@ -36,4 +40,7 @@ public class CutoutObject : MonoBehaviour
             }
         }
     }
+
+    #endregion
+    
 }

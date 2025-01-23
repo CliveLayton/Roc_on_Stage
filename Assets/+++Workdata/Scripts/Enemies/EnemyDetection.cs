@@ -7,16 +7,6 @@ public class EnemyDetection : MonoBehaviour
     [SerializeField] private Enemy[] enemies;
     [SerializeField] private Cage blockade;
     [SerializeField] private bool hasBlockade;
-    
-    public enum Music
-    {
-        Forest,
-        Town,
-        Castle,
-        Boss
-    }
-
-    public Music music;
 
     private bool checkForNull = false;
 
@@ -32,20 +22,6 @@ public class EnemyDetection : MonoBehaviour
             
             if (AllItemsNull())
             {
-                switch (music)
-                {
-                    case Music.Forest:
-                        MusicManager.Instance.PlayMusic(MusicManager.Instance.forestMusic, 0.5f);
-                        break;
-                    case Music.Town:
-                        MusicManager.Instance.PlayMusic(MusicManager.Instance.townMusic, 0.5f);
-                        break;
-                    case Music.Castle:
-                    case Music.Boss:
-                        MusicManager.Instance.PlayMusic(MusicManager.Instance.castleMusic, 0.5f);
-                        break;
-                }
-
                 if (hasBlockade)
                 {
                     blockade.OpenCage();
@@ -59,7 +35,6 @@ public class EnemyDetection : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            MusicManager.Instance.PlayMusic(MusicManager.Instance.combatMusic, 0.5f);
             checkForNull = true;
             foreach (Enemy enemy in enemies)
             {
@@ -73,6 +48,10 @@ public class EnemyDetection : MonoBehaviour
 
     #region EnemyDetection Methods
 
+    /// <summary>
+    /// check if all enemies are destroyed
+    /// </summary>
+    /// <returns></returns>
     private bool AllItemsNull()
     {
         foreach (var enemy in enemies)
@@ -86,6 +65,9 @@ public class EnemyDetection : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// check if only one enemy is left
+    /// </summary>
     private void GetLastRemainingEnemy()
     {
         Enemy lastEnemy = null;

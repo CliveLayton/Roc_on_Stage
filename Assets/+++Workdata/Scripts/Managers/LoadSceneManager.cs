@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -92,16 +91,21 @@ public class LoadSceneManager : MonoBehaviour
         }
         showLoadingScreen = true;
         
-        
         currentScene = newSceneName;
     }
 
+    /// <summary>
+    /// show the loading screen and trigger animation to close the curtain
+    /// </summary>
     public void ShowLoadingScreen()
     {
         loadingScreen.ShowCanvasGroup();
         loadingAnim.SetTrigger("Close");
     }
 
+    /// <summary>
+    /// trigger the animation to open the curtain
+    /// </summary>
     public void OpenLoadingScreen()
     {
         loadingAnim.SetTrigger("Open");

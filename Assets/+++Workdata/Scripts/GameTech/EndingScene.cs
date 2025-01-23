@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -10,17 +8,17 @@ public class EndingScene : MonoBehaviour
     #region Variables
 
     [SerializeField] private PlayerInputManager playerInput;
+    [SerializeField] private GameObject player;
     [SerializeField] private Animator faboCage;
     [SerializeField] private Volume volume;
+    [SerializeField] private float direction = 0.8f; // Controls the direction of the chromatic change and value
+    [SerializeField] private float colorChangeInterval = 0.1f;
     private ChromaticAberration chromaticAberration;
     private LiftGammaGain liftGammaGain;
     private Animator UiAnim;
     private bool inQuestion = false;
     private float chromaticValue = 0.5f;
-    [SerializeField] private float direction = 0.8f; // Controls the direction of the chromatic change
-    [SerializeField] private float colorChangeInterval = 0.1f;
     private Color currentLiftColor = Color.gray;
-    
 
     #endregion
 
@@ -60,6 +58,9 @@ public class EndingScene : MonoBehaviour
 
     #region EndingScene Methods
 
+    /// <summary>
+    /// disable playerinput, start post processing effects, unlock cursor
+    /// </summary>
     public void StartScene()
     {
         playerInput.enabled = false;
@@ -68,6 +69,9 @@ public class EndingScene : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
+    /// <summary>
+    /// count up npc Counter, trigger rescue animation
+    /// </summary>
     public void RescueFabo()
     {
         GameStateManager.instance.npcCounter += 1;
@@ -75,32 +79,67 @@ public class EndingScene : MonoBehaviour
         UiAnim.SetTrigger("Rescue");
     }
 
+    /// <summary>
+    /// trigger open cage animation
+    /// </summary>
     public void OpenCage()
     {
         faboCage.SetTrigger("Open");
     }
 
+    /// <summary>
+    /// trigger stay in cage animation
+    /// </summary>
+    public void StayCage()
+    {
+        faboCage.SetTrigger("Stay");
+    }
+
+    /// <summary>
+    /// trigger fadeout animation for the question
+    /// </summary>
     public void LeaveFabo()
     {
         inQuestion = false;
         UiAnim.SetTrigger("FadeOut");
     }
 
+    /// <summary>
+    /// load the credit scene
+    /// </summary>
     public void LoadCreditScene()
     {
         GameStateManager.instance.LoadNewGameplayScene(GameStateManager.creditSceneName);
     }
 
+    /// <summary>
+    /// show loading screen
+    /// </summary>
     public void ShowLoadingScreen()
     {
         LoadSceneManager.instance.ShowLoadingScreen();
     }
 
+    /// <summary>
+    /// hide loading screen
+    /// </summary>
     public void HideLoadingScreen()
     {
         LoadSceneManager.instance.OpenLoadingScreen();
     }
 
+    /// <summary>
+    /// disable player
+    /// </summary>
+    public void DisablePlayer()
+    {
+        player.SetActive(false);
+    }
+
+    /// <summary>
+    /// change values of the post processing effects over time
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ActivateVolume()
     {
         volume.enabled = true;

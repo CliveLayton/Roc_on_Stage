@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
@@ -14,12 +13,13 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioSource inGameSFXAudio;
 
     [Header("Music")] 
-    public AudioClip creditsMusic;
-    public AudioClip combatMusic;
-    public AudioClip townMusic;
+    public AudioClip mainMenuMusic;
     public AudioClip comicMusic;
-    public AudioClip castleMusic;
     public AudioClip forestMusic;
+    public AudioClip townMusic;
+    public AudioClip castleMusic;
+    public AudioClip creditsMusic;
+    public AudioClip pauseMenuMusic;
 
     [Header("VoiceLines")] 
     public AudioClip storyLine;
@@ -28,7 +28,8 @@ public class MusicManager : MonoBehaviour
     public AudioClip playerSteps;
 
     [Header("InGame SFX")] 
-    public AudioClip curtainMoving;
+    public AudioClip curtainOpen;
+    public AudioClip curtainClose;
     public AudioClip stageRevolving;
     public AudioClip npcHarmonica;
     public AudioClip parry;

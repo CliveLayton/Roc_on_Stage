@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,18 +7,16 @@ public class PlayerInputManager : MonoBehaviour
 
    private GameInput gameInput;
    private PlayerController playerController;
-   //private PlayerAimAndShoot playerAimAndShoot;
 
    #endregion
 
    #region Unity Methods
 
-   // We create a new PlayerControllerMap and get the PlayerJumping, PlayerMovement and PlayerObjectMove. 
+   // We create a new PlayerControllerMap
    private void Awake()
    {
       gameInput = new GameInput();
       playerController = GetComponent<PlayerController>();
-      //playerAimAndShoot = GetComponent<PlayerAimAndShoot>();
    }
 
    /// <summary>
@@ -38,16 +35,9 @@ public class PlayerInputManager : MonoBehaviour
       gameInput.Player.Sprint.performed += playerController.OnSprint;
       gameInput.Player.Sprint.canceled += playerController.OnSprint;
 
-      //gameInput.Player.DodgeRoll.performed += playerController.OnDodgeRoll;
-
-      //gameInput.Player.StompAttack.performed += playerController.OnStompAttack;
-
       gameInput.Player.Attack.performed += playerController.OnAttacking;
 
       gameInput.Player.Counter.performed += playerController.OnCounter;
-
-      //gameInput.Player.Shoot.performed += playerAimAndShoot.OnShoot;
-      //gameInput.Player.Shoot.canceled += playerAimAndShoot.OnShoot;
    }
 
    /// <summary>
@@ -66,16 +56,9 @@ public class PlayerInputManager : MonoBehaviour
       gameInput.Player.Sprint.performed -= playerController.OnSprint;
       gameInput.Player.Sprint.canceled -= playerController.OnSprint;
 
-      //gameInput.Player.DodgeRoll.performed -= playerController.OnDodgeRoll;
-      
-      //gameInput.Player.StompAttack.performed -= playerController.OnStompAttack;
-      
       gameInput.Player.Attack.performed -= playerController.OnAttacking;
 
       gameInput.Player.Counter.performed -= playerController.OnCounter;
-
-      //gameInput.Player.Shoot.performed -= playerAimAndShoot.OnShoot;
-      //gameInput.Player.Shoot.canceled -= playerAimAndShoot.OnShoot;
    }
 
    #endregion

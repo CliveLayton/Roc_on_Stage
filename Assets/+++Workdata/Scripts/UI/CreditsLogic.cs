@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,15 +24,15 @@ public class CreditsLogic : MonoBehaviour
     private void Awake()
     {
         inputActions = new GameInput();
-        if (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
-        {
-            inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").gameObject;
-            inGameUI.SetActive(false);
-        }
+        // if (GameStateManager.instance.currentState != GameStateManager.GameState.InMainMenu)
+        // {
+        //     inGameUI = GameObject.FindGameObjectWithTag("InGameHUD").gameObject;
+        //     inGameUI.SetActive(false);
+        // }
 
         npcCounterText.text = GameStateManager.instance.npcCounter + " / " + GameStateManager.instance.maxNpcCounter;
         
-        //start music
+        MusicManager.Instance.PlayMusic(MusicManager.Instance.creditsMusic, 0.1f);
 
         StartCoroutine(WaitforSkip());
     }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +15,10 @@ public class HeartBarUI : MonoBehaviour
 
     #region HeartBarUI Methods
 
+    /// <summary>
+    /// set the heart images to the current health
+    /// </summary>
+    /// <param name="health"></param>
     public void UpdateHearts(int health)
     {
         for (int i = 0; i < hearts.Length; i++)

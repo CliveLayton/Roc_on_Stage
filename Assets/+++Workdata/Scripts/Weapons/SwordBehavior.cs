@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -53,6 +51,10 @@ public class SwordBehavior : MonoBehaviour
 
     #region SwordBehavior Methods
 
+    /// <summary>
+    /// slow the time for a short time
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SlowTimeShortly()
     {
         Time.timeScale = slowAmount;

@@ -1254,6 +1254,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &166627676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166627678}
+  - component: {fileID: 166627677}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &166627677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166627676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 8f9b6dca525a0d242b1e902cb97a64cd, type: 2}
+--- !u!4 &166627678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166627676}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.948648, y: -1.2104021, z: 4.626782}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &171131807
 GameObject:
   m_ObjectHideFlags: 0
@@ -7548,7 +7597,6 @@ MonoBehaviour:
   - {fileID: 634183773}
   blockade: {fileID: 1919189226}
   hasBlockade: 1
-  music: 0
 --- !u!65 &680942624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8289,7 +8337,6 @@ MonoBehaviour:
   - {fileID: 1413794360}
   blockade: {fileID: 0}
   hasBlockade: 0
-  music: 0
 --- !u!65 &726940872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23099,7 +23146,7 @@ Transform:
   m_GameObject: {fileID: 1878336037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.9408, y: -3.19, z: 5.0966988}
+  m_LocalPosition: {x: 81.9408, y: -3.199, z: 5.0966988}
   m_LocalScale: {x: 18.991817, y: 1.0374876, z: 2.2098312}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23623,7 +23670,6 @@ MonoBehaviour:
   - {fileID: 1950096913}
   blockade: {fileID: 371279202}
   hasBlockade: 1
-  music: 0
 --- !u!65 &1918057598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24284,6 +24330,11 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8281314508326868275, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: dropHeart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24790,6 +24841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StoppingDistance
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281314508326868275, guid: 333d697c84615a04bbdf83c8e699078f,
+        type: 3}
+      propertyPath: dropHeart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27251,6 +27307,11 @@ PrefabInstance:
       propertyPath: cm
       value: 
       objectReference: {fileID: 1919090804}
+    - target: {fileID: 7672820516935211190, guid: eb33bea6e6b453c4c92d4d5351dcf6cf,
+        type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 166627677}
     - target: {fileID: 7997481231258327835, guid: eb33bea6e6b453c4c92d4d5351dcf6cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27544,3 +27605,4 @@ SceneRoots:
   - {fileID: 4212586357929934488}
   - {fileID: 1919189227}
   - {fileID: 5706750563194052639}
+  - {fileID: 166627678}

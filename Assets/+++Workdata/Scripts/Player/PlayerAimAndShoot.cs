@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//currently not in use 
 public class PlayerAimAndShoot : MonoBehaviour
 {
     #region Variables
@@ -76,8 +76,11 @@ public class PlayerAimAndShoot : MonoBehaviour
 
     #endregion
 
-    #region Gun Methdos
+    #region Gun Methods
 
+    /// <summary>
+    /// rotate the gun to the cursor
+    /// </summary>
     private void HandleGunRotation()
     {
         if (playerController.moveInput.x > 0)
@@ -118,6 +121,9 @@ public class PlayerAimAndShoot : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// instantiate a bullet and set direction for it
+    /// </summary>
     private void HandleGunShooting()
     {
         bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
@@ -129,6 +135,10 @@ public class PlayerAimAndShoot : MonoBehaviour
         bulletInst.GetComponent<BulletBehavior>().SetDirection(bulletDirection);
     }
 
+    /// <summary>
+    /// check if the cursor is on a enemy
+    /// </summary>
+    /// <returns>returns the enemy</returns>
     private bool CheckForTarget()
     {
         return Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit) && hit.collider.CompareTag("Enemy");

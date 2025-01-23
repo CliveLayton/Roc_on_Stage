@@ -1,5 +1,4 @@
 using System.Collections;
-using Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,31 +9,26 @@ public class Enemy : MonoBehaviour , IDamageable
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private float knockbackPower = 4f;
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private GameObject keyPrefab;
-    [SerializeField] private GameObject stickPrefab;
-    [SerializeField] private GameObject lancePrefab;
     [SerializeField] private bool isBoss1;
     [SerializeField] private bool isBoos2;
     [SerializeField] private bool isKnight;
-    [SerializeField] private float attackThreshold = 0.0f;
-    // [SerializeField] private float outlineThickness = 5f;
-    // [ColorUsage(showAlpha:true, hdr:true)]
-    // [SerializeField] private Color outlineGlowColor;
-    // [ColorUsage(showAlpha:true, hdr:true)]
-    // [SerializeField] private Color resetOutlineColor;
+    [SerializeField] private float attackThreshold = 0.0f; //threshold for determine what is behind the enemy
+    [SerializeField] private GameObject keyPrefab;
+    [SerializeField] private GameObject stickPrefab;
+    [SerializeField] private GameObject lancePrefab;
+    [SerializeField] private GameObject heartPrefab;
+    
     public bool hasTarget = false;
     public Transform targetTransform;
     public bool dropKey = false;
-    
-    private NavMeshAgent agent;
-    //private Material enemyMaterial;
-    private Transform visualChild;
+    public bool dropHeart = false;
+    public bool isDying = false;
 
     private int currentHealth;
-    public bool isDying = false;
+    private NavMeshAgent agent;
+    private Transform visualChild;
     private BoxCollider col;
     private Material enemyMaterial;
-
     private PlayerController player;
     
 
@@ -48,7 +42,6 @@ public class Enemy : MonoBehaviour , IDamageable
         visualChild = this.transform.GetChild(0);
         col = GetComponent<BoxCollider>();
         enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
-        //enemyMaterial = GetComponentInChildren<SpriteRenderer>().material;
     }
 
     private void Start()
@@ -59,6 +52,7 @@ public class Enemy : MonoBehaviour , IDamageable
 
     private void Update()
     {
+        //let the enemy work towards the player or stop him
         if (hasTarget && !isDying && !player.isCountering)
         {
             agent.SetDestination(targetTransform.position);
@@ -68,6 +62,7 @@ public class Enemy : MonoBehaviour , IDamageable
             StartCoroutine(EnemyStunned(2f));
         }
 
+        //rotate the sprite of the enemy
         if (!isDying && !player.isCountering)
         {
             if (agent.velocity.x <= 0)
@@ -85,24 +80,11 @@ public class Enemy : MonoBehaviour , IDamageable
             agent.enabled = false;
             transform.Rotate(0, 10, 0 ,Space.Self);
         }
-        
-        
     }
-
-    /*private void OnMouseEnter()
-    {
-        enemyMaterial.SetFloat("_Thickness", outlineThickness);
-        enemyMaterial.SetColor("_OutlineColor", outlineGlowColor);
-    }
-
-    private void OnMouseExit()
-    {
-        enemyMaterial.SetFloat("_Thickness", 0f);
-        enemyMaterial.SetColor("_OutlineColor", resetOutlineColor);
-    }*/
 
     private void OnCollisionEnter(Collision other)
     {
+        //if enemy hit player, damage the player and get a knockback 
         if (other.gameObject.CompareTag("Player"))
         {
             IDamageable idamageable = other.gameObject.GetComponent<IDamageable>();
@@ -121,6 +103,7 @@ public class Enemy : MonoBehaviour , IDamageable
 
     public void Damage(int damageAmount)
     {
+        //if the enemy is a knight only get damage, if the attacker is behind it 
         if (isKnight)
         {
             //get the direction from the enemy to the attacker
@@ -150,6 +133,11 @@ public class Enemy : MonoBehaviour , IDamageable
         StartCoroutine(LerpBetweenColors());
     }
 
+    /// <summary>
+    /// stop the agent for a short time
+    /// </summary>
+    /// <param name="stunTime">time the enemy can't move</param>
+    /// <returns></returns>
     private IEnumerator EnemyStunned(float stunTime)
     {
         agent.isStopped = true;
@@ -160,13 +148,17 @@ public class Enemy : MonoBehaviour , IDamageable
         }
     }
     
+    /// <summary>
+    /// lerp between two colors for damage effect
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator LerpBetweenColors()
     {
         float duration = 0.2f;
         float elapsedTime = 0f;
         Color startColor = Color.black;
         Color endColor = Color.red;
-
+        
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
@@ -189,6 +181,10 @@ public class Enemy : MonoBehaviour , IDamageable
         enemyMaterial.SetColor("_SpriteColor", startColor);
     }
 
+    /// <summary>
+    /// let the enemy flip off the stage and if they should drop a item, let them drop it on the ground
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator EnemyDying()
     {
         while (transform.position.y < -2f)
@@ -207,13 +203,15 @@ public class Enemy : MonoBehaviour , IDamageable
         {
             Instantiate(keyPrefab, dropPoint, Quaternion.identity);
         }
-
-        if (isBoss1)
+        else if (dropHeart)
+        {
+            Instantiate(heartPrefab, dropPoint, Quaternion.identity);
+        }
+        else if (isBoss1)
         {
             Instantiate(stickPrefab, dropPoint, Quaternion.identity);
         }
-
-        if (isBoos2)
+        else if (isBoos2)
         {
             Instantiate(lancePrefab, dropPoint, Quaternion.identity);
         }
