@@ -28,7 +28,7 @@ public class LoadingScreen : MonoBehaviour
     public void HideLoadingScreen()
     {
         PlayerInputManager playerInput = FindObjectOfType<PlayerInputManager>();
-        if (playerInput != null)
+        if (playerInput != null && LoadSceneManager.instance.currentScene != GameStateManager.level4SceneName)
         {
             playerInput.enabled = true;
         }
@@ -61,6 +61,10 @@ public class LoadingScreen : MonoBehaviour
         if (GameStateManager.instance.currentState == GameStateManager.GameState.InGame)
         {
             playerLifeBar.SetActive(true);
+        }
+        else
+        {
+            playerLifeBar.SetActive(false);
         }
         MusicManager.Instance.PlayInGameSFX(MusicManager.Instance.stageRevolving);
     }

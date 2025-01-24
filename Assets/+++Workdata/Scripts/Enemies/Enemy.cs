@@ -216,6 +216,8 @@ public class Enemy : MonoBehaviour , IDamageable
             Instantiate(lancePrefab, dropPoint, Quaternion.identity);
         }
 
+        targetTransform.GetComponent<PlayerController>().DenyParry();
+        
         while (transform.position.y > -5f)
         {
             transform.position -= new Vector3(0,1,2) * (5 * Time.deltaTime);

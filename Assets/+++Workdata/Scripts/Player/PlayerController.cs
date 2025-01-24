@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float speed;
     public Vector2 moveInput;
     public CinemachineVirtualCamera cm;
-    
+
     //Mesh Trail Variables
     [Header("Mesh Related")] 
     [SerializeField] private float meshRefreshRate = 0.1f;
@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     private Material[] counterMaterials;
     
     //private Variables
-    private bool canCounter = false;
     private int attackID = 0;
     private int currentHealth;
+    private bool canCounter = false;
     private bool allowDamage = true;
     private bool parryToRight = true;
     private float invincibleTime = 0.5f;
@@ -203,6 +203,7 @@ public class PlayerController : MonoBehaviour, IDamageable
                 GameStateManager.instance.playerKeys -= 1;
                 GameStateManager.instance.LoadNewGameplayScene(GameStateManager.level4SceneName);
                 MusicManager.Instance.PlayMusic(MusicManager.Instance.castleMusic, 0.1f);
+                allowDamage = false;
             }
         }
     }
@@ -336,6 +337,12 @@ public class PlayerController : MonoBehaviour, IDamageable
         
         StartCoroutine(InvincibleTime());
         StartCoroutine(LerpBetweenColors());
+    }
+
+    public void DenyParry()
+    {
+        canCounter = false;
+        parrySymbol.SetActive(false);
     }
 
     /// <summary>

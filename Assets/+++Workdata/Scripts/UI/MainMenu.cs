@@ -74,6 +74,22 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
+    /// play close curtain sound
+    /// </summary>
+    public void CloseCurtainSound()
+    {
+        MusicManager.Instance.PlayUISFX(MusicManager.Instance.curtainClose);
+    }
+
+    /// <summary>
+    /// play open curtain sound
+    /// </summary>
+    public void OpenCurtainSound()
+    {
+        MusicManager.Instance.PlayUISFX(MusicManager.Instance.curtainOpen);
+    }
+
+    /// <summary>
     /// activate the current menu and trigger the open animation for the curtain
     /// </summary>
     /// <returns></returns>

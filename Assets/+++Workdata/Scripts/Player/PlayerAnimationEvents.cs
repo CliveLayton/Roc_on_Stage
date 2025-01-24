@@ -94,6 +94,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     public void DyingEnd()
     {
         FindObjectOfType<InGameUI>().OpenGameOverMenu();
+        FindObjectOfType<InGameUI>().gameObject.SetActive(false);
         heartBar.UpdateHearts(3);
         player.isGameover = false;
     }

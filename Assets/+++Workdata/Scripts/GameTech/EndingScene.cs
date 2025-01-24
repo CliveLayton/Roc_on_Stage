@@ -6,9 +6,8 @@ using UnityEngine.Rendering.Universal;
 public class EndingScene : MonoBehaviour
 {
     #region Variables
-
-    [SerializeField] private PlayerInputManager playerInput;
-    [SerializeField] private GameObject player;
+    
+    [SerializeField] private SpriteRenderer playerVisual;
     [SerializeField] private Animator faboCage;
     [SerializeField] private Volume volume;
     [SerializeField] private float direction = 0.8f; // Controls the direction of the chromatic change and value
@@ -63,7 +62,6 @@ public class EndingScene : MonoBehaviour
     /// </summary>
     public void StartScene()
     {
-        playerInput.enabled = false;
         inQuestion = true;
         StartCoroutine(ActivateVolume());
         Cursor.lockState = CursorLockMode.None;
@@ -109,7 +107,7 @@ public class EndingScene : MonoBehaviour
     /// </summary>
     public void LoadCreditScene()
     {
-        GameStateManager.instance.LoadNewGameplayScene(GameStateManager.creditSceneName);
+        LoadSceneManager.instance.SwitchScene(GameStateManager.creditSceneName, false);
     }
 
     /// <summary>
@@ -133,7 +131,7 @@ public class EndingScene : MonoBehaviour
     /// </summary>
     public void DisablePlayer()
     {
-        player.SetActive(false);
+        playerVisual.enabled = false;
     }
 
     /// <summary>
